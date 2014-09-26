@@ -9,9 +9,11 @@
 #ifndef WATER_SERVERS_SERVER_H
 #define WATER_SERVERS_SERVER_H
 
-#include "../base/base.h"
-#include "../socket_lib.h"
-//#include "../base/
+#include "componet/componet.h"
+#include "net/net.h"
+
+namespace water
+{
 
 enum class ProcessType
 {
@@ -20,7 +22,7 @@ enum class ProcessType
     ROUTER = 2,
 };
 
-class ConnectionGroup
+class ConnectionManager
 {
 public:
     enum class  
@@ -28,7 +30,7 @@ public:
         STOP, RUNNING, SUSPEND
     };
 
-    ConnectionGroup(ConnectionIdentity)
+    ConnectionManager(ConnectionIdentity)
 
     void mainLoop();
 
@@ -86,5 +88,7 @@ private:
 
     std::vector<std::thread> threads;
 };
+
+}
 
 #endif
