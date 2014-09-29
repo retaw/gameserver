@@ -1,0 +1,13 @@
+*/a.out
+*.exe
+*.d.*
+*.d
+*.o
+*.a
+*.so
+*.swp
+core
+core.*
+tmp
+temp
+test_*
