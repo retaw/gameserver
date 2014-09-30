@@ -10,6 +10,7 @@
 
 
 namespace water{
+namespace componet{
 
 ExceptionBase::ExceptionBase(const std::string& msg, 
                              const std::string& file, 
@@ -41,4 +42,4 @@ const char* ExceptionBase::what() const noexcept
     return m_what.c_str();
 }
 
-}
+}}

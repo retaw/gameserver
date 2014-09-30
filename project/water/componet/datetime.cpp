@@ -4,6 +4,7 @@
 
 
 namespace water{
+namespace componet{
 
 TimePoint::TimePoint(uint64_t epochSeconds, int32_t offset)
 : m_epochMilliseconds(0), m_offset(offset)
@@ -128,32 +129,4 @@ TimePoint TimePoint::now(int32_t offset)
 }
 
 
-
-
-}
-
-#ifdef UNIT_TEST
-
-#include <time.h>
-#include <iostream>
-using namespace std;
-using namespace water;
-
-int main()
-{
-    cout << "time(nullptr):" << time(nullptr) << endl;
-
-    TimePoint china = TimePoint::now(8 * 3600);
-    cout << "china:" << china.toString() << " " << china.epochSeconds() << endl;
-
-    TimePoint tp;
-    tp.fromString(china.toString());
-    cout << "copy: " << tp.toString() << " " << tp.epochSeconds() << endl;
-
-    tp.setTimezone(-9 * 3600);
-    cout << "copy: " << tp.toString() << " " << tp.epochSeconds() << endl;
-    return 0;
-}
-
-
-#endif
+}}

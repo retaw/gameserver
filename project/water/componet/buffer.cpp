@@ -3,8 +3,8 @@
 #include <cstring>
 
 
-namespace water
-{
+namespace water{
+namespace componet{
 
 RawBuffer::RawBuffer(void* ptr, size_type size)
 : m_size(0), m_rawBuffer(reinterpret_cast<value_type*>(ptr)), m_bufSize(size) 
@@ -110,4 +110,4 @@ RawBuffer::size_type RawBuffer::append(const value_type* buf, size_type len)
     return ret;
 }
 
-}
+}}

@@ -1,11 +1,10 @@
 #ifndef WATER_BASE_TOOLS_HPP
 #define WATER_BASE_TOOLS_HPP
 
-#include <cstdint>
 #include <string>
-#include <sstream>
-#include <algorithm>
 #include <memory>
+
+#include "format.h"
 
 namespace water{
 namespace componet{
@@ -13,9 +12,9 @@ namespace componet{
 template<typename T>
 std::string toString(const T& obj)
 {
-    std::stringstream ss;
-    ss << obj;
-    return ss.str();
+    std::string ret;
+    appendToString(&ret, obj);
+    return ret;
 }
 
 template <typename T>
@@ -35,23 +34,23 @@ void splitString(StrContiner* result, const std::string& str, const std::string&
     if(result == nullptr)
         return;
     result->clear();
-    std::string::size_type beginPos = 0;
-    std::string::size_type endPos = 0;
+    std::string::size_type subBegin = 0;
+    std::string::size_type subEnd = 0;
     while(true)
     {
-        endPos = str.find(delimiter, beginPos); //endPos此时指向分隔符
+        subEnd = str.find(delimiter, subBegin); //subEnd此时指向分隔符
 
-        if(endPos == std::string::npos)//没有剩余的分隔符了, 即切分完毕
+        if(subEnd == std::string::npos)//没有剩余的分隔符了, 即切分完毕
         {
-            if(beginPos != endPos)// 最后一个分隔符不在串尾
-                result->insert(result->end(), str.substr(beginPos, endPos - beginPos));
+            if(subBegin != subEnd)// 最后一个分隔符不在串尾
+                result->insert(result->end(), str.substr(subBegin, subEnd - subBegin));
             break;
         }
 
-        if(beginPos != endPos)// 当前位置的字符， 不是刚找到的分隔符
-            result->insert(result->end(), str.substr(beginPos, endPos - beginPos));
+        if(subBegin != subEnd)// 当前位置的字符， 不是刚找到的分隔符
+            result->insert(result->end(), str.substr(subBegin, subEnd - subBegin));
 
-        beginPos = endPos + delimiter.length();
+        subBegin = subEnd + delimiter.length(); //将begin指向下个子串的起点
     }
 }
 
