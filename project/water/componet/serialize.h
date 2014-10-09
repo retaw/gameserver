@@ -1,5 +1,13 @@
-#ifndef WATER_BASE_SERIALIZE_STREAM_H
-#define WATER_BASE_SERIALIZE_STREAM_H
+/*
+ * Author: LiZhaojia 
+ *
+ * Last modified: 2014-08-09 16:38 +0800
+ *
+ * Description: 通用序列化机制
+ */
+
+#ifndef WATER_COMPONET_SERIALIZE_STREAM_H
+#define WATER_COMPONET_SERIALIZE_STREAM_H
 
 #include <type_traits>
 #include <cstring>

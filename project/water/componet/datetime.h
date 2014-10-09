@@ -1,71 +1,68 @@
 /*
  * Author: LiZhaojia - dantezhu@vip.qq.com
  *
- * Last modified: 2014-07-11 18:56 +0800
+ * Last modified: 2014-10-09 16:00 +0800
  *
- * Description:  与系统时区设定无关的时间处理工具，无显式冬令时夏令时支持
+ * Description:  时间处理的一些常用函数, 包括时间点的格式化, 时间点的自然日期处理等
  */
+
 #ifndef WATER_BASE_DATE_TIME_H
 #define WATER_BASE_DATE_TIME_H
 
-
-#include <cstdint>
+#include <chrono>
 #include <string>
 
 namespace water{
 namespace componet{
 
 
-class TimePoint
+namespace datetime
 {
-public:
-    struct Detail
-    {
-        int32_t year     = 0;
-        int32_t month    = 0;
-        int32_t day      = 0;
-        int32_t hour     = 0;
-        int32_t minute   = 0;
-        int32_t second   = 0;
-        int32_t weekday  = 0;
-        int32_t yearday  = 0;
-        int32_t offset   = 0;
-    };
 
-    TimePoint(uint64_t epochSeconds = 0, int32_t offset = 8);
-
-    ~TimePoint();
-
-    void setTimezone(int32_t offset);
-    void setEpochMilliseconds(uint64_t epochSeconds);
-
-    uint64_t epochMilliseconds() const;
-    uint32_t epochSeconds() const;
-
-    void setToNow();
-
-    Detail detail() const;
+typedef std::chrono::high_resolution_clock Clock;
+typedef Clock::time_point TimePoint;
 
 
-    //格式化为字符串和从字符串逆格式化
-    //格式为 YYYYMMDD-hh:mm:ss.timezoneoffset, 
-    //如: 2014年1月2日12点30分30秒 东8区  :  "20140102-12:30:30.+28800"
-    std::string toString() const;
-    void fromString(const std::string& timeStr);
+//19700101-00:00:00 所有返回TimePoint的函数, 出错时返这个值
+extern const TimePoint epoch; 
 
-public:
-    static TimePoint now(int32_t offset = 8);
+//以下涉及到周内自然日编号，一律按tm结构的默认规则，0-6表示周日到周六
 
-private:
-    void doGmtime() const;
 
-private:
-    uint64_t m_epochMilliseconds = 0;
-    int32_t m_offset = 0;
-    mutable tm* m_localtm = nullptr;
+//把时间点转成tm结构
+bool timePointToTM(const TimePoint& tp, ::tm* detail);
+
+//把满足YYYYMMDD-hh:mm:ss格式的字符串转成tp
+TimePoint stringToTimePoint(const std::string& timeStr);
+
+//tp转成YYYYMMDD-hh:mm:ss格式的字符串
+std::string timePointToString(const TimePoint& tp);
+
+//一个tp所在年是否是闰年
+bool inLeapYear(const TimePoint& tp);
+
+//tp所在的自然日的0点
+TimePoint beginOfDay(const TimePoint& tp);
+
+//两个tp是在同一个自然日内
+bool inSameDay(TimePoint tp1, TimePoint tp2);
+
+//beginOfLastDayInWeek(tp, 2) 即为tp之前（或当前）最近的上一个周二0点
+TimePoint beginOfLastDayInWeek(TimePoint tp, int32_t dayInWeek);
+
+//tp所在周的第一天的0点, sinceDayInWeek 表示把周几视为周的第一天, 默认周日为每周第一天
+TimePoint beginOfWeek(TimePoint tp, int32_t sinceDayInWeek = 0);
+
+//两个tp是否在同一周,  sinceDayInWeek 表示把周几视为一周的第一天, 默认周日为每周第一天
+bool inSameWeek(TimePoint tp1, TimePoint tp2, int32_t sinceDayInWeek = 0);
+
+//一个tp所在的自然月的第一天的0点
+TimePoint beginOfMonth(TimePoint tp);
+
+//两个tp是否在同一个自然月内
+bool inSameMonth(TimePoint tp1, TimePoint tp2);
+
 };
-
-
 
 }}
 

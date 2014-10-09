@@ -1,6 +1,6 @@
 objects = \
     \
-    tools.o\
+    string_kit.o\
     exception.o\
     scope_guard.o\
     datetime.o\
@@ -14,11 +14,10 @@ cc = g++
 
 cc_flags = -std=c++11 -fPIC -g
 
-target = libbase
+target = libcomponet
 
 .PHONY:
-all: $(target).a $(target).so
-
+all: $(target).a 
 
 $(target).a : $(objects)
 	ar rs $(target).a $(objects)
@@ -30,8 +29,8 @@ $(target).so : $(objects)
 	$(cc) $(cc_flags) -c $< -o $@
 
 %.d: %.cpp
-	@set -e -x; \
-	rm -f $@; \
+#此行用于调试	@set -e -x; \ #此行用于调试
+	@rm -f $@; \
 	$(cc) $(cc_flags) -MM $< > $@.$$$$;  \
 	sed 's,\($*\)\.o[ :]*,\1.o $@ : ,g' < $@.$$$$ > $@;  \
 	rm -f $@.$$$$
@@ -40,5 +39,5 @@ $(target).so : $(objects)
 
 .PHONY: clean
 clean:
-	-rm -f *.o *.d *.d.* 
-	-rm $(target).so $(target).a
+	rm -f *.o *.d *.d.* 
+	rm -f $(target).a $(target).so 
