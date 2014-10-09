@@ -4,7 +4,7 @@ objects = \
     exception.o\
     scope_guard.o\
     datetime.o\
-    buffer.o\
+    raw_buffer.o\
     backend_logger.o\
     log_file.o\
     logger.o\

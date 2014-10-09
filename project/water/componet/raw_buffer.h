@@ -3,7 +3,7 @@
  *
  * Last modified: 2014-09-29 20:34 +0800
  *
- * Description: 
+ * Description: 将一个块内存做一个包装， 使之可以直接用于序列化的buff
  */
 
 
