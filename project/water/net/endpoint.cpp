@@ -10,7 +10,7 @@
 
 #include "net_exception.h"
 #include "../componet/scope_guard.h"
-#include "../componet/tools.h"
+#include "../componet/string_kit.h"
 
 #include <string>
 #include <cstring>

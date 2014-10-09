@@ -15,13 +15,13 @@ ln_flags = -L../base -lbase
 cc_flags = -std=c++11 -g
 
 
-target = libnet.a
+target = libnet
 
 .PHONY:
-all: $(target)
+all: $(target).a
 
 
-$(target) : $(objects)
+$(target).a : $(objects)
 	ar rs $(target) $(objects)
 
 $(objects): %.o: %.cpp
@@ -41,5 +41,5 @@ $(objects): %.o: %.cpp
 
 .PHONY: clean
 clean:
-	-rm -f *.o *.d *.d.*
-	-rm $(target)
+	rm -f *.o *.d *.d.*
+	rm -f $(target)

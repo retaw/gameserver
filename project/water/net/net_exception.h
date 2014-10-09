@@ -14,7 +14,7 @@
 namespace water{
 namespace net{
 
-    DEFINE_EXCEPTION(NetException, ExceptionBase)
+    DEFINE_EXCEPTION(NetException, componet::ExceptionBase)
 
 }}
 #endif

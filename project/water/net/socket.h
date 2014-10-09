@@ -48,7 +48,7 @@ public:
     void close();
 
 public:
-    typedef Event<void (TcpSocket*)> OnClosedEvent;
+    typedef componet::Event<void (TcpSocket*)> OnClosedEvent;
     OnClosedEvent onClosed;
 
 public:
