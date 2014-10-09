@@ -14,7 +14,6 @@
 #include <thread>
 #include <condition_variable>
 #include <chrono>
-#include <pthread.h>
 
 namespace water {
 namespace componet{

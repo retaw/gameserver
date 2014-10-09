@@ -5,9 +5,9 @@ objects = \
     scope_guard.o\
     datetime.o\
     raw_buffer.o\
-    backend_logger.o\
-    log_file.o\
-    logger.o\
+    log/backend_logger.o\
+    log/log_file.o\
+    log/logger.o\
 
 CC = g++
 cc = g++
@@ -39,5 +39,5 @@ $(target).so : $(objects)
 
 .PHONY: clean
 clean:
-	rm -f *.o *.d *.d.* 
+	rm -f $(objects) $(objects:.o=.d) *.d *.d.* 
 	rm -f $(target).a $(target).so 

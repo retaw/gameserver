@@ -8,12 +8,13 @@
 #ifndef WATER_BASE_LOGGER_HPP
 #define WATER_BASE_LOGGER_HPP
 
-#include "format.h"
 #include <functional>
 #include <iostream>
 #include <sstream>
 #include <stdexcept>
 #include <time.h>
+
+#include "../format.h"
 
 namespace water{
 namespace componet{
