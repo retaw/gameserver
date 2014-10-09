@@ -37,13 +37,10 @@ T fromString(const std::string& str)
 
 //对时间转换的重载或特化
 //字符串格式为 YYYYMMDD-hh:mm:ss
-std::string toString(const datetime::TimePoint tp);
+std::string toString(const datetime::TimePoint& tp);
 
 template<>
-datetime::Clock::time_point fromString<datetime::Clock::time_point>(const std::string& str)
-{
-    return datetime::stringToTimePoint(str);
-}
+datetime::TimePoint fromString<datetime::TimePoint>(const std::string& str);
 
 
 //字符串分割， 不保留空串
