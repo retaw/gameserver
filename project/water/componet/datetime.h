@@ -16,15 +16,12 @@ namespace water{
 namespace componet{
 
 
-namespace datetime
-{
-
-typedef std::chrono::high_resolution_clock Clock;
+typedef std::chrono::system_clock Clock;
 typedef Clock::time_point TimePoint;
 
 
 //19700101-00:00:00 所有返回TimePoint的函数, 出错时返这个值
-extern const TimePoint epoch; 
+extern const TimePoint EPOCH; 
 
 //以下涉及到周内自然日编号，一律按tm结构的默认规则，0-6表示周日到周六
 
@@ -61,8 +58,6 @@ TimePoint beginOfMonth(TimePoint tp);
 
 //两个tp是否在同一个自然月内
 bool inSameMonth(TimePoint tp1, TimePoint tp2);
-
-};
 
 }}
 

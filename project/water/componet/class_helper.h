@@ -1,5 +1,11 @@
-#ifndef WATER_BASE_COMPONENT_TOOL_H
-#define WATER_BASE_COMPONENT_TOOL_H
+#ifndef WATER_BASE_COMPONENT_CLASS_HELPER_H
+#define WATER_BASE_COMPONENT_CLASS_HELPER_H
+
+#include <memory>
+
+#define GCC_VERSION (__GNUC__ * 10000 \
+                     + __GNUC_MINOR__ * 100 \
+                     + __GNUC_PATCHLEVEL__)
 
 #define STR(str) #str
 #define MACRO_2_STR(str) STR(str)
@@ -24,9 +30,10 @@ static std::shared_ptr<ClassName> create(ArgsType&& ... args)\
     return std::make_shared<ClassName>(std::forward<ArgsType>(args)...);\
 }
 
-#define GCC_VERSION (__GNUC__ * 10000 \
-                     + __GNUC_MINOR__ * 100 \
-                     + __GNUC_PATCHLEVEL__)
+#define NON_COPYABLE(ClassName) \
+ClassName(const ClassName&) = delete; \
+ClassName& operator=(const ClassName&) = delete;
+
 
 
 

@@ -19,6 +19,7 @@ public:
 
 
     virtual std::string exceptionName() const noexcept;
+    std::string msg() const noexcept;
     const char* what() const noexcept override;
 
 protected:

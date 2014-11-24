@@ -11,6 +11,7 @@
 #include <sys/epoll.h>
 #include <linux/version.h>
 
+#include "socket.h"
 #include "net_exception.h"
 
 namespace water{
@@ -27,37 +28,61 @@ Epoller::~Epoller()
 {
 }
 
-void Epoller::regSocket(TcpSocket* socket, EventType et)
+void Epoller::regSocket(int32_t socketFD, Event et)
 {
     struct epoll_event ev;
-    ev.data.ptr = socket;
+    ev.data.fd = socketFD;
 
-    if(et == EventType::READ)
+    if(et == Event::READ)
     {
         ev.events = EPOLLIN;
     }
-    else if(et == EventType::WRITE)
+    else if(et == Event::WRITE)
     {
         ev.events = EPOLLOUT;
+    }
+    else if(et == Event::READ_ERITE)
+    {
+        ev.events = EPOLLIN | EPOLLOUT;
     }
     else
     {
         return;
     }
 
-    if(::epoll_ctl(m_epollfd, EPOLL_CTL_ADD, socket->getFD(), &ev) == -1)
-    {
-        if(errno != EEXIST)
+    if(::epoll_ctl(m_epollfd, EPOLL_CTL_ADD, socketFD, &ev) == -1)
             SYS_EXCEPTION(NetException, "::epoll_ctl, EPOLL_CTL_ADD");
-
-        if(::epoll_ctl(m_epollfd, EPOLL_CTL_MOD, socket->getFD(), &ev) == -1)
-            SYS_EXCEPTION(NetException, "::epoll_ctl, EPOLL_CTL_MOD");
-    }
 }
 
-void Epoller::delSocket(TcpSocket* socket)
+void Epoller::modifySocket(int32_t socketFD, Event et)
 {
-    if(::epoll_ctl(m_epollfd, EPOLL_CTL_DEL, socket->getFD(), nullptr) == -1)
+    struct epoll_event ev;
+    ev.data.fd = socketFD;
+
+    if(et == Event::READ)
+    {
+        ev.events = EPOLLIN;
+    }
+    else if(et == Event::WRITE)
+    {
+        ev.events = EPOLLOUT;
+    }
+    else if(et == Event::READ_ERITE)
+    {
+        ev.events = EPOLLIN | EPOLLOUT;
+    }
+    else
+    {
+        return;
+    }
+
+    if(::epoll_ctl(m_epollfd, EPOLL_CTL_MOD, socketFD, &ev) == -1)
+        SYS_EXCEPTION(NetException, "::epoll_ctl, EPOLL_CTL_MOD");
+}
+
+void Epoller::delSocket(int32_t socketFD)
+{
+    if(::epoll_ctl(m_epollfd, EPOLL_CTL_DEL, socketFD, nullptr) == -1)
     {
         if(errno == ENOENT) //删除时已经不存在了，不视为错误
             return;
@@ -66,31 +91,49 @@ void Epoller::delSocket(TcpSocket* socket)
     }
 }
 
-void Epoller::wait(int32_t timeout)
+void Epoller::setEventHandler(const EventHandler& eventHanlder)
+{
+    m_eventHanlder = eventHanlder;
+}
+
+void Epoller::wait(std::chrono::milliseconds timeout)
+{
+    waitImpl(timeout.count());
+}
+
+void Epoller::wait()
+{
+    waitImpl(-1);
+}
+
+void Epoller::waitImpl(int32_t timeout)
 {
     const uint32_t maxevents = 100;
     struct epoll_event events[maxevents];
 
     const int32_t eventSize = ::epoll_wait(m_epollfd, events, maxevents, timeout);
-    if(eventSize == -1)
+    if(eventSize == -1 && errno != EINTR)
         SYS_EXCEPTION(NetException, "::epoll_wait");
 
     for(int32_t i = 0; i < eventSize; ++i)
     {
-        TcpSocket* socket = reinterpret_cast<TcpSocket*>(events[i].data.ptr);
+        bool ok = false;
+        int32_t socketFD = events[i].data.fd;
         if(events[i].events & EPOLLIN)
         {
-            socket->m_epollReadCallback();
+            m_eventHanlder(this, socketFD, Event::READ);
+            ok = true;
         }
         if(events[i].events & EPOLLOUT)
         {
-            socket->m_epollWriteCallback();
+            m_eventHanlder(this, socketFD, Event::WRITE);
+            ok = true;
         }
-        if( (events[i].events & EPOLLERR) || (events[i].events & EPOLLHUP) )
-        {
-            socket->m_epollErrorCallback();
-        }
+
+        if( !ok || (events[i].events & EPOLLERR) || (events[i].events & EPOLLHUP) )
+            m_eventHanlder(this, socketFD, Event::ERROR);
     }
 }
+
 
 }}

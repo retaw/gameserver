@@ -22,10 +22,11 @@ public:
     TYPEDEF_PTR(TcpListener);
 public:
     CREATE_FUN_MAKE(TcpListener);
-    explicit TcpListener();
+    explicit TcpListener() = default;
+    //using TcpSocket::TcpSocket;
 
 public:
-    ~TcpListener();
+    ~TcpListener() = default;
 
     void listen(int32_t backlog = 20);
     TcpConnection::Ptr accept();

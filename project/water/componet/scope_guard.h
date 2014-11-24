@@ -14,7 +14,7 @@
 namespace water{
 namespace componet{
 
-class ScopeGuard
+class ScopeGuard final
 {
 public:
     explicit ScopeGuard(std::function<void()> onExitScope_);

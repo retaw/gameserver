@@ -17,24 +17,24 @@ void epoch()
 
 void strConvert()
 {
-    auto now = datetime::Clock::now();
-    cout << datetime::Clock::to_time_t(now) << endl;
+    auto now = Clock::now();
+    cout << Clock::to_time_t(now) << endl;
 
-    std::string timeStr = datetime::timePointToString(now);
+    std::string timeStr = timePointToString(now);
     cout << timeStr << endl;
 
-    auto tp = datetime::stringToTimePoint(timeStr);
-    cout << datetime::Clock::to_time_t(tp) << endl;
+    auto tp = stringToTimePoint(timeStr);
+    cout << Clock::to_time_t(tp) << endl;
 }
 
 void compare()
 {
-    auto now = datetime::Clock::now();
+    auto now = Clock::now();
     cout << toString(now) << endl;
-    cout << toString(datetime::beginOfDay(now)) << endl;
-    cout << toString(datetime::beginOfMonth(now)) << endl;
-    cout << toString(datetime::beginOfWeek(now)) << endl;
-    cout << toString(datetime::beginOfWeek(now, 1)) << endl;
+    cout << toString(beginOfDay(now)) << endl;
+    cout << toString(beginOfMonth(now)) << endl;
+    cout << toString(beginOfWeek(now)) << endl;
+    cout << toString(beginOfWeek(now, 1)) << endl;
 }
 
 int main()

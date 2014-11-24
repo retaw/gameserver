@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <router id="0">
+        <listen>192.168.5.128:6001</listen>
+    </router>
+
+    <function id="0">
+        <connect>192.168.5.128:6001</connect>
+    </function>
+    <function id="1">
+        <connect>192.168.5.128:6001</connect>
+    </function>
+    <function id="2">
+        <connect>192.168.5.128:6001</connect>
+    </function>
+</root>

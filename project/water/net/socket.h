@@ -8,15 +8,17 @@
 #ifndef WATER_NET_SOCKET_HPP
 #define WATER_NET_SOCKET_HPP
 
-#include "../componet/macro.h"
+#include "../componet/class_helper.h"
 #include "../componet/event.h"
+
 #include "endpoint.h"
+//#include "epoller.h"
+
 namespace water{
 namespace net{
 
 class TcpSocket
 {
-    friend class Epoller;
 public:
     enum class BlockingStatus {BLOCKING, NON_BLOCKING };
 
@@ -39,6 +41,7 @@ public:
     void bind(const Endpoint& endPoint);
 
     void setNonBlocking();
+    void setBlocking();
     bool isNonBlocking() const;
 
     int32_t getFD() const;
@@ -48,21 +51,7 @@ public:
     void close();
 
 public:
-    typedef componet::Event<void (TcpSocket*)> OnClosedEvent;
-    OnClosedEvent onClosed;
-
-public:
-    typedef std::function<void ()> EpollCallback;
-
-    void setEpollReadCallback(EpollCallback cb);
-    void setEpollWriteCallback(EpollCallback cb);
-    void setEpollErrorCallback(EpollCallback cb);
-
-private:
-    EpollCallback m_epollReadCallback;
-    EpollCallback m_epollWriteCallback;
-    EpollCallback m_epollErrorCallback;
-
+    componet::Event<void (TcpSocket*)> e_onClose;
 private:
     int32_t m_fd;
     bool m_autoClose;

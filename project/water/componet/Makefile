@@ -1,18 +1,28 @@
 objects = \
     \
+	xmlparse/xml_parse.o\
+	xmlparse/xml_parse_doc.o\
+	xmlparse/tinyxml.o\
+	xmlparse/tinystr.o\
+	xmlparse/tinyxmlerror.o\
+	xmlparse/tinyxmlparser.o\
     string_kit.o\
     exception.o\
     scope_guard.o\
     datetime.o\
     raw_buffer.o\
-    log/backend_logger.o\
-    log/log_file.o\
+    log/file_writer.o\
+	log/stdout_writer.o\
+    log/writer_file.o\
     log/logger.o\
+    log.o\
+    spinlock.o\
+    timer.o\
 
 CC = g++
 cc = g++
 
-cc_flags = -std=c++11 -fPIC -g
+cc_flags = -std=c++11 -fPIC -ggdb -Wall -Werror
 
 target = libcomponet
 
@@ -40,4 +50,4 @@ $(target).so : $(objects)
 .PHONY: clean
 clean:
 	rm -f $(objects) $(objects:.o=.d) *.d *.d.* 
-	rm -f $(target).a $(target).so 
+	rm -f $(target).a

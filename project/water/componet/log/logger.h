@@ -1,19 +1,17 @@
 /*
- * Author: HongXiaoqiang  - prove.hxq@gmail.com
- *
- * Last modified: 2014-10-05 20:18 +0800
- *
- * Description: 日志模块前端，example: 2014-07-27 09:41:23 DEBUG: hello shok - Loggging_test.cpp:34
+ * Description: 日志模块前端，example: 2014-07-27 09:41:23 DEBUG: hello shok
  */
-#ifndef WATER_BASE_LOGGER_HPP
-#define WATER_BASE_LOGGER_HPP
+#ifndef WATER_COMPONET_LOGGER_HPP
+#define WATER_COMPONET_LOGGER_HPP
 
 #include <functional>
 #include <iostream>
 #include <sstream>
 #include <stdexcept>
 #include <time.h>
-
+#include <map>
+#include "writer.h"
+#include "../class_helper.h"
 #include "../format.h"
 
 namespace water{
@@ -26,73 +24,65 @@ enum class LogLevel : uint8_t
 {
 	LL_DEBUG,
 	LL_TRACE,
-	LL_WARN,
 	LL_ERROR,
 	LL_MAX
 };
 
 class Logger
 {
+	NON_COPYABLE(Logger);
 public:
-    typedef std::function<void(const char*,uint32_t)> AppendCallback;
-
     Logger();
-    ~Logger() = default;
+    ~Logger();
+public:
+    void setWriter(std::shared_ptr<Writer> writer);
+	std::shared_ptr<Writer> getWriter(const WriterType type) const;
+	void restartWriter(const WriterType type) ;
+	void stopWriter(const WriterType type) ;
+
+	template<typename... Args>   
+	void trace(const Args&... args)
+	{
+		return this->log(LogLevel::LL_TRACE, std::forward<const Args>(args)...);
+	}
+
+	template<typename... Args>   
+	void debug(const Args&... args)
+	{
+		return this->log(LogLevel::LL_DEBUG, std::forward<const Args>(args)...);
+	}
+
+	template<typename... Args>   
+	void error(const Args&... args)
+	{
+		return this->log(LogLevel::LL_ERROR, std::forward<const Args>(args)...);
+	}
+	
+private:
+    void formatTime();
+    const char* getLevelStr(LogLevel l);
 
     template<typename... Args>
-    void log(LogLevel level, const char* file, int line,  Args... args)
+    void log(LogLevel level, const Args&... args)
     {
         formatTime();
         m_stream <<" "<< getLevelStr(level) << ": ";
-        //print(args...);
         m_stream << format(args...);
-        m_stream << " - " << file << ":" << line;
         m_stream << "\n";
-
-        if (m_appendcb)
-            m_appendcb(m_stream.str().data(), (uint32_t)(m_stream.str().size()));
-        m_stream.str("");
+		for (const auto &item : writerMap)
+		{
+			if (item.second != nullptr)
+				item.second->append(m_stream.str().data(), (uint32_t)(m_stream.str().size())); 
+		}
+		m_stream.str("");
         m_stream.clear();
     }
-
-    void setAppendCallback(AppendCallback cb){ m_appendcb = cb; }
-
-    void formatTime();
-
-    void setLogLevel(LogLevel l){ m_level = l; }
-
-    LogLevel level() const { return m_level; }
-
-    const char* getLevelStr(LogLevel l);
-
 private:
-    LogLevel m_level;
-    AppendCallback m_appendcb;
+	std::map<WriterType, std::shared_ptr<Writer>> writerMap; 
 };
 
 
-#define LOG_DEBUG(...) \
-    do{\
-        gLogger.log(LogLevel::LL_DEBUG, __FILE__,__LINE__, __VA_ARGS__); \
-    }while(0)
-
-#define LOG_TRACE(...) \
-    do{\
-        gLogger.log(LogLevel::LL_TRACE, __FILE__,__LINE__, __VA_ARGS__); \
-    }while(0)
-
-#define LOG_WARN(...) \
-    do{\
-        gLogger.log(LogLevel::LL_WARN, __FILE__,__LINE__, __VA_ARGS__); \
-    }while(0)
-
-#define LOG_ERROR(...) \
-    do{\
-        gLogger.log(LogLevel::LL_ERROR, __FILE__,__LINE__, __VA_ARGS__); \
-    }while(0)
 
 }}
 
-extern water::componet::Logger gLogger;
-
-#endif //#define WATER_BASE_LOGGER_HPP
+#endif //#define WATER_COMPONET_LOGGER_HPP 

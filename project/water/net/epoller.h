@@ -12,34 +12,37 @@
 #ifndef WATER_NET_EPOLLER_H
 #define WATER_NET_EPOLLER_H
 
-
-#include "../componet/macro.h"
-#include "socket.h"
-
 #include <functional>
+#include <chrono>
+
 
 namespace water{
 namespace net{
 
-
 class Epoller
 {
 public:
-    enum class EventType : int32_t { ERROR = 0, READ = 1, WRITE = 2 };
-
-    TYPEDEF_PTR(Epoller)
-    CREATE_FUN_MAKE(Epoller)
+    enum class Event : int32_t { ERROR = 0, READ = 1, WRITE = 2, READ_ERITE = 3 };
+    typedef std::function<void(Epoller* epoller, int32_t socketFD, Event event)>  EventHandler;
 public:
     Epoller();
     ~Epoller();
 
-    void regSocket(TcpSocket* socket, EventType et);
-    void delSocket(TcpSocket* socket);
+    void regSocket(int32_t socketFD, Event et);
+    void modifySocket(int32_t socketFD, Event et);
+    void delSocket(int32_t socketFD);
 
-    void wait(int32_t timeout = -1);
+    void setEventHandler(const EventHandler& eventHanlder);
+
+    void wait(std::chrono::milliseconds timeout);
+    void wait();
+
+private:
+    void waitImpl(int32_t timeout);
 
 private:
     int32_t m_epollfd = -1;
+    EventHandler m_eventHanlder;
 };
 
 }}

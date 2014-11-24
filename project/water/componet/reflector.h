@@ -9,6 +9,8 @@
 #ifndef WATER_BASE_REFLECTOR_H
 #define WATER_BASE_REFLECTOR_H
 
+#include <map>
+#include <utility>
 
 namespace water{
 namespace componet{

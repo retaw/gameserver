@@ -53,4 +53,5 @@ private:
 };
 
 }}
+
 #endif //#define WATER_BASE_BACKEND_LOGGER_HPP

@@ -36,6 +36,11 @@ IpV4::IpV4(uint32_t ipValue)
 {
 }
 
+IpV4& IpV4::operator=(const std::string& ipStr)
+{
+    fromString(ipStr);
+}
+
 std::string IpV4::toString() const
 {
     std::stringstream ss;
@@ -46,6 +51,18 @@ std::string IpV4::toString() const
     << (int)bytes[3];
 
     return ss.str();
+}
+
+void IpV4::appendToString(std::string* str) const
+{
+    std::stringstream ss;
+    ss
+    << (int)bytes[0] << "." 
+    << (int)bytes[1] << "." 
+    << (int)bytes[2] << "." 
+    << (int)bytes[3];
+
+    str->append(ss.str());
 }
 
 void IpV4::fromString(const std::string& str)
@@ -94,10 +111,30 @@ std::istream& operator >> (std::istream& is, IpV4& ip)
     return is;
 }
 
-namespace Tool
+std::string Endpoint::toString() const
 {
+    return ip.toString() + ":" + componet::toString(port);
+}
+
+void Endpoint::fromString(const std::string& str)
+{
+    std::vector<std::string> strs = componet::splitString(str, ":");
+    if(strs.size() < 2)
+        return;
+
+    ip = componet::fromString<IpV4>(strs[0]);
+    port = componet::fromString<uint16_t>(strs[1]);
 
 }
+
+bool operator<(const Endpoint& ep1, const Endpoint& ep2)
+{
+    if(ep1.ip.value == ep2.ip.value)
+        return ep1.port < ep2.port;
+
+    return ep1.ip.value < ep2.ip.value;
+}
+
 
 }} //namespace water::net
 

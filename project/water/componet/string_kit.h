@@ -10,7 +10,7 @@
 #define WATER_COMPONET_STRING_KIT_HPP
 
 #include <string>
-#include <memory>
+#include <vector>
 
 #include "format.h"
 #include "datetime.h"
@@ -37,13 +37,16 @@ T fromString(const std::string& str)
 
 //对时间转换的重载或特化
 //字符串格式为 YYYYMMDD-hh:mm:ss
-std::string toString(const datetime::TimePoint& tp);
+std::string toString(const TimePoint& tp);
 
 template<>
-datetime::TimePoint fromString<datetime::TimePoint>(const std::string& str);
+TimePoint fromString<TimePoint>(const std::string& str);
 
 
-//字符串分割， 不保留空串
+//字符串分割，不保留空串
+std::vector<std::string> splitString(const std::string& str, const std::string& delimiter);
+
+//字符串分割，不保留空串
 template <typename StrContiner>
 void splitString(StrContiner* result, const std::string& str, const std::string& delimiter)
 {
@@ -68,15 +71,6 @@ void splitString(StrContiner* result, const std::string& str, const std::string&
 
         subBegin = subEnd + delimiter.length(); //将begin指向下个子串的起点
     }
-}
-
-//随机访问容器的尾删除
-template <typename RandomContiner>
-void tailEraseInRandomAccessContiner(RandomContiner* continer, typename RandomContiner::size_type index)
-{
-    typename RandomContiner::value_type tmp = continer->back();
-    continer->back() = continer->at(index);
-    continer->at(index) = continer->back();
 }
 
 }}

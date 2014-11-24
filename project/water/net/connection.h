@@ -10,15 +10,27 @@
 #define WATER_NET_CONNECTION_HPP
 
 #include "socket.h"
+#include "net_exception.h"
 #include "endpoint.h"
+#include "../componet/lock_free_circular_queue_ss.h"
+#include "packet.h"
+
 
 namespace water{
 namespace net{
+
+
+//异常定义：读取一个已经关闭的连接
+DEFINE_EXCEPTION(ReadClosedConnection, NetException);
+DEFINE_EXCEPTION(RecvIllegalData, NetException);
 
 class TcpConnection : public TcpSocket
 {
     friend class TcpListener;
     friend class TcpConnector;
+
+    typedef int32_t PacketDataSize;
+
 public:
     TYPEDEF_PTR(TcpConnection)
 private:
@@ -32,27 +44,69 @@ public:
 public:
     enum class ConnState : uint8_t 
     {
-        CLOSED         = 0x00, 
-        READ           = 0x01, 
-        WRITE          = 0x02, 
-        READ_AND_WRITE = 0x03
+        CLOSED         = 0, 
+        READ           = 1, 
+        WRITE          = 2, 
+        READ_AND_WRITE = 3
     };
 
     const Endpoint& getRemoteEndpoint() const;
-
-    //返回-1时, 表示noblocking的socket, 返回EAGAIN或EWOULDBLOCK
-    uint32_t send(const void* buf, int bufLen);
-    uint32_t recv(void* buf, int bufLen);
 
     void shutdown(ConnState state = ConnState::READ_AND_WRITE);
 
     ConnState getState() const;
 
+public://发送与接收
+    //返回-1时, 表示noblocking的socket, 返回EAGAIN或EWOULDBLOCK
+    int32_t send(const void* data, int32_t dataLen);
+    int32_t recv(void* data, int32_t dataLen);
+
+//带缓冲队列的发送和接收，以下4个函数互相可以不加锁并发，但单个函数本身不可并发
+public:
+    //将消息放入发送队列，返回false表明队列已满
+    bool putPacket(const Packet::Ptr& packet);
+    //将消息从接收队列取出，返回nullptr表明队列已空
+    Packet::Ptr getPacket();
+
+    //执行发送，尽可能的把数据写入socket，返回true表示没有尚未写入socket的数据
+    bool sendAll();
+    //执行接收, 尽可能的从socket读数据, 返回true表示socket上的数据已全部读出
+    bool recvAll();
+
+//操作发送与接收缓冲，缓冲中的数据一定属于同一个packet
+private:
+    //把packet放入发送缓冲, packet的结构为：[4字节包体长度，包体，2个字节的魔数]
+    bool setSendPacket(const Packet::Ptr& packet);
+    //注册要发送的数据放入发送缓冲
+    bool setSendPacket(const void* packetData, int32_t dataLen);
+    //将发送缓冲写入socket，返回true表示缓冲中的这个packet已发送完毕
+    bool trySendPacket();
+
+    //清除接收缓冲
+    void clearRecvPacket();
+    //读取socket到接收缓冲，返回true表示收到一个完整的packet
+    bool tryRecvPacket();
+
+    //检查packet的结构：[4字节包体长度，包体，2个字节的魔数] 
+    bool checkPacket(const Packet::Ptr& packet);
+
 private:
     Endpoint m_remoteEndpoint;
     ConnState m_state;
+
+    struct PacketBuffer
+    {
+        Packet::Ptr buf;
+        Packet::size_type doneSize = 0;
+    };
+    PacketBuffer m_sendBuf;
+    PacketBuffer m_recvBuf;
+
+    componet::LockFreeCircularQueueSPSC<Packet::Ptr> m_sendQueue;
+    componet::LockFreeCircularQueueSPSC<Packet::Ptr> m_recvQueue;
 };
 
 }}
 
 #endif
+

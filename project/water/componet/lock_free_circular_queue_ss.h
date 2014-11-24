@@ -36,8 +36,8 @@ class LockFreeCircularQueueSPSC final //不可作为基类
     };
 
 public:
-    explicit LockFreeCircularQueueSPSC(uint32_t powArg = 16) //队列长度为 pow(2, powArg)
-    : m_begin(0), m_end(0), m_maxSize(1u << (powArg < 16 ? powArg : 16)), m_data(m_maxSize)
+    explicit LockFreeCircularQueueSPSC(uint32_t powArg = 10) //队列长度为 pow(2, powArg)
+    : m_begin(0), m_end(0), m_maxSize(1u << (powArg < 24 ? powArg : 24)), m_data(m_maxSize)
     {
     }
     ~LockFreeCircularQueueSPSC() = default;
@@ -106,13 +106,18 @@ public:
         return m_data[m_begin].status.load(std::memory_order_relaxed) == Cell::Status::empty;
     }
 
-    inline uint64_t maxSize() const
+    bool full() const
+    {
+        return m_data[m_end].status.load(std::memory_order_relaxed) == Cell::Status::full;
+    }
+
+    uint64_t maxSize() const
     {
         return static_cast<uint64_t>(m_data.size());
     }
 
 private:
-    inline uint64_t realPos(uint64_t pos) const
+    uint64_t realPos(uint64_t pos) const
     {
         return pos & (maxSize() - 1);
     }

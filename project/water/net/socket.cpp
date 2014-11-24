@@ -48,7 +48,7 @@ void TcpSocket::close()
         return;
 
     ::close(m_fd);
-    onClosed(this);
+    e_onClose(this);
     m_fd = -1;
 }
 
@@ -76,6 +76,18 @@ void TcpSocket::setNonBlocking()
     if(-1 == flags)
         SYS_EXCEPTION(NetException, "::fcntl");
     if(-1 == ::fcntl(m_fd, F_SETFL, flags | O_NONBLOCK))
+        SYS_EXCEPTION(NetException, "::fcntl");
+}
+
+void TcpSocket::setBlocking()
+{
+    if(!isNonBlocking())
+        return;
+
+    int32_t flags = ::fcntl(m_fd, F_GETFL, 0);
+    if(-1 == flags)
+        SYS_EXCEPTION(NetException, "::fcntl");
+    if(-1 == ::fcntl(m_fd, F_SETFL, flags & ~O_NONBLOCK))
         SYS_EXCEPTION(NetException, "::fcntl");
 }
 
@@ -122,7 +134,7 @@ bool TcpSocket::isNonBlockingFD(int32_t fd)
 
     return (flags & O_NONBLOCK) > 0;
 }
-
+/*
 void TcpSocket::setEpollReadCallback(EpollCallback cb)
 {
     m_epollReadCallback = cb;
@@ -137,6 +149,6 @@ void TcpSocket::setEpollErrorCallback(EpollCallback cb)
 {
     m_epollErrorCallback = cb;
 }
-
+*/
 }}
 

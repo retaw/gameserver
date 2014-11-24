@@ -5,9 +5,8 @@
 
 namespace water{
 namespace componet{
-namespace datetime{
 
-const TimePoint epoch;
+const TimePoint EPOCH;
 
 bool timePointToTM(const TimePoint& tp, ::tm* detail)
 {
@@ -28,7 +27,7 @@ TimePoint stringToTimePoint(const std::string& timeStr)
     const char* formatEnd = ::strptime(timeStr.c_str(), format, &detail);
 
     if(formatEnd == nullptr) //失败
-        return epoch;
+        return EPOCH;
 
     uint64_t unixTime = ::timelocal(&detail);
     return Clock::from_time_t(unixTime);
@@ -63,7 +62,7 @@ TimePoint beginOfDay(const TimePoint& tp)
 {
     ::tm detail;
     if(!timePointToTM(tp, &detail))
-        return epoch;
+        return EPOCH;
 
     const time_t unixTime = Clock::to_time_t(tp) - (detail.tm_hour * 3600 + 
                                                     detail.tm_min  * 60   + 
@@ -80,7 +79,7 @@ TimePoint beginOfLastDayInWeek(TimePoint tp, int32_t dayInWeek)
 {
     ::tm detail;
     if(!timePointToTM(tp, &detail))
-        return epoch;
+        return EPOCH;
 
     const int32_t daysAfterDayInWeek = (detail.tm_wday + 7 - dayInWeek % 7) % 7; //上一个dayInWeek距今几天了
     const time_t unixTime = Clock::to_time_t(tp) - (daysAfterDayInWeek * 24 * 3600 +
@@ -104,7 +103,7 @@ TimePoint beginOfMonth(TimePoint tp)
 {
     ::tm detail;
     if(!timePointToTM(tp, &detail))
-        return epoch;
+        return EPOCH;
 
     const time_t unixTime = Clock::to_time_t(tp) - ((detail.tm_mday - 1) * 24 * 3600 +
                                                     detail.tm_hour * 3600 + 
@@ -118,9 +117,9 @@ bool inSameMonth(TimePoint tp1, TimePoint tp2)
     return beginOfMonth(tp1) == beginOfMonth(tp2);
 }
 
-}}}
+}}
 
-
+/*
 class TimePoint
 {
 public:
@@ -292,4 +291,4 @@ TimePoint TimePoint::now(int32_t offset)
     tp.setToNow();
     return tp;
 }
-
+*/

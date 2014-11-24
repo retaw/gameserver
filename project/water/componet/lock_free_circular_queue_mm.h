@@ -43,7 +43,7 @@ class LockFreeCircularQueueMPMC final //不可作为基类
 
 public:
     explicit LockFreeCircularQueueMPMC(uint64_t powArg = 16)
-    : m_begin(0), m_end(0), m_maxSize(1u << powArg), m_data(m_maxSize)
+    : m_begin(0), m_end(0), m_maxSize(1u << (powArg < 24 ? powArg : 24)), m_data(m_maxSize)
     {
     }
     ~LockFreeCircularQueueMPMC() = default;

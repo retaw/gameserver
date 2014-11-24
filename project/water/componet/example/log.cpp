@@ -1,5 +1,4 @@
 #include "../log.h"
-//#include "../backend_logger.h"
 #include <unistd.h>
 #include <iostream>
 #include <functional>
@@ -9,8 +8,6 @@
 using namespace water::componet;
 
 int32_t g_total;
-FILE* g_file;
-std::shared_ptr<BackendLogger> bkLogger;
 struct stFoo
 {
     int a{2};
@@ -28,32 +25,32 @@ LogStream& operator << (LogStream& ss, stFoo& foo)
     return ss;
 }
 
-void dumpfunc(const char* msg, uint32_t len)
-{
-    g_total += len;
-    if (g_file)
-    {
-        fwrite(msg, 1, len, g_file);
-    }
-    else if(bkLogger)
-    {
-        bkLogger->append(msg, len);
-    }
-}
 
-void bench(bool flag=false)
+void bench(Logger &log, bool flag = true)
 {
     std::chrono::time_point<std::chrono::system_clock> start, end;
     start = std::chrono::system_clock::now();
-    const int batch = 500*1000;
+    const int batch = 30;
     g_total = 0;
 
     for (int i = 0; i < batch; ++i)
     {
+		if (i!=0 && i%15 == 0)
+		{
+			log.stopWriter(WriterType::stdOut);
+			log.stopWriter(WriterType::fileOut);
+		}
+		if (i%10 == 0)
+		{
+			log.restartWriter(WriterType::stdOut);
+		}
+
         if (flag)
-            LOG_DEBUG("{} {} {}","Hello 0123456789","abcdefghijklmnopqrstuvwxyz", i);
+            log.debug("{} {} {}", "Hello 0123456789", "abcdefghijklmnopqrstuvwxyz", i);
         else
-            LOG_TRACE("{} {} {}","Hello 0123456789","abcdefghijklmnopqrstuvwxyz", i);
+            log.trace("{} {} {}", "Hello 0123456789", "abcdefghijklmnopqrstuvwxyz", i);
+
+		g_total += sizeof("Hello 0123456789") + sizeof("abcdefghijklmnopqrstuvwxyz") + 20;
     }
 
     end = std::chrono::system_clock::now();
@@ -65,31 +62,19 @@ void bench(bool flag=false)
 int main(int argc, char**argv)
 {
     using namespace std::placeholders;
-    bkLogger.reset(new BackendLogger("./game.log"));
-    bkLogger->start();
-    gLogger.setAppendCallback(std::bind(dumpfunc,_1, _2));
-    LOG_DEBUG("int={some int},str={your name}", 25,"hello");
-    LOG_DEBUG("hello logging");
+	Logger log;
+
+	log.setWriter(std::make_shared<FileWriter>("./game.log"));
+	log.debug("int={some int},str={your name}", 25,"hello");
+    log.trace("hello logging");
+
+    bool flag = (argc > 1) ? true : false;
+    bench(log);
 
     int a{32};
     float f{33.3};
     std::string s{"logging"};
     stFoo foo;
-    LOG_TRACE("int={},float={}, {foo data}", a, f, foo);
-
-    bool flag = (argc>1)?true:false;
-    bench(flag);
-
-    /*
-    char buffer[64*1024];
-    g_file = fopen("/dev/null", "w");
-    setbuffer(g_file, buffer, sizeof buffer);
-    bench();
-    fclose(g_file);
-
-    g_file = NULL;
-    */
-
-    sleep(8);
-    bkLogger->stop();
+    log.error("int={}, float={}, {foo data}", a, f, foo);
 }
+

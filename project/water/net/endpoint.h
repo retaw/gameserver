@@ -29,10 +29,14 @@ struct IpV4
     IpV4(const std::string& ipStr = "0,0,0,0");
     explicit IpV4(uint32_t ipValue);
 
+    IpV4& operator=(const std::string& ipStr);
+
     std::string toString() const;
+    void appendToString(std::string* str) const;
     void fromString(const std::string& str);
     static IpV4 getAddrByIfrName(const std::string& ifrName);
 };
+
 std::ostream& operator << (std::ostream& os, const IpV4& ip);
 std::istream& operator >> (std::istream& is, IpV4& ip);
 
@@ -40,7 +44,13 @@ struct Endpoint
 {
     IpV4 ip;
     uint16_t port = 0;
+
+    //字符串转换 格式：xxx.xxx.xxx.xxx:port
+    std::string toString() const;
+    void fromString(const std::string& str);
 };
+
+bool operator<(const Endpoint& ep1, const Endpoint& ep2);
 
 
 }} //namespace water::net

@@ -6,7 +6,6 @@
 
 using namespace water;
 using namespace componet;
-using namespace test;
 
 class T
 {
@@ -55,12 +54,14 @@ void sprintfTest2()
 int main()
 {
 
-    cout << format("abcdefg{}", T()) << endl;
+    cout << format("abcdefg{people name}, {info}", "小明", "hahah") << endl;
+    /*
     uint32_t times = 1000000;
     performance(formatTest, times);
     performance(streamTest, times);
     performance(sprintfTest1, times);
     performance(sprintfTest2, times);
+    */
 }
 
 

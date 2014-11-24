@@ -4,15 +4,22 @@ namespace water{
 namespace componet{
 
 
-std::string toString(const datetime::TimePoint& tp)
+std::string toString(const TimePoint& tp)
 {
-    return datetime::timePointToString(tp);
+    return timePointToString(tp);
 }
 
 template<>
-datetime::TimePoint fromString<datetime::TimePoint>(const std::string& str)
+TimePoint fromString<TimePoint>(const std::string& str)
 {
-    return datetime::stringToTimePoint(str);
+    return stringToTimePoint(str);
+}
+
+std::vector<std::string> splitString(const std::string& str, const std::string& delimiter)
+{
+    std::vector<std::string> result;
+    splitString(&result, str, delimiter);
+    return result;
 }
 
 }}

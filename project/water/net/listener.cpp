@@ -17,16 +17,6 @@ namespace water{
 namespace net{
 
 
-
-
-TcpListener::TcpListener()
-{
-}
-
-TcpListener::~TcpListener()
-{
-}
-
 void TcpListener::listen(int32_t backlog)
 {
     if(-1 == ::listen(getFD(), backlog))
@@ -41,7 +31,9 @@ TcpConnection::Ptr TcpListener::accept()
     int32_t fd = ::accept(getFD(), (struct sockaddr*)&clientAddrIn, &clientAddrInSize);
     if(-1 == fd)
     {
-        if(errno == EAGAIN || errno == EWOULDBLOCK)
+        //两种错误不视为错误
+        if(errno == EAGAIN || errno == EWOULDBLOCK  //非阻塞的accept暂时没有收到请求
+           || errno == EINTR) //被信号打断
             return nullptr;
 
         SYS_EXCEPTION(NetException, "::accept");
@@ -57,19 +49,3 @@ TcpConnection::Ptr TcpListener::accept()
 
 }}
 
-
-/**********************************************/
-
-#ifdef UNIST_TEST_LISTENER
-int main()
-{
-    net::TcpListener::Ptr listener = net::TcpListener::create();
-    return 0;
-}
-
-
-
-
-
-
-#endif

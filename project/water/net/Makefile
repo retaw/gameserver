@@ -3,6 +3,7 @@ objects = \
     connector.o\
     listener.o\
     connection.o\
+    packet.o\
     socket.o\
     endpoint.o\
     epoller.o\
@@ -11,7 +12,6 @@ objects = \
 CC = g++
 cc = g++
 
-ln_flags = -L../base -lbase
 cc_flags = -std=c++11 -g
 
 
@@ -22,7 +22,7 @@ all: $(target).a
 
 
 $(target).a : $(objects)
-	ar rs $(target) $(objects)
+	ar rs $(target).a $(objects)
 
 $(objects): %.o: %.cpp
 	$(cc) $(cc_flags) -c $< -o $@
@@ -42,4 +42,4 @@ $(objects): %.o: %.cpp
 .PHONY: clean
 clean:
 	rm -f *.o *.d *.d.*
-	rm -f $(target)
+	rm -f $(target).a
