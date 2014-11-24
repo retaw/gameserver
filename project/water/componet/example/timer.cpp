@@ -20,8 +20,8 @@ void doSth(const TimePoint& tp, int x)
 int main()
 {
     Timer timer;
-    timer.regEventHandler(std::chrono::milliseconds(1000 * 2), std::bind(doSth, std::placeholders::_1, 2));
-    timer.regEventHandler(std::chrono::milliseconds(1000 * 3), std::bind(doSth, std::placeholders::_1, 3));
+    timer.regEventHandler(std::chrono::milliseconds(10 * 3), std::bind(doSth, std::placeholders::_1, 3));
+    timer.regEventHandler(std::chrono::milliseconds(10 * 5), std::bind(doSth, std::placeholders::_1, 5));
 
     cout << timer.precision() << endl;
     timer.run();

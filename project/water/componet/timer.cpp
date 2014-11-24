@@ -1,6 +1,9 @@
 #include "timer.h"
 
+#include "string_kit.h"
+
 #include <thread>
+
 
 namespace water{
 namespace componet{
