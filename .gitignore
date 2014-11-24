@@ -11,3 +11,5 @@ core.*
 tmp
 temp
 test_*
+lib*
+
