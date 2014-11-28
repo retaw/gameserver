@@ -1,9 +1,7 @@
 #include "timer.h"
 
-#include "string_kit.h"
-
 #include <thread>
-
+//#include <mutex>
 
 namespace water{
 namespace componet{
@@ -19,6 +17,8 @@ void Timer::run()
     while(m_switch.load(std::memory_order_relaxed) == Switch::on)
     {
         TimePoint wakeUp = EPOCH;
+
+        m_lock.lock();
         for(auto& pair : m_eventHandlers)
         {
             TimePoint now = TheClock::now();
@@ -32,8 +32,8 @@ void Timer::run()
             }
             if(wakeUp == EPOCH || nextWakeUp < wakeUp)
                 wakeUp = nextWakeUp;
-
         }
+        m_lock.unlock();
 
         TimePoint now = TheClock::now();
         if(wakeUp > now)
@@ -54,9 +54,11 @@ int64_t Timer::precision() const
 void Timer::regEventHandler(std::chrono::milliseconds interval,
                             const std::function<void (const TimePoint&)>& handler)
 {
+    m_lock.lock();
     auto& info = m_eventHandlers[interval];
     info.event.reg(handler);
     info.lastEmitTime = EPOCH;
+    m_lock.unlock();
 }
 
 

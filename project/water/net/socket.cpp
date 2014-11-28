@@ -18,10 +18,13 @@
 
 namespace water{
 namespace net{
+
+const int32_t TcpSocket::INVALID_SOCKET_FD;
+
 TcpSocket::TcpSocket()
 : m_fd(::socket(PF_INET, SOCK_STREAM, 0))
 {
-    if(m_fd == -1)
+    if(m_fd == TcpSocket::INVALID_SOCKET_FD)
         SYS_EXCEPTION(NetException, "::socket");
 
 }
@@ -42,14 +45,28 @@ TcpSocket::~TcpSocket()
     }
 }
 
+TcpSocket::TcpSocket(TcpSocket&& other)
+    :m_fd(other.m_fd), e_close(other.e_close)
+{
+    m_fd = TcpSocket::INVALID_SOCKET_FD;
+}
+
+TcpSocket& TcpSocket::operator=(TcpSocket&& other)
+{
+    m_fd = other.m_fd;
+    e_close = other.e_close;
+
+    other.m_fd = TcpSocket::INVALID_SOCKET_FD;
+}
+
 void TcpSocket::close()
 {
     if(!isAvaliable())
         return;
 
     ::close(m_fd);
-    e_onClose(this);
-    m_fd = -1;
+    e_close(this);
+    m_fd = TcpSocket::INVALID_SOCKET_FD;
 }
 
 int32_t TcpSocket::getFD() const
@@ -59,7 +76,7 @@ int32_t TcpSocket::getFD() const
 
 bool TcpSocket::isAvaliable() const
 {
-    return m_fd != -1;
+    return m_fd != TcpSocket::INVALID_SOCKET_FD;
 }
 
 bool TcpSocket::isNonBlocking() const
@@ -134,21 +151,6 @@ bool TcpSocket::isNonBlockingFD(int32_t fd)
 
     return (flags & O_NONBLOCK) > 0;
 }
-/*
-void TcpSocket::setEpollReadCallback(EpollCallback cb)
-{
-    m_epollReadCallback = cb;
-}
 
-void TcpSocket::setEpollWriteCallback(EpollCallback cb)
-{
-    m_epollWriteCallback = cb;
-}
-
-void TcpSocket::setEpollErrorCallback(EpollCallback cb)
-{
-    m_epollErrorCallback = cb;
-}
-*/
 }}
 

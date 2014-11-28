@@ -4,12 +4,11 @@
 #include <thread>
 
 #include "net/connector.h"
-#include "tcp_connection_manager.h"
+//#include "tcp_connection_manager.h"
 
 namespace water{
 
 TcpClient::TcpClient()
-: m_switch(Switch::off)
 {
 }
 
@@ -28,15 +27,14 @@ void TcpClient::addRemoteEndpoint(net::Endpoint ep, std::chrono::seconds retryIn
     }
 }
 
-void TcpClient::run()
+bool TcpClient::exec()
 {
-    m_switch.store(Switch::on, std::memory_order_release);
-    //while(m_switch.load(std::memory_order_relaxed) == Switch::on)
+    while(checkSwitch())
     {
         const auto now = componet::Clock::now();
         for(auto it = m_remoteEndpoints.begin(); it != m_remoteEndpoints.end(); ++it)
         {
-            if(m_switch.load(std::memory_order_relaxed) == Switch::off)
+            if(!checkSwitch())
                 break;
 
             const net::Endpoint& ep = it->first;
@@ -59,7 +57,7 @@ void TcpClient::run()
                 {
                     std::cout << "主动新建连接成功:{" << epStr << "}" << std::endl;
                     it->second.conn = conn;
-                    conn->e_onClose.reg([epStr](net::TcpSocket*)
+                    conn->e_close.reg([epStr](net::TcpSocket*)
                                         {std::cout << "out连接已断开" << epStr << std::endl;});
                     e_newConn(conn);
                 }
@@ -81,14 +79,9 @@ void TcpClient::run()
         std::this_thread::sleep_for(std::chrono::milliseconds(1000));
     }
 
-    std::cout << "connector thread terminated" << std::endl;
+    std::cout << "connector thread stoped" << std::endl;
+    return true;
 }
 
-void TcpClient::stop()
-{
-    Switch s = Switch::on;
-    if(m_switch.compare_exchange_strong(s, Switch::off, std::memory_order_release))
-        e_onClose(this);
-}
 
 }

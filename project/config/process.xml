@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
-    <router id="0">
-        <listen>192.168.5.128:6001</listen>
-    </router>
+    <endpoint id="1" str="192.168.5.128:6001"/>
+    <endpoint id="2" str="192.168.5.128:6002"/>
 
-    <function id="0">
-        <connect>192.168.5.128:6001</connect>
-    </function>
-    <function id="1">
-        <connect>192.168.5.128:6001</connect>
-    </function>
-    <function id="2">
-        <connect>192.168.5.128:6001</connect>
-    </function>
+    <process type="router" num="1">
+        <privateNet listenEps="1,2" acceptWhiteList="function:1,2  gateway:1,2,3" connectEps=""/>
+        <publicNet listenEps=""/>
+    </process>
+
+    <process type="function" num="1">
+        <privateNet listenEps="" acceptWhiteList="" connectEps="1"/>
+        <publicNet listenEps=""/>
+    </process>
+
+    <process type="function" num="2">
+        <privateNet listenEps="" acceptWhiteList="" connectEps="1"/>
+        <publicNet listenEps=""/>
+    </process>
+
+    <process type="gateway" num="1">
+        <privateNet listenEps="" acceptWhiteList="" connectEps=""/>
+        <publicNet listenEps=""/>
+    </process>
 </root>

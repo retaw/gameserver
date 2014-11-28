@@ -8,7 +8,6 @@
 namespace water{
 
 TcpServer::TcpServer()
-: m_switch(Switch::off)
 {
 }
 
@@ -17,9 +16,8 @@ void TcpServer::addLocalEndpoint(const net::Endpoint& ep)
     m_localEndpoints.insert(ep);
 }
 
-void TcpServer::run()
+bool TcpServer::exec()
 {
-    m_switch.store(Switch::on, std::memory_order_release);
     try 
     {
         {//绑定事件处理器
@@ -40,7 +38,7 @@ void TcpServer::run()
         }
 
         //开始epoll循环
-        //while(m_switch.load(std::memory_order_relaxed) == Switch::on)
+        while(checkSwitch())
         {   
             m_epoller.wait(std::chrono::milliseconds(50));
         }
@@ -48,17 +46,11 @@ void TcpServer::run()
     catch (const net::NetException& ex) 
     {   
         LOG_ERROR("监听失败, {}", ex.what());
-        stop();
+        return false;
     }
 
-    LOG_TRACE("listener thread terminated");
-}
-
-void TcpServer::stop()
-{
-    Switch s = Switch::on;
-    if(m_switch.compare_exchange_strong(s, Switch::off, std::memory_order_release))
-        e_onClose(this);
+    LOG_TRACE("listener thread stoped");
+    return true;
 }
 
 void TcpServer::epollEventHandler(int32_t socketFD, net::Epoller::Event event)

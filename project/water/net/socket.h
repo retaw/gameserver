@@ -20,8 +20,7 @@ namespace net{
 class TcpSocket
 {
 public:
-    enum class BlockingStatus {BLOCKING, NON_BLOCKING };
-
+    static const int32_t INVALID_SOCKET_FD = -1;
 public:
     TYPEDEF_PTR(TcpSocket)
 protected:
@@ -30,10 +29,11 @@ protected:
 
 public:
     virtual ~TcpSocket();
-
+    //moveable
+    TcpSocket(TcpSocket&& other);
+    TcpSocket& operator=(TcpSocket&& other);
     //non-copyable
     TcpSocket(const TcpSocket&) = delete;
-    TcpSocket(TcpSocket&&) = delete;
     TcpSocket& operator = (const TcpSocket&) = delete;
 
     void bind(uint16_t port);
@@ -51,10 +51,9 @@ public:
     void close();
 
 public:
-    componet::Event<void (TcpSocket*)> e_onClose;
+    componet::Event<void (TcpSocket*)> e_close;
 private:
     int32_t m_fd;
-    bool m_autoClose;
 
 public:
     static bool isNonBlockingFD(int32_t fd);

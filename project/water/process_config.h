@@ -3,11 +3,11 @@
  *
  * Last modified: 2014-11-18 12:10 +0800
  *
- * Description:  进程配置，监听的端点，要连接的端点
+ * Description:  进程配置，监听的端点，要连接的端点，可接入的processType
  */
 
-#ifndef WATER_PROCESS_CONFIG_H
-#define WATER_PROCESS_CONFIG_H
+#ifndef WATER_PROCESS_NET_CONFIG_H
+#define WATER_PROCESS_NET_CONFIG_H
 
 #include <string>
 #include <vector>
@@ -16,37 +16,50 @@
 
 #include "componet/exception.h"
 #include "net/endpoint.h"
+#include "process_id.h"
 
 namespace water{
 
 DEFINE_EXCEPTION(LoadProcessConfigFailed, componet::ExceptionBase)
 DEFINE_EXCEPTION(ProcessConfigNotExist, componet::ExceptionBase)
 
-enum class ProcessType : int32_t
-{
-    router,
-    function,
-};
-
 class ProcessConfig final
 {
 public:
-    struct NetInfo
+
+    struct ProcessInfo
     {
-        std::set<net::Endpoint> listen;
-        std::set<net::Endpoint> connect;
+        struct
+        {
+            std::set<net::Endpoint> listen;
+
+            std::set<ProcessIdentity> acceptWhiteList;
+            std::set<net::Endpoint> connect;
+        } privateNet;
+
+        struct
+        {
+            std::set<net::Endpoint> listen;
+        } publicNet;
     };
 
-    ProcessConfig(const std::string& filePath);
+    ProcessConfig(const std::string& filePath, ProcessIdentity processId);
     ~ProcessConfig() = default;
 
-    bool load();
+    void load();
 
-    const NetInfo& getInfo(ProcessType type, int const id);
+    const ProcessInfo& getInfo();
 
 private:
-    std::map<ProcessType, std::vector<NetInfo>> m_data;
+    bool parseEndpointListStr(std::set<net::Endpoint>* ret, const std::string& epsStr);
+    bool parseProcessList(std::set<ProcessIdentity>* ret, const std::string& epsStr);
+
+private:
+    std::vector<net::Endpoint> m_eps;
+    ProcessInfo m_processInfo; //下标表示num
+
     const std::string m_filePath;
+    const ProcessIdentity m_processId;
 };
 
 }

@@ -4,6 +4,8 @@
 #include <exception>
 #include <string>
 
+#include "format.h"
+
 namespace water{
 namespace componet{
 
@@ -50,13 +52,14 @@ public:\
     }\
 };
 
-#define EXCEPTION(ExceptionType, msg)\
-    throw ExceptionType(msg, __FILE__, __PRETTY_FUNCTION__, __LINE__);
-
-
-#define SYS_EXCEPTION(ExceptionType, msg)\
-    throw ExceptionType(msg, __FILE__, __PRETTY_FUNCTION__, __LINE__, errno);
-
 }}
+
+#define EXCEPTION(ExceptionType, formatMsg...)\
+    throw ExceptionType(water::componet::format(formatMsg), __FILE__, __PRETTY_FUNCTION__, __LINE__);
+
+
+#define SYS_EXCEPTION(ExceptionType, formatMsg...)\
+    throw ExceptionType(water::componet::format(formatMsg), __FILE__, __PRETTY_FUNCTION__, __LINE__, errno);
+
 
 #endif //#ifndef WATER_EXCEPTION_HPP

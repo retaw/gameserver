@@ -1,10 +1,18 @@
+/*
+ * Author: LiZhaojia 
+ *
+ * Last modified: 2014-11-24 16:44 +0800
+ *
+ * Description: 
+ */
+
 #ifndef WATER_TCP_SERVER_H
 #define WATER_TCP_SERVER_H
 
-#include <atomic>
 #include <set>
 #include <unordered_map>
 
+#include "process_thread.h"
 #include "net/epoller.h"
 #include "net/endpoint.h"
 #include "net/listener.h"
@@ -13,17 +21,19 @@
 
 namespace water{
 
-class TcpServer final
+class TcpServer final : public ProcessThread
 {
 public:
+    TYPEDEF_PTR(TcpServer)
+    CREATE_FUN_MAKE(TcpServer)
+
     TcpServer();
     ~TcpServer() = default;
     void addLocalEndpoint(const net::Endpoint& ep);
-    void run();
-    void stop();
+    bool exec();
 
 public:
-    componet::Event<void (TcpServer*)> e_onClose;
+    componet::Event<void (TcpServer*)> e_close;
     componet::Event<void (net::TcpConnection::Ptr)> e_newConn;
 
 private:
@@ -33,9 +43,6 @@ private:
     std::set<net::Endpoint> m_localEndpoints;
     std::unordered_map<int32_t, net::TcpListener::Ptr> m_listeners;
     net::Epoller m_epoller;
-
-    enum class Switch : uint8_t {on, off};
-    std::atomic<Switch> m_switch;
 };
 
 }

@@ -14,27 +14,33 @@
 
 #include "tcp_server.h"
 #include "tcp_client.h"
-#include "tcp_connection_manager.h"
 #include "process_config.h"
+#include "packet_connection_manager.h"
+
 #include "componet/timer.h"
+#include "componet/datetime.h"
 
 namespace water{
 
 class Process
 {
 public:
-    Process(ProcessType type, int32_t id, const std::string& configFile);
+    Process(ProcessType type, int32_t id, const std::string& configFile, const std::string& processTypeStr);
     virtual ~Process() = default;
 
     void start();
     void terminate();
+    componet::Timer& mainTimer();
 
 private:
     void init();
-    void runMainLoop();
+    void handleMsgByTimer(const componet::TimePoint& now);
 
 protected:
-    virtual void timeEventHandler(const componet::TimePoint& now);
+    virtual void packetHandler(PacketConnection::Ptr conn, Packet::Ptr packet, const componet::TimePoint& now);
+    void newPrivateInConnection(net::TcpConnection::Ptr tcpConn);
+    void newPrivateOutConnection(net::TcpConnection::Ptr tcpConn);
+    void newPublicInConnection(net::TcpConnection::Ptr tcpConn);
 
 protected:
     ProcessType m_type;
@@ -42,12 +48,22 @@ protected:
 
     ProcessConfig m_cfg;
 
-    TcpServer m_server;
-    TcpClient m_client;
-    TcpConnectionManager m_tcm;
+    //私网，建立内部连接
+    TcpServer::Ptr m_privateNetServer;
+    TcpClient::Ptr m_privateNetClient;
+    //公网，建立外部连接
+    TcpServer::Ptr m_publicNetServer;
 
-    enum class Switch : uint8_t {on, off};
-    std::atomic<Switch> m_switch;
+    //连接检查器
+    //暂空
+
+    //连接管理器，消息接收
+    TcpConnectionManager m_conns;
+
+    //主定时器，处理一切业务处理
+    componet::Timer m_timer;
+
+    std::unordered_map<ProcessType, std::vector<PacketConnection::Ptr>> m_ProcessConns; 
 };
 
 }

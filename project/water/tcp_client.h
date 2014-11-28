@@ -8,23 +8,24 @@
 #include "net/connection.h"
 #include "componet/datetime.h"
 #include "componet/event.h"
+#include "componet/class_helper.h"
+#include "process_thread.h"
 
 namespace water{
 
-class TcpClient
+class TcpClient : public ProcessThread
 {
 public:
+    TYPEDEF_PTR(TcpClient)
+    CREATE_FUN_MAKE(TcpClient)
+
     TcpClient();
-
     void addRemoteEndpoint(net::Endpoint ep, std::chrono::seconds retryInterval);
-
-    void run();
-
-    void stop();
+    bool exec();
 
 public:
     componet::Event<void (net::TcpConnection::Ptr)> e_newConn;
-    componet::Event<void (TcpClient*)> e_onClose;
+    componet::Event<void (TcpClient*)> e_close;
 
 private:
     struct RemoteEndpointInfo
@@ -35,9 +36,6 @@ private:
     };
 
     std::map<net::Endpoint, RemoteEndpointInfo> m_remoteEndpoints;
-
-    enum class Switch : uint8_t {on, off};
-    std::atomic<Switch> m_switch;
 };
 
 }

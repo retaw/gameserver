@@ -1,10 +1,12 @@
 objects = \
     \
-    tcp_connection_manager.o\
     tcp_client.o\
     tcp_server.o\
-    process.o\
+    packet_connection_manager.o\
     process_config.o\
+    process_id.o\
+    process_thread.o\
+    #process.o\
 
 
 

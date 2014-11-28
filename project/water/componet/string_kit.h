@@ -11,6 +11,7 @@
 
 #include <string>
 #include <vector>
+#include <algorithm>
 
 #include "format.h"
 #include "datetime.h"
@@ -18,35 +19,8 @@
 namespace water{
 namespace componet{
 
-template<typename T>
-std::string toString(const T& obj)
-{
-    std::string ret;
-    appendToString(&ret, obj);
-    return ret;
-}
-
-template <typename T>
-T fromString(const std::string& str)
-{
-    T ret = T();
-    std::stringstream ss(str);
-    ss >> ret;
-    return ret;
-}
-
-//对时间转换的重载或特化
-//字符串格式为 YYYYMMDD-hh:mm:ss
-std::string toString(const TimePoint& tp);
-
-template<>
-TimePoint fromString<TimePoint>(const std::string& str);
-
-
-//字符串分割，不保留空串
-std::vector<std::string> splitString(const std::string& str, const std::string& delimiter);
-
-//字符串分割，不保留空串
+/*****************字符串分割******************************/
+//字符串分割，放入任意支持insert(pos, item)的容器，不保留空串
 template <typename StrContiner>
 void splitString(StrContiner* result, const std::string& str, const std::string& delimiter)
 {
@@ -72,6 +46,56 @@ void splitString(StrContiner* result, const std::string& str, const std::string&
         subBegin = subEnd + delimiter.length(); //将begin指向下个子串的起点
     }
 }
+//字符串分割，不保留空串，vector的版本
+std::vector<std::string> splitString(const std::string& str, const std::string& delimiter);
+
+/**********************其它类型与字符串的转换************************/
+//其他类型与字符串互转
+template<typename T>
+std::string toString(const T& obj)
+{
+    std::string ret;
+    appendToString(&ret, obj);
+    return ret;
+}
+template <typename T>
+T fromString(const std::string& str)
+{
+    T ret = T();
+    std::stringstream ss(str);
+    ss >> ret;
+    return ret;
+}
+
+//特化，时间字符串的互转, 字符串格式为 YYYYMMDD-hh:mm:ss
+std::string toString(const TimePoint& tp);
+template<>
+TimePoint fromString<TimePoint>(const std::string& str);
+
+
+//把字符串分割并转化为对应的一组用容器存放的对象
+template<typename TContiner>
+void fromString(TContiner* result, const std::string& str, const std::string& delimiter)
+{
+    using T = typename TContiner::value_type;
+    if(result == nullptr)
+        return;
+    result->clear();
+
+    std::vector<std::string> strItems = splitString(str, delimiter);
+    std::for_each(strItems.begin(), strItems.end(), 
+                  [result](const std::string& item) {result->insert(result->end(), fromString<T>(item));}
+                  );
+}
+//特化，把字符串先分割并转化为对应的一组用vector存放的对象
+template<typename TContiner>
+TContiner fromString(const std::string& str, const std::string& delimiter)
+{
+    TContiner result;
+    fromString(&result, str, delimiter);
+    return result;
+}
+
 
 }}
 

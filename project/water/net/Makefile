@@ -3,11 +3,12 @@ objects = \
     connector.o\
     listener.o\
     connection.o\
-    packet.o\
     socket.o\
     endpoint.o\
     epoller.o\
 
+    #packet.o\
+    #packet_connection.o\
 
 CC = g++
 cc = g++

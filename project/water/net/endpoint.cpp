@@ -111,6 +111,11 @@ std::istream& operator >> (std::istream& is, IpV4& ip)
     return is;
 }
 
+Endpoint::Endpoint(const std::string& str)
+{
+    fromString(str);
+}
+
 std::string Endpoint::toString() const
 {
     return ip.toString() + ":" + componet::toString(port);
@@ -124,7 +129,11 @@ void Endpoint::fromString(const std::string& str)
 
     ip = componet::fromString<IpV4>(strs[0]);
     port = componet::fromString<uint16_t>(strs[1]);
+}
 
+bool operator==(const Endpoint& ep1, const Endpoint& ep2)
+{
+    return ep1.ip.value == ep2.ip.value && ep1.port == ep2.port;
 }
 
 bool operator<(const Endpoint& ep1, const Endpoint& ep2)

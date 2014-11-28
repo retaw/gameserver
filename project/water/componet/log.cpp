@@ -17,6 +17,7 @@ GlobalLogger* GlobalLogger::getInstance()
         if (tmp == nullptr) 
         {
             tmp = new GlobalLogger;
+            //start thread {Logger::run, tmp}
             m_instance.store(tmp, std::memory_order_release);
         }
     }

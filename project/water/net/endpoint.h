@@ -42,6 +42,9 @@ std::istream& operator >> (std::istream& is, IpV4& ip);
 
 struct Endpoint
 {
+    Endpoint() = default;
+    explicit Endpoint(const std::string& str);
+
     IpV4 ip;
     uint16_t port = 0;
 
@@ -50,6 +53,7 @@ struct Endpoint
     void fromString(const std::string& str);
 };
 
+bool operator==(const Endpoint& ep1, const Endpoint& ep2);
 bool operator<(const Endpoint& ep1, const Endpoint& ep2);
 
 

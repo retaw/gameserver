@@ -8,6 +8,7 @@
 
 #include "datetime.h"
 #include "event.h"
+#include "spinlock.h"
 
 #include <map>
 #include <atomic>
@@ -16,7 +17,7 @@
 namespace water{
 namespace componet{
 
-class Timer final
+class Timer
 {
     //typedef std::chrono::high_resolution_clock TheClock;
     typedef Clock TheClock;
@@ -32,6 +33,8 @@ public:
     //注册一个触发间隔
     void regEventHandler(std::chrono::milliseconds interval,
                          const std::function<void (const TimePoint&)>& handle);
+public:
+    Event<void (Timer*)> e_stop;
 
 private:
     struct EventHandlers
@@ -40,6 +43,7 @@ private:
         TheClock::time_point lastEmitTime;
     };
 
+    Spinlock m_lock;
     std::map<TheClock::duration, EventHandlers> m_eventHandlers;
 
     enum class Switch : uint8_t {on, off};
