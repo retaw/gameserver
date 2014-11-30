@@ -6,9 +6,8 @@ objects = \
     socket.o\
     endpoint.o\
     epoller.o\
-
-    #packet.o\
-    #packet_connection.o\
+    packet.o\
+    packet_connection.o\
 
 CC = g++
 cc = g++

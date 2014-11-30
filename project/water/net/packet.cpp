@@ -4,17 +4,32 @@
 namespace water{
 namespace net{
 
+const Packet::SizeType Packet::MIN_SIZE;
+const Packet::SizeType Packet::MAX_SIZE;
+const Packet::SizeType Packet::MIN_CONTENT_SIZE;
+const Packet::SizeType Packet::MAX_CONTENT_SIZE;
+const Packet::SizeType Packet::HEAD_SIZE;
 
-const uint32_t Packet::MAX_SIZE;
-
-void Packet::setMsg(const void* msg, uint32_t msgLen)
+void Packet::setContent(const void* content, SizeType contentSize)
 {
-    resize(sizeof(msgLen) + msgLen);
-
-    uint32_t shift = 0;
-    std::memcpy(data() + shift, &msgLen, sizeof(msgLen));
-    shift += sizeof(msgLen);
-    std::memcpy(data() + shift, msg, msgLen);
+    setContentSize(contentSize);
+    std::memcpy(data() + sizeof(contentSize), content, contentSize);
 }
 
-}};
+void Packet::setContentSize(SizeType size)
+{
+    resize(sizeof(size) + size);
+    *reinterpret_cast<SizeType*>(data()) = size;
+}
+
+const uint8_t* Packet::getContent() const
+{
+    return data() + sizeof(SizeType);
+}
+
+Packet::SizeType Packet::getContentSize() const
+{
+    return *reinterpret_cast<const SizeType*>(data());
+}
+
+}}

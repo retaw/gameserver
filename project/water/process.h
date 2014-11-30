@@ -14,8 +14,10 @@
 
 #include "tcp_server.h"
 #include "tcp_client.h"
+#include "process_id.h"
 #include "process_config.h"
 #include "packet_connection_manager.h"
+#include "connection_checker.h"
 
 #include "componet/timer.h"
 #include "componet/datetime.h"
@@ -43,21 +45,20 @@ protected:
     void newPublicInConnection(net::TcpConnection::Ptr tcpConn);
 
 protected:
-    ProcessType m_type;
-    int32_t m_id;
-
+    ProcessIdentity m_processId;
     ProcessConfig m_cfg;
 
-    //私网，建立内部连接
+    //私网
     TcpServer::Ptr m_privateNetServer;
     TcpClient::Ptr m_privateNetClient;
-    //公网，建立外部连接
+
+    //公网
     TcpServer::Ptr m_publicNetServer;
 
     //连接检查器
-    //暂空
+    ConnectionChecker m_connChecker;
 
-    //连接管理器，消息接收
+    //连接管理器，提供消息接收和发送的epoll事件
     TcpConnectionManager m_conns;
 
     //主定时器，处理一切业务处理

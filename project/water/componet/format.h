@@ -72,7 +72,7 @@ typename std::enable_if<std::is_enum<T>::value, void>::type
 appendToString(std::string* str, T arg)
 {
     char buf[400];
-    snprintf(buf, sizeof(buf), "%lu", static_cast<long>(arg));
+    snprintf(buf, sizeof(buf), "%" PRIu64, static_cast<uint64_t>(arg));
     str->append(buf);
 }
 
@@ -89,13 +89,13 @@ appendToString(std::string* str, T arg)
 
 /**************************/
 
-inline void formatImpl(std::string* str, const char* f)
+inline void formatAndAppend(std::string* str, const char* f)
 {
     str->append(f);
 }
 
 template <typename T, typename... Args>
-void formatImpl(std::string* str, const char* f, const T& firstArg, const Args&... args)
+void formatAndAppend(std::string* str, const char* f, const T& firstArg, const Args&... args)
 {
     for(std::string::size_type i = 0; f[i] != '\0'; ++i)
     {
@@ -113,7 +113,7 @@ void formatImpl(std::string* str, const char* f, const T& firstArg, const Args&.
 
             //f[j] == '}', 即匹配到了一个占位符
             appendToString(str, std::forward<const T>(firstArg));
-            return formatImpl(str, f + j + 1, std::forward<const Args>(args)...);
+            return formatAndAppend(str, f + j + 1, std::forward<const Args>(args)...);
         }
     }
 }
@@ -123,7 +123,7 @@ std::string format(const std::string& formatStr, const Args&... args)
 {
     std::string ret;
     ret.reserve(formatStr.size() * 2);
-    formatImpl(&ret, formatStr.c_str(), std::forward<const Args>(args)...);
+    formatAndAppend(&ret, formatStr.c_str(), std::forward<const Args>(args)...);
     return ret;
 }
 

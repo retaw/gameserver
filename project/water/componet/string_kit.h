@@ -54,9 +54,7 @@ std::vector<std::string> splitString(const std::string& str, const std::string& 
 template<typename T>
 std::string toString(const T& obj)
 {
-    std::string ret;
-    appendToString(&ret, obj);
-    return ret;
+    return format("{}", obj);
 }
 template <typename T>
 T fromString(const std::string& str)

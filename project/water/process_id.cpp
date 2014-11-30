@@ -1,11 +1,13 @@
 #include "process_id.h"
 
+#include "componet/format.h"
+
 #include <map>
 
 
 namespace water{
 
-std::string ProcessTypeToString(ProcessType type)
+std::string processTypeToString(ProcessType type)
 {
     static const std::string strs[] =
     {
@@ -32,6 +34,20 @@ ProcessType stringToProcessType(std::string& str)
 
     return it->second;
 }
+
+ProcessIdentity::ProcessIdentity(ProcessType type_, int32_t num_)
+{
+    type = type_;
+    num = num_;
+}
+
+void ProcessIdentity::appendToString(std::string* str) const
+{
+    str->append(processTypeToString(type));
+    str->append(":");
+    componet::appendToString(str, num);
+}
+
 
 bool operator==(const ProcessIdentity& pid1, const ProcessIdentity& pid2)
 {

@@ -9,8 +9,8 @@
 
 namespace water{
 
-Process::Process(ProcessType type, int32_t id, const std::string& configFile)
-:m_type(type), m_id(id), m_cfg(configFile, processType)
+Process::Process(ProcessType type, int32_t num, const std::string& configFile)
+: m_processId.type(type), m_processId.num(num), m_cfg(m_processId)
 {
 }
 
@@ -22,9 +22,9 @@ void Process::start()
 
         std::vector<std::thread> threads;
 
-        threads.push_back(std::thread(std::mem_fn(&TcpServer::run), &m_server));
-        threads.push_back(std::thread(std::mem_fn(&TcpClient::run), &m_client));
-        threads.push_back(std::thread(std::mem_fn(&TcpConnectionManager::run), &m_conns));
+        threads.push_back(std::thread(std::mem_fn(&TcpServer::run), m_server));
+        threads.push_back(std::thread(std::mem_fn(&TcpClient::run), m_client));
+        threads.push_back(std::thread(std::mem_fn(&PacketConnectionManager::run), m_conns));
         threads.push_back(std::thread(std::mem_fn(&componet::Timer::run), &m_timer));
         for(auto& th : threads)
             th.join();
@@ -44,42 +44,24 @@ void Process::terminate()
     m_conns.stop();
     m_timer.stop();
 }
-/*
 
-    struct ProcessInfo
-    {
-        struct
-        {
-            std::set<net::Endpoint> listen;
-            std::set<std::pair<ProcessType, int32_t>> acceptWhiteList;
-
-            std::set<net::Endpoint> connect;
-        } privateNet;
-
-        struct
-        {
-            std::set<net::Endpoint> listen;
-        } publicNet;
-    };
-
-*/
 void Process::init()
 {
     {//配置解析
         m_cfg.load();
-        const ProcessConfig::ProcessInfo& cfg = m_cfg.getInfo(m_id);
+        const ProcessConfig::ProcessInfo& cfg = m_cfg.getInfo();
 
-        //私网
         const auto& privateNet = cfg.privateNet;
+        //私网监听
         if(!privateNet.listen.empty())
         {
             m_privateNetServer = TcpServer::create();
             for(const net::Endpoint& ep : privateNet.listen)
                 m_privateNetServer->addLocalEndpoint(ep);
         }
-
-        /*这里应该读取私网过滤规则，加入checker，暂空*/
-
+        //私网接入过滤
+        m_connChecker.setPrivateWhiteList(cfg.privateNet.acceptWhiteList);
+        //私网连出
         if(!privateNet.connect.empty())
         {
             m_privateNetClient = TcpClient::create();
@@ -87,8 +69,8 @@ void Process::init()
                 m_privateNetClient->addLocalEndpoint(ep);
         }
 
-        //公网
         const auto& publicNet& = cfg.publicNet;
+        //公网监听
         if(!publicNet.listen.empty())
         {
             for(const net::Endpoint& ep : cfg.connect)
@@ -99,8 +81,14 @@ void Process::init()
     {//绑定各种事件的处理函数
         using namespace std::placeholders;
         //私网的新连接
-        m_privateNetServer.e_newConn.reg(std::bind(&Process::, this, _1));
-        m_privateNetClient.e_newConn.reg(std::bind(&Process::newInConnection, this, _1));
+        if(m_privateNetServer)
+            m_privateNetServer->e_newConn.reg(std::bind(&Process::newPrivateInConnection, this, _1));
+        if(m_publicNetClient)
+            m_privateNetClient.e_newConn.reg(std::bind(&Process::newPrivateOutConnection, this, _1));
+
+        //检查通过的连接
+        {
+        }
 
         //定时执行消息处理
         m_timer.regEventHandler(std::chrono::milliseconds(20),
@@ -115,23 +103,14 @@ void Process::init()
 
 void Process::newPrivateInConnection(net::TcpConnection::Ptr tcpConn)
 {
-    try
-    {
-        PacketConnection::Ptr conn = PacketConnection::create(std::move(*tcpConn), 8, 11);
-        ProcessInendityNum msg;
-        if(msg->tryRecvPacket());
-
-        if(m_conns.addConnection(conn))
-            LOG_TRACE("private in connection: {}", conn->getRemoteEndpoint().toString());
-
-    }
+    PacketConnection::Ptr conn = PacketConnection::create(std::move(*tcpConn), 8, 11);
+    m_connChecker.addUncheckedPrivateConnection(conn, ConnectionChecker::ConnType::in);
 }
 
 void Process::newPrivateOutConnection(net::TcpConnection::Ptr tcpConn)
 {
     PacketConnection::Ptr conn = PacketConnection::create(std::move(*tcpConn), 8, 11);
-    if(m_conns.addConnection(conn))
-        LOG_TRACE("private out connection: {}", conn->getRemoteEndpoint().toString());
+    m_connChecker.addUncheckedPrivateConnection(conn, ConnectionChecker::ConnType::out);
 }
 
 void Process::newPublicInConnection(net::TcpConnection::Ptr tcpConn)

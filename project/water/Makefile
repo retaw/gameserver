@@ -2,12 +2,12 @@ objects = \
     \
     tcp_client.o\
     tcp_server.o\
-    packet_connection_manager.o\
     process_config.o\
     process_id.o\
     process_thread.o\
-    #process.o\
-
+	connection_checker.o\
+    process.o\
+    #packet_connection_manager.o\
 
 
 CC = g++

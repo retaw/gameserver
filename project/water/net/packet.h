@@ -11,11 +11,10 @@
 
 #include <vector>
 
-#include "../componet/class_helper.h"
+#include "componet/class_helper.h"
 
 namespace water{
 namespace net{
-
 
 
 class Packet final : public std::vector<uint8_t>
@@ -24,26 +23,24 @@ public:
     TYPEDEF_PTR(Packet);
     CREATE_FUN_MAKE(Packet);
 
-    static const uint32_t MIN_SIZE = 4;
-    static const uint32_t MAX_SIZE = 65535;
-    static const uint32_t MAX_MSG_SIZE = 65531;
+    typedef uint32_t SizeType;
+    static const SizeType HEAD_SIZE = sizeof(SizeType);
+    static const SizeType MIN_SIZE = sizeof(HEAD_SIZE);
+    static const SizeType MAX_SIZE = 65535;
+    static const SizeType MIN_CONTENT_SIZE = 0;
+    static const SizeType MAX_CONTENT_SIZE = MAX_SIZE - MIN_SIZE;
+
 
 public:
-    void setMsg(const void* msg, uint32_t msgLen);
+    void setContent(const void* content, SizeType contentSize);
+    void setContentSize(SizeType size);
+    const uint8_t* getContent() const;
+    SizeType getContentSize() const;
 
-    const uint8_t* getMsg() const
-    {
-        return data();
-    }
-
-    uint32_t msgSize() const
-    {
-        return *reinterpret_cast<const uint32_t*>(data());
-    }
 };
 
 
-}};
+}}
 
 
 #endif

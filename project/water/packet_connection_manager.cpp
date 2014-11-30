@@ -10,7 +10,7 @@ namespace water{
 
 
 /****************inner class*********************/
-bool PacketConnectionManager::ConnectionWithEpoller::insert(PacketConnection::Ptr conn)
+bool PacketConnectionManager::ConnectionWithEpoller::insert(net::PacketConnection::Ptr conn)
 {
     std::lock_guard<componet::Spinlock> lock(m_lock);
 
@@ -30,7 +30,7 @@ void PacketConnectionManager::ConnectionWithEpoller::erase(int32_t socketFD)
     m_conns.erase(socketFD);
 }
 
-PacketConnection::Ptr PacketConnectionManager::ConnectionWithEpoller::find(int32_t socketFD)
+net::PacketConnection::Ptr PacketConnectionManager::ConnectionWithEpoller::find(int32_t socketFD)
 {
     auto it = m_conns.find(socketFD);
     if(it == m_conns.end())
@@ -46,19 +46,19 @@ PacketConnectionManager::PacketConnectionManager()
 {
 }
 
-bool PacketConnectionManager::addConnection(PacketConnection::Ptr conn)
+bool PacketConnectionManager::addConnection(net::PacketConnection::Ptr conn)
 {
     conn->setNonBlocking();
     return m_connsEpoller.insert(conn);
 }
 
-void PacketConnectionManager::delConnection(PacketConnection::Ptr conn)
+void PacketConnectionManager::delConnection(net::PacketConnection::Ptr conn)
 {
     m_connsEpoller.erase(conn->getFD());
     conn->close();
 }
 
-PacketConnection::Ptr PacketConnectionManager::getConnection() const
+net::PacketConnection::Ptr PacketConnectionManager::getConnection() const
 {
     return nullptr;
 }
@@ -95,7 +95,7 @@ void PacketConnectionManager::stop()
 
 void PacketConnectionManager::epollerEventHandler(net::Epoller* epoller, int32_t socketFD, net::Epoller::Event event)
 {
-    PacketConnection::Ptr conn = m_connsEpoller.find(socketFD);
+    net::PacketConnection::Ptr conn = m_connsEpoller.find(socketFD);
     if(conn == nullptr)
     {
         LOG_ERROR("epoll报告一个socket事件，但该socket不在manager中");
@@ -111,7 +111,7 @@ void PacketConnectionManager::epollerEventHandler(net::Epoller* epoller, int32_t
                 conn->recvAll();
                 while(Packet::Ptr packet = conn->getPacket())
                 {
-                    std::pair<PacketConnection::Ptr, Packet::Ptr> tmp{conn, packet};
+                    std::pair<net::PacketConnection::Ptr, Packet::Ptr> tmp{conn, packet};
                     if(!m_recvMsgQueue.push(tmp))
                     {
                         LOG_TRACE("消息接收队列满，消息处理系统速度过慢");
@@ -145,9 +145,9 @@ void PacketConnectionManager::epollerEventHandler(net::Epoller* epoller, int32_t
     }
 }
 
-bool PacketConnectionManager::getPacket(PacketConnection::Ptr* conn, Packet::Ptr* packet)
+bool PacketConnectionManager::getPacket(net::PacketConnection::Ptr* conn, Packet::Ptr* packet)
 {
-    std::pair<PacketConnection::Ptr, Packet::Ptr> ret;
+    std::pair<net::PacketConnection::Ptr, Packet::Ptr> ret;
     if(!m_recvMsgQueue.pop(&ret))
         return false;
 

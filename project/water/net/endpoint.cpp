@@ -55,14 +55,11 @@ std::string IpV4::toString() const
 
 void IpV4::appendToString(std::string* str) const
 {
-    std::stringstream ss;
-    ss
-    << (int)bytes[0] << "." 
-    << (int)bytes[1] << "." 
-    << (int)bytes[2] << "." 
-    << (int)bytes[3];
-
-    str->append(ss.str());
+    componet::formatAndAppend(str, "{}.{}.{}.{}",
+                              (int)bytes[0],
+                              (int)bytes[1],
+                              (int)bytes[2],
+                              (int)bytes[3]);
 }
 
 void IpV4::fromString(const std::string& str)
@@ -129,6 +126,11 @@ void Endpoint::fromString(const std::string& str)
 
     ip = componet::fromString<IpV4>(strs[0]);
     port = componet::fromString<uint16_t>(strs[1]);
+}
+
+void Endpoint::appendToString(std::string* str) const
+{
+    componet::formatAndAppend(str, "{}:{}", ip, port);
 }
 
 bool operator==(const Endpoint& ep1, const Endpoint& ep2)

@@ -32,8 +32,8 @@ public:
         struct
         {
             std::set<net::Endpoint> listen;
-
             std::set<ProcessIdentity> acceptWhiteList;
+
             std::set<net::Endpoint> connect;
         } privateNet;
 

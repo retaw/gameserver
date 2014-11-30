@@ -51,6 +51,7 @@ struct Endpoint
     //字符串转换 格式：xxx.xxx.xxx.xxx:port
     std::string toString() const;
     void fromString(const std::string& str);
+    void appendToString(std::string* str) const;
 };
 
 bool operator==(const Endpoint& ep1, const Endpoint& ep2);

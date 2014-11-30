@@ -55,32 +55,6 @@ const Endpoint& TcpConnection::getRemoteEndpoint() const
     return m_remoteEndpoint;
 }
 
-int32_t TcpConnection::send(const void* data, int32_t dataLen)
-{
-    uint32_t sendLen = ::send(getFD(), data, dataLen, MSG_NOSIGNAL);
-    if(sendLen == static_cast<uint32_t>(-1))
-    {
-        if(errno == EAGAIN || errno == EWOULDBLOCK)
-            return -1;
-
-        SYS_EXCEPTION(NetException, "::send");
-    }
-
-    return sendLen;
-}
-
-int32_t TcpConnection::recv(void* data, int32_t dataLen)
-{
-    uint32_t recvLen = ::recv(getFD(), data, dataLen, 0);
-    if(recvLen == static_cast<uint32_t>(-1))
-    {
-        if(errno == EAGAIN || errno == EWOULDBLOCK)
-            return -1;
-        SYS_EXCEPTION(NetException, "::recv");
-    }
-    return recvLen;
-}
-
 void TcpConnection::shutdown(ConnState state)
 {
     if(!isAvaliable())
@@ -111,6 +85,32 @@ void TcpConnection::shutdown(ConnState state)
 TcpConnection::ConnState TcpConnection::getState() const
 {
     return m_state;
+}
+
+int32_t TcpConnection::send(const void* data, int32_t dataLen)
+{
+    uint32_t sendLen = ::send(getFD(), data, dataLen, MSG_NOSIGNAL);
+    if(sendLen == static_cast<uint32_t>(-1))
+    {
+        if(errno == EAGAIN || errno == EWOULDBLOCK)
+            return -1;
+
+        SYS_EXCEPTION(NetException, "::send");
+    }
+
+    return sendLen;
+}
+
+int32_t TcpConnection::recv(void* data, int32_t dataLen)
+{
+    uint32_t recvLen = ::recv(getFD(), data, dataLen, 0);
+    if(recvLen == static_cast<uint32_t>(-1))
+    {
+        if(errno == EAGAIN || errno == EWOULDBLOCK)
+            return -1;
+        SYS_EXCEPTION(NetException, "::recv");
+    }
+    return recvLen;
 }
 
 

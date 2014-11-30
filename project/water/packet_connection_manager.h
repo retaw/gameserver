@@ -12,7 +12,7 @@
 #include <unordered_map>
 #include <atomic>
 
-#include "packet_connection.h"
+#include "net/packet_connection.h"
 #include "net/epoller.h"
 #include "componet/spinlock.h"
 #include "componet/event.h"
@@ -22,35 +22,36 @@ namespace water{
 
 class PacketConnectionManager
 {
-    /*
-public:
-    TYPEDEF_PTR(PacketConnectionManager)
-    CREATE_FUN_MAKE(PacketConnectionManager)
-*/
 private:
+    struct ConnectonHolder
+    {
+        net::PacketConnection::Ptr conn;
+        std::vector<net::Packet::Ptr> sendQueue;
+    };
+
     class ConnectionWithEpoller : public net::Epoller
     {
     public:
-        bool insert(PacketConnection::Ptr conn);
+        bool insert(net::PacketConnection::Ptr conn);
         void erase(int32_t socketFD);
-        PacketConnection::Ptr find(int32_t socketFD);
+        net::PacketConnection::Ptr find(int32_t socketFD);
 
     private:
         componet::Spinlock m_lock;
-        std::unordered_map<int32_t, PacketConnection::Ptr> m_conns;
-//        std::unordered_map<ProcessType, std::vector<PacketConnection::Ptr>> m_ProcessConns;
+        std::unordered_map<int32_t, net::PacketConnection::Ptr> m_conns;
+//        std::unordered_map<ProcessType, std::vector<net::PacketConnection::Ptr>> m_ProcessConns;
     };
 
 public:
     PacketConnectionManager();
     ~PacketConnectionManager() = default;
 
-    bool addConnection(PacketConnection::Ptr conn);
-    void delConnection(PacketConnection::Ptr conn);
-    PacketConnection::Ptr getConnection() const;
+    bool addConnection(net::PacketConnection::Ptr conn);
+    void delConnection(net::PacketConnection::Ptr conn);
+    net::PacketConnection::Ptr getConnection() const;
 
     //从接收队列中取出一个packet, 并得到与其相关的conn
-    bool getPacket(PacketConnection::Ptr* conn, Packet::Ptr* packet);
+    bool getPacket(net::PacketConnection::Ptr* conn, Packet::Ptr* packet);
 
     void run();
     void stop();
@@ -64,7 +65,7 @@ private:
 private:
     ConnectionWithEpoller m_connsEpoller;
 
-    componet::LockFreeCircularQueueSPSC<std::pair<PacketConnection::Ptr, Packet::Ptr>> m_recvMsgQueue;
+    componet::LockFreeCircularQueueSPSC<std::pair<net::PacketConnection::Ptr, Packet::Ptr>> m_recvMsgQueue;
 
     enum class Switch : uint8_t {on, off};
     std::atomic<Switch> m_switch;

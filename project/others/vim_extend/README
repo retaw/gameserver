@@ -1,1 +1,2 @@
-cp -r vim ~/.vim
+mkdir ~/.vim
+cp -r vim/* ~/.vim
