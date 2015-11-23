@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 服务端大量的杂项配置统一放在此配置中 -->
+<root>
+    <!--pk过程中产生的罪恶值配置 kill_add_evil:每击杀一个主角/英雄增加的罪恶值 
+         yellow:黄名状态临界罪恶值, red:红名,  sub_evil:每分钟减掉的罪恶值(线上和线下都扣), greyname_time:灰名持续时间-->
+    <Evil kill_add_evil="10" yellow="100" red="200" sub_evil="1" greyname_time="10"/>
+
+    <!--死亡掉装备配置 normal_package:背包掉落系数 eqiup_package:装备包裹掉落系数 evil_param1.2:罪恶值系数1.2 constant:掉落常数 owner_time:归属时间(秒)-->
+    <DropEquip normal_package="100" equip_package="200" evil_param1="1000" evil_param2="1500" constant="500" owner_time="20"/>
+	
+	<!--技能公共cd(毫秒)-->
+	<Skill public_cd="1000"/>
+	
+	<!--火墙配置  lifetime:火墙持续时间(秒) interval:作用间隔时间(秒)-->
+	<Fire lifetime="20" interval="1"/>
+	
+	<!--合击技能,火龙之心  baseAnger:每5s增加的基础怒气值 costAnger:释放合击技能消耗的怒气 angerLimit:怒气上限 energeLimit:龙心能量上限 
+		prepareTime:合击准备时长 dragonSoul:每次释放合击技能时获得的龙魂 costObj:充龙心能量消耗的道具-->
+	<JointSkill baseAnger="5" costAnger="100" angerLimit="100" energeLimit="1000" prepareTime="15" dragonSoul="5" costObj="5316"/>
+	
+	 <!--摆摊配置 map:允许的摆摊地图id  level:摆摊所需等级-->
+	<Stall map="1008" level="60"/>
+</root>

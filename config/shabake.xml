@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--沙巴克争夺战职位
+     0: 普通成员
+     1: 城主
+     2: 左副城主
+     3: 右副城主
+     4: 龙卫团统领
+     5: 虎卫团统领
+     6: 鹰卫团统领-->
+
+<root>
+    <!--合服前 first:开服后第一次开启沙巴克间隔(天),活动时间   second:第二次间隔(天),活动时间
+         weekday:平常开活动周几-周几,活动时间-->
+    <BeforeMerge first="3,20:00:00~21:00:00" second="5,20:00:00~21:00:00" weekday="3-6,20:00:00~21:00:00"/>
+
+    <!--合服后  first:第一次开沙巴克活动间隔(天),活动时间   weekday:同BeforeMerge一样-->
+    <AfterMerge first="3,20:00:00~21:00:00" weekday="3-6,20:00:00~21:00:00"/>
+
+    <!--奖励配置-->
+    <Award>
+        <!--占领奖 type 1:首次占领奖  2:非首次占领-->
+        <Win>
+            <Item type="1" reward="6001"/>
+            <Item type="2" reward="6002"/>
+        </Win>
+
+        <!--城主奖-->
+        <King>
+            <Item type="1" reward="6003"/>
+            <Item type="2" reward="6004"/>
+        </King>
+
+        <!--参与奖-->
+        <Parttake reward="6005"/>
+
+        <!--占领帮派日常奖励 position:职位-->
+        <Daily>
+            <Item position="1" reward="6006"/>
+            <Item position="2" reward="6007"/>
+            <Item position="3" reward="6008"/>
+            <Item position="4" reward="6009"/>
+            <Item position="5" reward="6010"/>
+            <Item position="6" reward="6011"/>
+            <Item position="0" reward="6012"/>
+        </Daily>
+    </Award>
+
+    <!--地图相关配置  palace: 皇宫地图  outcity: 外城地图  offensivePos: 进攻方出生点  defensivePos: 防守方出生点 
+		 defensiveTriggerDoor: 防守方机关传送门  defensiveTriggerDoorPos:防守方机关传送门位置
+         outcityWallDoor: 外城城门npcid  outcityWallDoorPos: 外城城门npc坐标  blockDoorPos: 外城城门动态阻挡坐标点-->
+    <Map palace="1010" outcity="1011" offensivePos="12,23" defensivePos="23,34" 
+		defensiveTriggerDoor="2345" defensiveTriggerDoorPos="12,23" 
+		outcityWallDoor="123456" outcityWallDoorPos="45,56" blockDoorPos="12,34;23,45">
+        <!--墙壁npc配置 doorpos:npc死亡后召唤传送门的位置-->
+        <Item wallnpc="12345" pos="12,23" doorid="1234" doorpos="12,23"/>
+        <Item wallnpc="12345" pos="12,23" doorid="1234" doorpos="12,23"/>
+        <Item wallnpc="12345" pos="12,23" doorid="1234" doorpos="12,23"/>
+        <Item wallnpc="12345" pos="12,23" doorid="1234" doorpos="12,23"/>
+    </Map>
+
+    <!--ownmin:占领需持续时间(分钟) level:参加所需最低角色等级  statueid:主城雕像npcid-->
+    <Other ownmin="20" level="2" statueid="123456"/>
+</root>

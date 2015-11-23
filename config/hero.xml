@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!--needLevel:第一次创建英雄需要角色等级;	needSpanSec:召唤冷却时间-->
+    <hero needLevel="1" needSpanSec="15" >
+        <item job="1" name="战士英雄" />
+        <item job="2" name="法师英雄" />
+        <item job="3" name="道士英雄" />
+    </hero>
+
+    <consume>
+        <!--createNum:创建的第N个英雄; needLevel:创建的第N个英雄需要角色等级; needTplId:创建此英雄需要物品tpleId, needNum:创建此英雄需要物品数量-->
+        <item createNum="2" needLevel="1" needTplId="5001" needNum="1" />
+        <item createNum="3" needLevel="1" needTplId="5001" needNum="1" />
+    </consume>
+
+    <ai>
+        <item job="1" skillPriority="10105,10104,10103" defaultSkill="10100" singleTargetAttSkill="10101" multiTargetAttSkill="10103">
+            <jointSkill job="1" skillId="15000"/>
+            <jointSkill job="2" skillId="15004"/>
+            <jointSkill job="3" skillId="15006"/>
+        </item>
+        <item job="2" skillPriority="11106" defaultSkill="10100" singleTargetAttSkill="11101" multiTargetAttSkill="11104">
+            <jointSkill job="1" skillId="15003"/>
+            <jointSkill job="2" skillId="15002"/>
+            <jointSkill job="3" skillId="15008"/>
+        </item>
+        <item job="3" skillPriority="" defaultSkill="10100" singleTargetAttSkill="12102" multiTargetAttSkill="">
+            <jointSkill job="1" skillId="15005"/>
+            <jointSkill job="2" skillId="15007"/>
+            <jointSkill job="3" skillId="15001"/>
+        </item>
+    </ai>
+</root>

@@ -1,0 +1,36 @@
+syntax = "proto2";
+
+package PrivateProto;
+
+// step 2, gw -> super
+message CheckAccountAndToken
+{
+    required string account = 1;
+    required uint32 token   = 2;
+};
+
+
+// step 2,  gw -> world
+// 通知world让user进场景
+message UserIntoWorld
+{
+    required uint64 rid      = 1;
+    required string account  = 2;
+    required uint32 scene_id  = 3;
+}
+
+// step 3, world -> gw
+//scene创建user完毕
+message RetUserIntoWorld
+{
+    required uint64 rid             = 1;
+    required bool   is_successful   = 2;
+}
+
+// gw <- -> world
+//下线 or 踢人
+message UserOffline
+{
+    required uint64 rid        = 1;
+    required int32  reason     = 2;
+}

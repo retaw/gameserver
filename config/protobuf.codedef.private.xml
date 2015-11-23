@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<item msg_code="2415919105" msg_name="PrivateProto.CheckAccountAndToken"/>
+	<item msg_code="2415919106" msg_name="PrivateProto.UserIntoWorld"/>
+	<item msg_code="2415919107" msg_name="PrivateProto.RetUserIntoWorld"/>
+	<item msg_code="2415919108" msg_name="PrivateProto.UserOffline"/>
+	<item msg_code="2415919109" msg_name="PrivateProto.ZoneActiveInfo"/>
+	<item msg_code="2415919110" msg_name="PrivateProto.RegVerifiedAccountToGateway"/>
+	<item msg_code="2415919111" msg_name="PrivateProto.ZoneGatewayReady"/>
+</root>

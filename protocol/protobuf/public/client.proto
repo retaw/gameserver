@@ -1,0 +1,204 @@
+syntax = "proto2";
+
+package PublicProto; 
+
+
+//step 1,  client -> gw
+//acc
+message AccountAndTokenToServer
+{
+    required uint64 acc_id  = 1;
+    required uint64 token   = 2;
+}
+
+//step 4, w -> client
+//rid, client验证通过, 发送一个确认给client, 告诉它服务器准备就绪
+message S_ClientLoginReady
+{
+    required uint64 uid = 1;
+}
+
+
+//step 6, client -> world
+//起名字, 并开始游戏
+message C_SetUpName
+{
+    required string name = 1;
+}
+
+
+
+//////////////////////////////////////////////////
+
+//移动请求
+message C_MoveTo
+{
+//    required float radian = 1;  //移动方向
+    required float x = 1;
+    required float y = 2;
+}
+
+//角色出现在场景中
+message S_ItemRoleInfo
+{
+    required uint32 id      = 1;
+    required float  x       = 2;
+    required float  y       = 3;
+    required int32  radius  = 4;
+    optional string name    = 5;
+    required uint64 uid     = 6;
+    required int32  color   = 7;
+}
+
+//食物出现在场景中
+message S_ItemFoodInfo
+{
+    required uint32 id      = 1;
+    required float  x       = 2;
+    required float  y       = 3;
+}
+
+//荆棘出现在场景中
+message S_ItemThronInfo
+{
+    required uint32 id      = 1;
+    required float  x       = 2;
+    required float  y       = 3;
+    required int32  radius  = 4;
+}
+
+//子弹出现在场景中
+message S_ItemBulletInfo
+{
+    required uint32 id      = 1;
+    required float  x       = 2;
+    required float  y       = 3;
+}
+
+//黑洞出现
+message S_ItemCollapsar
+{
+    required uint32 id = 1;
+    required float x   = 2;
+    required float y   = 3;
+    required int32 radius = 5;  //这里发送的不是半径值, 而是  1 或 2,  分别表示交大和较小的两种尺寸
+}
+
+//批量出现在场景内的对象
+message S_SyncSceneInfo
+{
+   repeated S_ItemRoleInfo roles   = 1;
+   repeated S_ItemFoodInfo foods   = 2;
+   repeated S_ItemThronInfo throns  = 3;
+   repeated S_ItemBulletInfo bullets = 4;
+   repeated S_ItemCollapsar collapsar = 5;
+}
+
+//对象属性发生变化
+message SceneItemAttr
+{
+    required uint32 id      = 1;
+    optional int32  radius  = 2;
+    optional float  x       = 3;
+    optional float  y       = 4;
+//    optional float speed    = 5;
+}
+
+
+//对象快速移动时的属性变化
+message HighSpeedSceneItemAttr
+{
+    required uint32 id      = 1;
+    optional int32  radius  = 2;
+    optional float  x       = 3;
+    optional float  y       = 4;
+}
+
+//对象消失
+message DeleteItem
+{
+    required uint32 id = 1;
+    optional uint32 predator_id = 2; //被谁吃了
+}
+
+//质心发生变化, 只通知自己
+message S_SyncLogicCenter
+{
+    required float  x       = 1;
+    required float  y       = 2;
+}
+
+//本局失败
+message S_GameOver
+{
+}
+
+//分裂
+message C_Fission
+{
+    required float radian  = 1; //分裂方与x轴正半轴的夹角, 弧度值
+}
+
+//射出
+message C_Expal
+{
+    required float radian  = 1; // 射出的方向
+}
+
+//玩家离开游戏的通知
+message S_UserLogout
+{
+    required uint64 uid = 1;
+}
+
+//进入黑洞后被传送
+message S_SceneItemAttrAfterImpactToCollapsar
+{
+    /*
+    message Pos
+    {
+        required uint32 id      = 1;
+        optional float  x       = 2;
+        optional float  y       = 3;
+    }
+
+    repeated Pos  new_pos = 1;*/
+    repeated SceneItemAttr new_pos = 1;
+    required uint32 collapsar_id   = 2;
+    required uint64 uid            = 3;             //所属玩家的id
+    required bool erase_collapsar  = 4;
+}
+
+//个人积分
+message S_UpdatePoint
+{
+    required uint32 point = 1;
+}
+
+
+
+
+////进入黑洞
+//message S_UserIntoCollapsar
+//{
+//    required int64 uid          = 1;
+//    required int32 collapsar_id = 2;
+//    required int32 type         = 3; //0, 被定住;  1 消失
+//}
+//
+////从黑洞中回到场景内
+//message S_UserReturnSceneFromCollapsar
+//{
+//    required uint32 id      = 1;
+//    required float  x       = 2;
+//    required float  y       = 3;
+//    required int32  radius  = 4;
+//    optional string name    = 5;
+//    required uint64 uid     = 6;
+//    required int32  color   = 7;
+//}
+
+
+
+
+

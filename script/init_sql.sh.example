@@ -1,0 +1,76 @@
+#!/bin/bash
+
+PROJECT_ROOT_DIR=$(pwd)/..
+SQL_ROOT_DIR=${PROJECT_ROOT_DIR}/sql
+
+HOSTNAME="localhost"
+PORT="3306"
+USERNAME="zpf"
+PASSWORD="123456"
+
+DBNAME="game"
+
+IP=`ifconfig |grep 'inet ' |grep -v '127.0.0.1' |grep -v 192.168.122.1 | cut -d: -f2 | awk '{ print $2}'`
+CURTIME=`date "+%s"`
+
+#链接数据库
+MYSQL_CMD="mysql -h${HOSTNAME} -P${PORT} -u${USERNAME} -p${PASSWORD}"
+echo ${MYSQL_CMD}
+
+#删除数据库
+DROP_DB_SQL="DROP DATABASE IF EXISTS ${DBNAME}"
+echo ${DROP_DB_SQL} | ${MYSQL_CMD}
+
+#创建数据库
+echo "create database ${DBNAME}"
+CREATE_DB_SQL="CREATE DATABASE IF NOT EXISTS ${DBNAME} DEFAULT CHARACTER SET utf8"
+echo ${CREATE_DB_SQL} | ${MYSQL_CMD}
+if [ $? -ne 0 ] ; then
+	echo "create databases ${DBNAME} fail..."
+	exit 1
+else
+	echo "create databases ${DBNAME} success!"
+	
+fi	
+
+#创建表ZONELIST, 并插入数据
+TABLENAME="ZONELIST"
+CREATE_TABLE_SQL="CREATE TABLE IF NOT EXISTS ${TABLENAME}(
+GAME INT NOT NULL,
+ZONE INT NOT NULL,
+NAME VARCHAR(32) NOT NULL,
+IP VARCHAR(32) NOT NULL,
+PORT INT NOT NULL,
+OPENTIME INT NOT NULL,
+PRIMARY KEY(GAME)
+) CHARSET=utf8;"
+insert_data_sql="INSERT INTO ZONELIST VALUES(301, 998, 'WEBGAME', '${IP}', 3306, ${CURTIME})"
+
+echo ${CREATE_TABLE_SQL} | ${MYSQL_CMD} ${DBNAME}
+if [ $? -ne 0 ] ; then
+	echo "create table ${DBNAME}.${TABLENAME} fail..."
+else
+	echo "create table ${DBNAME}.${TABLENAME} success!"
+	echo ${insert_data_sql} | ${MYSQL_CMD} ${DBNAME}
+fi
+
+#要导入的sql语句文件
+CREATE_TABLES_SQL="create_table.sql"              
+#创建数据库表
+cd ${SQL_ROOT_DIR}
+mysql -h${HOSTNAME} -P${PORT} -u${USERNAME} -p${PASSWORD} ${DBNAME} < ${CREATE_TABLES_SQL}
+if [ $? -ne 0 ] ; then
+	echo "create tables ${DBNAME}.${CREATE_TABLES_SQL} fail..."
+else
+	echo "create tables ${DBNAME}.${CREATE_TABLES_SQL} success!"
+fi
+
+#要修改的sql语句文件
+ALTER_TABLES_SQL="alter.sql"
+cd ${SQL_ROOT_DIR}
+mysql -h${HOSTNAME} -p${PORT} -u${USERNAME} -p${PASSWORD} ${DBNAME} < ${ALTER_TABLES_SQL}
+if [ $? -ne 0 ] ; then
+	echo "alter tables ${DBNAME}.${ALTER_TABLES_SQL} fail..."
+else
+	echo "alter tables ${DBNAME}.${ALTER_TABLES_SQL} sucess!"
+fi

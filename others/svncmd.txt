@@ -1,0 +1,1 @@
+svn ps svn:mime-type text/plain *.mine_suffix

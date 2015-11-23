@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!--随机奖励池-->
+	<reward_pool_list>
+		<pool poolId="1001">	<!--装备类-->
+			<item tplId="101011001" num="1" bind="1" job="1" minLevel="10" maxLevel="20" />
+			<item tplId="101011001" num="1" bind="1" job="1" minLevel="10" maxLevel="20" />
+			<item tplId="111021001" num="1" bind="1" job="1" minLevel="21" maxLevel="30" />
+			<item tplId="121021001" num="1" bind="1" job="1" minLevel="31" maxLevel="40" />
+			<item tplId="101031001" num="1" bind="1" job="1" minLevel="41" maxLevel="50" />
+			<item tplId="101041001" num="1" bind="1" job="1" minLevel="51" maxLevel="60" />
+			<item tplId="101051001" num="1" bind="1" job="1" minLevel="61" maxLevel="70" />
+			<item tplId="101061001" num="1" bind="1" job="1" minLevel="71" maxLevel="80" />
+			<item tplId="101071001" num="1" bind="1" job="1" minLevel="81" maxLevel="90" />
+			<item tplId="101081001" num="1" bind="1" job="2" minLevel="91" maxLevel="100" />
+			<item tplId="102011001" num="1" bind="1" job="2" minLevel="10" maxLevel="20" />
+			<item tplId="112021001" num="1" bind="1" job="2" minLevel="21" maxLevel="30" />
+			<item tplId="122021001" num="1" bind="1" job="2" minLevel="31" maxLevel="40" />
+			<item tplId="102031001" num="1" bind="1" job="2" minLevel="41" maxLevel="50" />
+			<item tplId="102041001" num="1" bind="1" job="2" minLevel="51" maxLevel="60" />
+			<item tplId="102051001" num="1" bind="1" job="2" minLevel="61" maxLevel="70" />
+			<item tplId="102061001" num="1" bind="1" job="2" minLevel="71" maxLevel="80" />
+			<item tplId="102071001" num="1" bind="1" job="2" minLevel="81" maxLevel="90" />
+			<item tplId="102081001" num="1" bind="1" job="2" minLevel="91" maxLevel="100" />
+			<item tplId="103011001" num="1" bind="1" job="3" minLevel="10" maxLevel="20" />
+			<item tplId="113021001" num="1" bind="1" job="3" minLevel="21" maxLevel="30" />
+			<item tplId="123021001" num="1" bind="1" job="3" minLevel="31" maxLevel="40" />
+			<item tplId="103031001" num="1" bind="1" job="3" minLevel="41" maxLevel="50" />
+			<item tplId="103041001" num="1" bind="1" job="3" minLevel="51" maxLevel="60" />
+			<item tplId="103051001" num="1" bind="1" job="3" minLevel="61" maxLevel="70" />
+			<item tplId="103061001" num="1" bind="1" job="3" minLevel="71" maxLevel="80" />
+			<item tplId="103071001" num="1" bind="1" job="3" minLevel="81" maxLevel="90" />
+			<item tplId="103081001" num="1" bind="1" job="3" minLevel="91" maxLevel="100" />
+		</pool>
+		<pool poolId="1002">	<!--激情泡点奖励1-->
+			<item tplId="101011001" num="1" bind="1"   job="0" minLevel="1" maxLevel="150" />
+			<item tplId="111021001" num="1" bind="1"   job="0" minLevel="1" maxLevel="150" />
+		</pool>
+		<pool poolId="1003">	<!--激情泡点奖励2-->
+			<item tplId="121021001" num="1" bind="1"   job="0" minLevel="1" maxLevel="150" />
+			<item tplId="101031001" num="1" bind="1"   job="0" minLevel="1" maxLevel="150" />
+		</pool>
+		<pool poolId="1004">	<!--激情泡点奖励3-->
+			<item tplId="101041001" num="1" bind="1"   job="0" minLevel="1" maxLevel="150" />
+			<item tplId="101051001" num="1" bind="1"   job="0" minLevel="1" maxLevel="150" />
+		</pool>
+		<pool poolId="2001">	<!--经验类-->
+			<item tplId="6" num="100" bind="2" job="0" minLevel="1" maxLevel="100" />
+			<item tplId="6" num="200" bind="2" job="0" minLevel="1" maxLevel="100" />
+			<item tplId="6" num="300" bind="2" job="0" minLevel="1" maxLevel="100" />
+			<item tplId="7" num="100" bind="2" job="0" minLevel="1" maxLevel="100" />
+			<item tplId="7" num="200" bind="2" job="0" minLevel="1" maxLevel="100" />
+			<item tplId="7" num="300" bind="2" job="0" minLevel="1" maxLevel="100" />
+		</pool>
+		<pool poolId="2002">	<!--饮酒经验类-->
+			<item tplId="6" num="100"  bind="2" job="0" minLevel="1"   maxLevel="20" />
+			<item tplId="6" num="1000" bind="2" job="0" minLevel="21"  maxLevel="40" />
+			<item tplId="6" num="1000" bind="2" job="0" minLevel="41"  maxLevel="60" />
+			<item tplId="6" num="2000" bind="2" job="0" minLevel="61"  maxLevel="80" />
+			<item tplId="6" num="2000" bind="2" job="0" minLevel="81"  maxLevel="100" />
+			<item tplId="6" num="2000" bind="2" job="0" minLevel="101" maxLevel="150" />
+		</pool>
+		<pool poolId="3001">	<!--金币类-->
+			<item tplId="1" num="100" bind="1" job="0" minLevel="1" maxLevel="100" />
+			<item tplId="1" num="200" bind="1" job="0" minLevel="1" maxLevel="100" />
+			<item tplId="1" num="200" bind="1" job="0" minLevel="1" maxLevel="100" />
+			<item tplId="2" num="300" bind="2" job="0" minLevel="1" maxLevel="100" />
+			<item tplId="2" num="300" bind="2" job="0" minLevel="1" maxLevel="100" />
+			<item tplId="2" num="300" bind="2" job="0" minLevel="1" maxLevel="100" />
+		</pool>                                        
+		<pool poolId="1005">	<!--战功类-->          
+		    <item tplId="5" num="100" bind="2"  job="0" minLevel="60"  maxLevel="70" />
+		    <item tplId="5" num="200" bind="2"  job="0" minLevel="71"  maxLevel="80" />
+			<item tplId="5" num="300" bind="2"  job="0" minLevel="81"  maxLevel="90" />
+			<item tplId="5" num="500" bind="2"  job="0" minLevel="120" maxLevel="150" />
+		</pool>
+	</reward_pool_list>
+	
+	<reward_list>
+		<reward id="3001">
+			<item pool_prob_list="1001-10,2001-10" />
+			<item pool_prob_list="2001-10" />
+			<item pool_prob_list="3001-10,0-10" />
+		</reward>
+		<reward id="3002">
+			<item pool_prob_list="2001-10" />
+			<item pool_prob_list="3001-10,0-10" />
+		</reward>
+		<!--激情泡点橙色奖励-->
+		<reward id="3003">
+			<item pool_prob_list="1002-10,1003-10,1004-10" />
+		</reward>
+		<!--激情泡点紫色奖励-->
+		<reward id="3004">
+			<item pool_prob_list="1003-10,1004-10" />
+		</reward>
+		<!--激情泡点蓝色奖励-->
+		<reward id="3005">
+			<item pool_prob_list="1004-10" />
+		</reward>
+        <!--日常任务惊喜道具普通奖励-->
+		<reward id="4001">
+			<item pool_prob_list="1002-10" />
+		</reward> 
+       <!--日常任务惊喜道具三倍奖励-->
+		<reward id="4002">
+			<item pool_prob_list="1003-10" />
+		</reward>		
+        <!--天下第一活动每5秒发放的奖励-->
+		<reward id="4010">
+			<item pool_prob_list="1005-10" />
+		</reward>
+		<!--篝火饮酒奖励-->
+		<reward id="3006">
+			<item pool_prob_list="2002-10" />
+		</reward>
+	</reard_list>
+
+</root>

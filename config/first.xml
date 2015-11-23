@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<action mapId="2002" needLevel="60" basePoint="5" kickoutSec="30">
+		<!--wday: 0-6 周日为0-->
+		<item wday="1" applyBeginTime="18:00:00" applyEndTime="22:10:00" readyTime="22:10:00" beginTime="22:12:00" endTime="22:30:00" />
+		<item wday="2" applyBeginTime="18:00:00" applyEndTime="22:10:00" readyTime="22:10:00" beginTime="22:12:00" endTime="22:30:00" />
+		<item wday="3" applyBeginTime="18:00:00" applyEndTime="22:10:00" readyTime="22:10:00" beginTime="22:12:00" endTime="22:30:00" />
+		<item wday="4" applyBeginTime="18:00:00" applyEndTime="22:10:00" readyTime="22:10:00" beginTime="22:12:00" endTime="22:30:00" />
+		<item wday="5" applyBeginTime="18:00:00" applyEndTime="22:10:00" readyTime="22:10:00" beginTime="22:12:00" endTime="22:30:00" />
+		<item wday="6" applyBeginTime="18:00:00" applyEndTime="22:10:00" readyTime="22:10:00" beginTime="22:12:00" endTime="22:30:00" />
+		<item wday="0" applyBeginTime="18:00:00" applyEndTime="22:10:00" readyTime="22:10:00" beginTime="22:12:00" endTime="22:30:00" />
+	</action>
+
+	<reward randomRewardId="4010" winnerGiftId="5507" winnerTitleId="2003">
+		<item type="1" minPoint="0"    maxPoint="5"    giftId="5500"  zhangong="100"   name="青铜" />
+		<item type="2" minPoint="6"    maxPoint="10"   giftId="5501"  zhangong="200"   name="白银" />
+		<item type="3" minPoint="11"   maxPoint="15"   giftId="5502"  zhangong="300"   name="黄金" />
+		<item type="4" minPoint="16"   maxPoint="20"   giftId="5503"  zhangong="400"   name="白金" />
+		<item type="5" minPoint="21"   maxPoint="25"   giftId="5504"  zhangong="500"   name="钻石" />
+		<item type="6" minPoint="26"   maxPoint="30"  giftId="5505"  zhangong="600"   name="大师" />
+		<item type="7" minPoint="31"  maxPoint="0"    giftId="5506"  zhangong="1000"  name="最强王者" />
+	</reward>
+</root>

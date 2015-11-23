@@ -1,0 +1,70 @@
+#!/bin/bash
+
+PROJECT_ROOT_DIR=$(pwd)/..
+SQL_ROOT_DIR=${PROJECT_ROOT_DIR}/sql
+
+HOSTNAME="127.0.0.1"
+PORT="3306"
+#要创建的db用户
+USERNAME="test"
+#要创建的数据库名称
+DBNAME="game"
+
+#创建数据库
+echo "创建数据库: ${DBNAME}......"
+echo "输入mysql的root用户密码："
+read DB_ROOT_PWD
+DROP_DATABASE="DROP DATABASE IF EXISTS ${DBNAME}"
+echo ${DROP_DATABASE} | mysql -h${HOSTNAME} -P${PORT} -uroot -p${DB_ROOT_PWD}
+CREATE_DATABASE="CREATE DATABASE IF NOT EXISTS ${DBNAME} DEFAULT CHARACTER SET utf8"
+echo ${CREATE_DATABASE} | mysql -h${HOSTNAME} -P${PORT} -uroot -p${DB_ROOT_PWD}
+if [ $? -ne 0 ];then
+    echo "create databases ${DBNAME} fail..."
+    exit 1;
+else
+    echo "create databases ${DBNAME} success!"
+fi
+echo "创建数据库用户: ${USERNAME}"
+echo "输入用户 ${USERNAME} 的密码"
+USER_PWD=""
+flag=1
+while [ $flag == 1 ];do
+    read USER_PWD
+    echo "请再次输入："
+    read USER_PWD_R
+    if [ ${USER_PWD} == ${USER_PWD_R} ] ; then
+        flag=0
+    else
+        echo "两次输入不一致，请重新输入"
+    fi
+done
+#下面创建用户,并给用户赋权限
+DROP_USER="DROP USER '${USERNAME}'@'127.0.0.1'"
+CREATE_USER="CREATE USER '${USERNAME}'@'127.0.0.1' identified by '${USER_PWD}'"
+USER_INIT="GRANT ALL ON ${DBNAME}.* to ${USERNAME}@'${HOSTNAME}' identified by '${USER_PWD}'"
+FLUSH_PRIVILEGES="FLUSH PRIVILEGES"
+echo ${DROP_USER} | mysql -h ${HOSTNAME} -p${PORT} -uroot -p${DB_ROOT_PWD}
+
+echo ${CREATE_USER} | mysql -h ${HOSTNAME} -p${PORT} -uroot -p${DB_ROOT_PWD}
+if [ $? -ne 0 ] ; then
+    echo "用户：${USERNAME}创建失败"
+    exit 1;
+else
+    echo "创建用户：${USERNAME}成功"
+fi
+
+echo ${USER_INIT} | mysql -h ${HOSTNAME} -p${PORT} -uroot -p${DB_ROOT_PWD}
+echo ${FLUSH_PRIVILEGES} | mysql -h ${HOSTNAME} -p${PORT} -uroot -p${DB_ROOT_PWD}
+echo "数据库初始化完成，开始创建表......"
+echo " "
+
+#要导入的sql语句文件
+CREATE_TABLES_SQL="create_table.sql"              
+#创建数据库表
+cd ${SQL_ROOT_DIR}
+mysql -h${HOSTNAME} -P${PORT} -u${USERNAME} -p${USER_PWD} ${DBNAME} < ${CREATE_TABLES_SQL}
+if [ $? -ne 0 ] ; then
+	echo "create tables ${DBNAME}.${CREATE_TABLES_SQL} fail..."
+else
+	echo "create tables ${DBNAME}.${CREATE_TABLES_SQL} success!"
+fi

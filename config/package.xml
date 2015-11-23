@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!--cell:格子下标从0开始;  needOnlineSec:需要累计在线时间;	addExp:经验收益-->
+	<role sec="300" yuanbao="10" >
+		<item cell="42"  needOnlineSec="30"  addExp="1"  />		
+		<item cell="43"  needOnlineSec="60"  addExp="1"  />
+		<item cell="44"  needOnlineSec="120"  addExp="1"  />
+		<item cell="45"  needOnlineSec="180"  addExp="1"  />
+		<item cell="46"  needOnlineSec="240"  addExp="1"  />
+		<item cell="47"  needOnlineSec="360"  addExp="1"  />
+		<item cell="48"  needOnlineSec="15120"  addExp="64"  />
+		<item cell="49"  needOnlineSec="18960"  addExp="64"  />
+		<item cell="50"  needOnlineSec="22800"  addExp="64"  />
+		<item cell="51"  needOnlineSec="26640"  addExp="64"  />
+		<item cell="52"  needOnlineSec="30480"  addExp="64"  />
+		<item cell="53"  needOnlineSec="34320"  addExp="64"  />
+		<item cell="54"  needOnlineSec="38160"  addExp="64"  />
+		<item cell="55"  needOnlineSec="42000"  addExp="64"  />
+		<item cell="56"  needOnlineSec="45840"  addExp="64"  />
+		<item cell="57"  needOnlineSec="49680"  addExp="64"  />
+		<item cell="58"  needOnlineSec="53520"  addExp="64"  />
+		<item cell="59"  needOnlineSec="57360"  addExp="64"  />
+		<item cell="60"  needOnlineSec="61200"  addExp="64"  />
+		<item cell="61"  needOnlineSec="65040"  addExp="64"  />
+		<item cell="62"  needOnlineSec="68880"  addExp="64"  />
+		<item cell="63"  needOnlineSec="72720"  addExp="64"  />
+		<item cell="64"  needOnlineSec="76560"  addExp="64"  />
+		<item cell="65"  needOnlineSec="80400"  addExp="64"  />
+		<item cell="66"  needOnlineSec="84240"  addExp="64"  />
+		<item cell="67"  needOnlineSec="88080"  addExp="64"  />
+		<item cell="68"  needOnlineSec="91920"  addExp="64"  />
+		<item cell="69"  needOnlineSec="95760"  addExp="64"  />
+		<item cell="70"  needOnlineSec="99600"  addExp="64"  />
+		<item cell="71"  needOnlineSec="103440"  addExp="64"  />
+		<item cell="72"  needOnlineSec="107280"  addExp="64"  />
+		<item cell="73"  needOnlineSec="111120"  addExp="64"  />
+		<item cell="74"  needOnlineSec="114960"  addExp="64"  />
+		<item cell="75"  needOnlineSec="118800"  addExp="64"  />
+		<item cell="76"  needOnlineSec="122640"  addExp="64"  />
+		<item cell="77"  needOnlineSec="126480"  addExp="64"  />
+		<item cell="78"  needOnlineSec="130320"  addExp="64"  />
+		<item cell="79"  needOnlineSec="134160"  addExp="64"  />
+		<item cell="80"  needOnlineSec="138000"  addExp="64"  />
+		<item cell="81"  needOnlineSec="141840"  addExp="64"  />
+		<item cell="82"  needOnlineSec="145680"  addExp="64"  />
+		<item cell="83"  needOnlineSec="149520"  addExp="64"  />
+		<item cell="84"  needOnlineSec="153360"  addExp="64"  />
+		<item cell="85"  needOnlineSec="157200"  addExp="64"  />
+		<item cell="86"  needOnlineSec="161040"  addExp="64"  />
+		<item cell="87"  needOnlineSec="164880"  addExp="64"  />
+		<item cell="88"  needOnlineSec="168720"  addExp="64"  />
+		<item cell="89"  needOnlineSec="172560"  addExp="64"  />
+		<item cell="90"  needOnlineSec="176400"  addExp="64"  />
+		<item cell="91"  needOnlineSec="180240"  addExp="64"  />
+		<item cell="92"  needOnlineSec="184080"  addExp="64"  />
+		<item cell="93"  needOnlineSec="187920"  addExp="64"  />
+		<item cell="94"  needOnlineSec="191760"  addExp="64"  />
+		<item cell="95"  needOnlineSec="195600"  addExp="64"  />
+		<item cell="96"  needOnlineSec="199440"  addExp="64"  />
+		<item cell="97"  needOnlineSec="203280"  addExp="64"  />
+		<item cell="98"  needOnlineSec="207120"  addExp="64"  />
+		<item cell="99"  needOnlineSec="210960"  addExp="64"  />
+		<item cell="100"  needOnlineSec="214800"  addExp="64"  />
+		<item cell="101"  needOnlineSec="218640"  addExp="64"  />
+		<item cell="102"  needOnlineSec="222480"  addExp="64"  />
+		<item cell="103"  needOnlineSec="226320"  addExp="64"  />
+		<item cell="104"  needOnlineSec="230160"  addExp="64"  />
+		<item cell="105"  needOnlineSec="234000"  addExp="64"  />
+		<item cell="106"  needOnlineSec="237840"  addExp="64"  />
+		<item cell="107"  needOnlineSec="241680"  addExp="64"  />
+		<item cell="108"  needOnlineSec="245520"  addExp="64"  />
+		<item cell="109"  needOnlineSec="249360"  addExp="64"  />
+		<item cell="110"  needOnlineSec="253200"  addExp="64"  />
+		<item cell="111"  needOnlineSec="257040"  addExp="64"  />
+		<item cell="112"  needOnlineSec="260880"  addExp="64"  />
+		<item cell="113"  needOnlineSec="264720"  addExp="64"  />
+		<item cell="114"  needOnlineSec="268560"  addExp="64"  />
+		<item cell="115"  needOnlineSec="272400"  addExp="64"  />
+		<item cell="116"  needOnlineSec="276240"  addExp="64"  />
+		<item cell="117"  needOnlineSec="280080"  addExp="64"  />
+		<item cell="118"  needOnlineSec="283920"  addExp="64"  />
+		<item cell="119"  needOnlineSec="287760"  addExp="64"  />
+		<item cell="120"  needOnlineSec="291600"  addExp="64"  />
+		<item cell="121"  needOnlineSec="295440"  addExp="64"  />
+		<item cell="122"  needOnlineSec="299280"  addExp="64"  />
+		<item cell="123"  needOnlineSec="303120"  addExp="64"  />
+		<item cell="124"  needOnlineSec="306960"  addExp="64"  />
+		<item cell="125"  needOnlineSec="310800"  addExp="64"  />
+		<item cell="126"  needOnlineSec="314640"  addExp="64"  />
+		<item cell="127"  needOnlineSec="318480"  addExp="64"  />
+		<item cell="128"  needOnlineSec="322320"  addExp="64"  />
+		<item cell="129"  needOnlineSec="326160"  addExp="64"  />
+		<item cell="130"  needOnlineSec="330000"  addExp="64"  />
+		<item cell="131"  needOnlineSec="333840"  addExp="64"  />
+		<item cell="132"  needOnlineSec="337680"  addExp="64"  />
+		<item cell="133"  needOnlineSec="341520"  addExp="64"  />
+		<item cell="134"  needOnlineSec="345360"  addExp="64"  />
+		<item cell="135"  needOnlineSec="349200"  addExp="64"  />
+		<item cell="136"  needOnlineSec="353040"  addExp="64"  />
+		<item cell="137"  needOnlineSec="356880"  addExp="64"  />
+		<item cell="138"  needOnlineSec="360720"  addExp="64"  />
+		<item cell="139"  needOnlineSec="364560"  addExp="64"  />
+
+	</role>
+	
+	<storage needTplId="1003">
+		<item cell="70"  needNum="1"   addExp="61"  />
+		<item cell="71"  needNum="2"   addExp="63"  />
+		<item cell="72"  needNum="3"   addExp="65"  />
+		<item cell="73"  needNum="4"   addExp="67"  />
+		<item cell="74"  needNum="5"   addExp="69"  />
+		<item cell="75"  needNum="6"   addExp="71"  />
+		<item cell="76"  needNum="7"   addExp="73"  />
+		<item cell="77"  needNum="8"   addExp="75"  />
+		<item cell="78"  needNum="9"   addExp="77"  />
+		<item cell="79"  needNum="10"  addExp="79"  />
+		<item cell="80"  needNum="11"  addExp="81"  />
+		<item cell="81"  needNum="12"  addExp="83"  />
+		<item cell="82"  needNum="13"  addExp="85"  />
+		<item cell="83"  needNum="14"  addExp="87"  />
+		<item cell="84"  needNum="15"  addExp="89"  />
+		<item cell="85"  needNum="16"  addExp="91"  />
+		<item cell="86"  needNum="17"  addExp="93"  />
+		<item cell="87"  needNum="18"  addExp="95"  />
+		<item cell="88"  needNum="19"  addExp="97"  />
+		<item cell="89"  needNum="20"  addExp="99"  />
+		<item cell="90"  needNum="21"  addExp="101" />
+		<item cell="91"  needNum="22"  addExp="103" />
+		<item cell="92"  needNum="23"  addExp="105" />
+		<item cell="93"  needNum="24"  addExp="107" />
+		<item cell="94"  needNum="25"  addExp="109" />
+		<item cell="95"  needNum="26"  addExp="111" />
+		<item cell="96"  needNum="27"  addExp="113" />
+		<item cell="97"  needNum="28"  addExp="115" />
+		<item cell="98"  needNum="29"  addExp="117" />
+		<item cell="99"  needNum="30"  addExp="119" />
+		<item cell="100" needNum="31"  addExp="121" />
+		<item cell="101" needNum="32"  addExp="123" />
+		<item cell="102" needNum="33"  addExp="125" />
+		<item cell="103" needNum="34"  addExp="127" />
+		<item cell="104" needNum="35"  addExp="129" />
+		<item cell="105" needNum="36"  addExp="131" />
+		<item cell="106" needNum="37"  addExp="133" />
+		<item cell="107" needNum="38"  addExp="135" />
+		<item cell="108" needNum="39"  addExp="137" />
+		<item cell="109" needNum="40"  addExp="139" />
+		<item cell="110" needNum="41"  addExp="141" />
+		<item cell="111" needNum="42"  addExp="143" />
+		<item cell="112" needNum="43"  addExp="145" />
+		<item cell="113" needNum="44"  addExp="147" />
+		<item cell="114" needNum="45"  addExp="149" />
+		<item cell="115" needNum="46"  addExp="151" />
+		<item cell="116" needNum="47"  addExp="153" />
+		<item cell="117" needNum="48"  addExp="155" />
+		<item cell="118" needNum="49"  addExp="157" />
+		<item cell="119" needNum="50"  addExp="159" />
+		<item cell="120" needNum="51"  addExp="161" />
+		<item cell="121" needNum="52"  addExp="163" />
+		<item cell="122" needNum="53"  addExp="165" />
+		<item cell="123" needNum="54"  addExp="167" />
+		<item cell="124" needNum="55"  addExp="169" />
+		<item cell="125" needNum="56"  addExp="171" />
+		<item cell="126" needNum="57"  addExp="173" />
+		<item cell="127" needNum="58"  addExp="175" />
+		<item cell="128" needNum="59"  addExp="177" />
+		<item cell="129" needNum="60"  addExp="179" />
+		<item cell="130" needNum="61"  addExp="181" />
+		<item cell="131" needNum="62"  addExp="183" />
+		<item cell="132" needNum="63"  addExp="185" />
+		<item cell="133" needNum="64"  addExp="187" />
+		<item cell="134" needNum="65"  addExp="189" />
+		<item cell="135" needNum="66"  addExp="191" />
+		<item cell="136" needNum="67"  addExp="193" />
+		<item cell="137" needNum="68"  addExp="195" />
+		<item cell="138" needNum="69"  addExp="197" />
+		<item cell="139" needNum="70"  addExp="199" />
+		<item cell="140" needNum="71"  addExp="201" />
+		<item cell="141" needNum="72"  addExp="203" />
+		<item cell="142" needNum="73"  addExp="205" />
+		<item cell="143" needNum="74"  addExp="207" />
+		<item cell="144" needNum="75"  addExp="209" />
+		<item cell="145" needNum="76"  addExp="211" />
+		<item cell="146" needNum="77"  addExp="213" />
+		<item cell="147" needNum="78"  addExp="215" />
+		<item cell="148" needNum="79"  addExp="217" />
+		<item cell="149" needNum="80"  addExp="219" />
+		<item cell="150" needNum="81"  addExp="221" />
+		<item cell="151" needNum="82"  addExp="223" />
+		<item cell="152" needNum="83"  addExp="225" />
+		<item cell="153" needNum="84"  addExp="227" />
+		<item cell="154" needNum="85"  addExp="229" />
+		<item cell="155" needNum="86"  addExp="231" />
+		<item cell="156" needNum="87"  addExp="233" />
+		<item cell="157" needNum="88"  addExp="235" />
+		<item cell="158" needNum="89"  addExp="237" />
+		<item cell="159" needNum="90"  addExp="239" />
+		<item cell="160" needNum="91"  addExp="241" />
+		<item cell="161" needNum="92"  addExp="243" />
+		<item cell="162" needNum="93"  addExp="245" />
+		<item cell="163" needNum="94"  addExp="247" />
+		<item cell="164" needNum="95"  addExp="249" />
+		<item cell="165" needNum="96"  addExp="251" />
+		<item cell="166" needNum="97"  addExp="253" />
+		<item cell="167" needNum="98"  addExp="255" />
+		<item cell="168" needNum="99"  addExp="257" />
+		<item cell="169" needNum="100" addExp="259" />
+		<item cell="170" needNum="101" addExp="261" />
+		<item cell="171" needNum="102" addExp="263" />
+		<item cell="172" needNum="103" addExp="265" />
+		<item cell="173" needNum="104" addExp="267" />
+		<item cell="174" needNum="105" addExp="269" />
+		<item cell="175" needNum="106" addExp="271" />
+		<item cell="176" needNum="107" addExp="273" />
+		<item cell="177" needNum="108" addExp="275" />
+		<item cell="178" needNum="109" addExp="277" />
+		<item cell="179" needNum="110" addExp="279" />
+		<item cell="180" needNum="111" addExp="281" />
+		<item cell="181" needNum="112" addExp="283" />
+		<item cell="182" needNum="113" addExp="285" />
+		<item cell="183" needNum="114" addExp="287" />
+		<item cell="184" needNum="115" addExp="289" />
+		<item cell="185" needNum="116" addExp="291" />
+		<item cell="186" needNum="117" addExp="293" />
+		<item cell="187" needNum="118" addExp="295" />
+		<item cell="188" needNum="119" addExp="297" />
+		<item cell="189" needNum="120" addExp="299" />
+		<item cell="190" needNum="121" addExp="301" />
+		<item cell="191" needNum="122" addExp="303" />
+		<item cell="192" needNum="123" addExp="305" />
+		<item cell="193" needNum="124" addExp="307" />
+		<item cell="194" needNum="125" addExp="309" />
+		<item cell="195" needNum="126" addExp="311" />
+		<item cell="196" needNum="127" addExp="313" />
+		<item cell="197" needNum="128" addExp="315" />
+		<item cell="198" needNum="129" addExp="317" />
+		<item cell="199" needNum="130" addExp="319" />
+		<item cell="200" needNum="131" addExp="321" />
+		<item cell="201" needNum="132" addExp="323" />
+		<item cell="202" needNum="133" addExp="325" />
+		<item cell="203" needNum="134" addExp="327" />
+		<item cell="204" needNum="135" addExp="329" />
+		<item cell="205" needNum="136" addExp="331" />
+		<item cell="206" needNum="137" addExp="333" />
+		<item cell="207" needNum="138" addExp="335" />
+		<item cell="208" needNum="139" addExp="337" />
+		<item cell="209" needNum="140" addExp="339" />
+	</storage>                                    
+                                                  
+</root>                                           
+                                                  
+                                                  
+                                                  
+                                                  
+                                                  
+                                                  
+                                                  
+                                                  
+                                                  
+                                                  
+                                                  
+                                                  
+                                                  
+                                                  
+                                                  
+                                                  
+                                                  
+                                                  
+                                                  
+                                                  
+                                                  
+                                                  
+                                                  
+                                                  
+                                                  

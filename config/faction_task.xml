@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <!--帮派任务开启的帮派等级-->
+    <factionTaskStartLevel>1</factionTaskStartLevel>
+    <!--帮派单日任务上限-->
+    <factionTaskNum>20</factionTaskNum>
+    <!--一折购买礼包-->
+    <rewardId>4010</rewardId>
+    <!--一折购买花费(只能是普通货币)-->
+    <price num="1000" money_type="3"/>
+    <taskNum>
+        <num value="1">
+            <!--如果没找到对应的角色等级则使用最后一个-->
+            <roleLevel minRoleLevel="1" roleExp="100" heroExp="100" factionExp="10" factionResource="10" banggong="0" objTmlId="0"  objNum="0" bind="0"/>
+        </num>
+        <num value="2">
+            <!--如果没找到对应的角色等级则使用最后一个-->
+            <roleLevel minRoleLevel="1" roleExp="100" heroExp="100" factionExp="10" factionResource="10" banggong="0" objTmlId="0"  objNum="0" bind="0"/>
+        </num>
+        <num value="3">
+            <!--如果没找到对应的角色等级则使用最后一个-->
+            <roleLevel minRoleLevel="1" roleExp="100" heroExp="100" factionExp="10" factionResource="10" banggong="0" objTmlId="0"  objNum="0" bind="0"/>
+        </num>
+        <num value="4">
+            <!--如果没找到对应的角色等级则使用最后一个-->
+            <roleLevel minRoleLevel="1" roleExp="100" heroExp="100" factionExp="10" factionResource="10" banggong="0" objTmlId="0"  objNum="0" bind="0"/>
+        </num>
+        <num value="5">
+            <!--如果没找到对应的角色等级则使用最后一个-->
+            <roleLevel minRoleLevel="1" roleExp="100" heroExp="100" factionExp="10" factionResource="10" banggong="0" objTmlId="0"  objNum="0" bind="0"/>
+        </num>
+        <num value="6">
+            <!--如果没找到对应的角色等级则使用最后一个-->
+            <roleLevel minRoleLevel="1" roleExp="100" heroExp="100" factionExp="10" factionResource="10" banggong="0" objTmlId="0"  objNum="0" bind="0"/>
+        </num>
+        <num value="7">
+            <!--如果没找到对应的角色等级则使用最后一个-->
+            <roleLevel minRoleLevel="1" roleExp="100" heroExp="100" factionExp="10" factionResource="10" banggong="0" objTmlId="0"  objNum="0" bind="0"/>
+        </num>
+        <num value="8">
+            <!--如果没找到对应的角色等级则使用最后一个-->
+            <roleLevel minRoleLevel="1" roleExp="100" heroExp="100" factionExp="10" factionResource="10" banggong="0" objTmlId="0"  objNum="0" bind="0"/>
+        </num>
+        <num value="9">
+            <!--如果没找到对应的角色等级则使用最后一个-->
+            <roleLevel minRoleLevel="1" roleExp="100" heroExp="100" factionExp="10" factionResource="10" banggong="0" objTmlId="0"  objNum="0" bind="0"/>
+        </num>
+        <num value="10">
+            <!--如果没找到对应的角色等级则使用最后一个-->
+            <roleLevel minRoleLevel="1" roleExp="100" heroExp="100" factionExp="10" factionResource="10" banggong="0" objTmlId="0"  objNum="0" bind="0"/>
+        </num>
+        <num value="11">
+            <!--如果没找到对应的角色等级则使用最后一个-->
+            <roleLevel minRoleLevel="1" roleExp="100" heroExp="100" factionExp="10" factionResource="10" banggong="0" objTmlId="0"  objNum="0" bind="0"/>
+        </num>
+        <num value="12">
+            <!--如果没找到对应的角色等级则使用最后一个-->
+            <roleLevel minRoleLevel="1" roleExp="100" heroExp="100" factionExp="10" factionResource="10" banggong="0" objTmlId="0"  objNum="0" bind="0"/>
+        </num>
+        <num value="13">
+            <!--如果没找到对应的角色等级则使用最后一个-->
+            <roleLevel minRoleLevel="1" roleExp="100" heroExp="100" factionExp="10" factionResource="10" banggong="0" objTmlId="0"  objNum="0" bind="0"/>
+        </num>
+        <num value="14">
+            <!--如果没找到对应的角色等级则使用最后一个-->
+            <roleLevel minRoleLevel="1" roleExp="100" heroExp="100" factionExp="10" factionResource="10" banggong="0" objTmlId="0"  objNum="0" bind="0"/>
+        </num>
+        <num value="15">
+            <!--如果没找到对应的角色等级则使用最后一个-->
+            <roleLevel minRoleLevel="1" roleExp="100" heroExp="100" factionExp="10" factionResource="10" banggong="0" objTmlId="0"  objNum="0" bind="0"/>
+        </num>
+        <num value="16">
+            <!--如果没找到对应的角色等级则使用最后一个-->
+            <roleLevel minRoleLevel="1" roleExp="100" heroExp="100" factionExp="10" factionResource="10" banggong="0" objTmlId="0"  objNum="0" bind="0"/>
+        </num>
+        <num value="17">
+            <!--如果没找到对应的角色等级则使用最后一个-->
+            <roleLevel minRoleLevel="1" roleExp="100" heroExp="100" factionExp="10" factionResource="10" banggong="0" objTmlId="0"  objNum="0" bind="0"/>
+        </num>
+        <num value="18">
+            <!--如果没找到对应的角色等级则使用最后一个-->
+            <roleLevel minRoleLevel="1" roleExp="100" heroExp="100" factionExp="10" factionResource="10" banggong="0" objTmlId="0"  objNum="0" bind="0"/>
+        </num>
+        <num value="19">
+            <!--如果没找到对应的角色等级则使用最后一个-->
+            <roleLevel minRoleLevel="1" roleExp="100" heroExp="100" factionExp="10" factionResource="10" banggong="0" objTmlId="0"  objNum="0" bind="0"/>
+        </num>
+        <num value="20">
+            <!--如果没找到对应的角色等级则使用最后一个-->
+            <roleLevel minRoleLevel="1" roleExp="100" heroExp="100" factionExp="10" factionResource="10" banggong="0" objTmlId="0"  objNum="0" bind="0"/>
+        </num>
+    </taskNum>
+</root>

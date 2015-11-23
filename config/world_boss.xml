@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 世界boss -->
+<root>
+    <Time> 
+		<item start="10:00:00" end="11:30:00"/>
+		<item start="14:00:00" end="15:30:00"/>
+	</Time>
+
+    <!--世界boss地图id  pos:进副本的坐标 needlevel:进世界boss需要角色等级 door:传送门机关ID doorpos:传送门坐标-->
+    <Map id="2003" enterpos="31,123" needlevel="60" door="1001" doorpos="26,91"/>
+
+    <!--boss配置 pos:boss出生点 baseLv:boss基础等级 up:boss升级击杀boss的耗时时长(分钟) -->
+    <Boss pos="16,96" baseLv="60" up="1">
+        <item lv="60" id="20012"/>
+        <item lv="70" id="30012"/>
+        <item lv="80" id="40012"/>
+    </Boss>
+
+    <!--个人伤害奖励-->
+    <DamageAward>
+        <item damage="10">
+            <obj id="5500" num="1" bind="1"/>
+        </item>
+        <item damage="20"> 
+            <obj id="5500" num="1" bind="1"/>
+        </item>
+		<item damage="40"> 
+            <obj id="5500" num="1" bind="1"/>
+        </item>
+		<item damage="60"> 
+            <obj id="5500" num="1" bind="1"/>
+        </item>
+		<item damage="80"> 
+            <obj id="5500" num="1" bind="1"/>
+        </item>
+		<item damage="100"> 
+            <obj id="5500" num="1" bind="1"/>
+        </item>
+		<item damage="120"> 
+            <obj id="5500" num="1" bind="1"/>
+        </item>
+		<item damage="140"> 
+            <obj id="5500" num="1" bind="1"/>
+        </item>
+		<item damage="160"> 
+            <obj id="5500" num="1" bind="1"/>
+        </item>
+		<item damage="180"> 
+            <obj id="5500" num="1" bind="1"/>
+        </item>
+		<item damage="200"> 
+            <obj id="5500" num="1" bind="1"/>
+        </item>
+		<item damage="220"> 
+            <obj id="5500" num="1" bind="1"/>
+        </item>
+		<item damage="240"> 
+            <obj id="5500" num="1" bind="1"/>
+        </item>
+		<item damage="260"> 
+            <obj id="5500" num="1" bind="1"/>
+        </item>
+		<item damage="280"> 
+            <obj id="5500" num="1" bind="1"/>
+        </item>
+		<item damage="300"> 
+            <obj id="5500" num="1" bind="1"/>
+        </item>
+    </DamageAward>
+
+    <!--排名奖励-->
+    <RankAward>
+        <item rank="1-1"> 
+            <obj id="5500" num="1" bind="1"/>
+        </item>
+        <item rank="2-3"> 
+            <obj id="5500" num="1" bind="1"/>
+        </item>
+		<item rank="4-10"> 
+            <obj id="5500" num="1" bind="1"/>
+        </item>
+		<item rank="11-50"> 
+            <obj id="5500" num="1" bind="1"/>
+        </item>
+		<item rank="51-100"> 
+            <obj id="5500" num="1" bind="1"/>
+        </item>
+    </RankAward>
+
+    <!--世界boss最后一击奖励-->
+    <KillAward>
+        <item id="5500" num="1" bind="1"/>
+    </KillAward>
+
+    <!--世界boss第二阶段宝箱 trigger_id:宝箱机关id id:宝箱道具id pos:宝箱刷新出来的坐标点 holdtime:宝箱归属判定的持有时间(秒)-->
+    <Box trigger_id="3001" id="5500" pos="49,46" holdtime="120"/>
+</root>

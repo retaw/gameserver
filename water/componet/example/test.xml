@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Persons>  
+	<Person ID="1101" GOGO="2001">  
+		<age Age="20" />  
+		<age Age="30" />  
+	</Person>  
+	<Person ID="2" GOGO="2002">  
+		<age Age="40" />  
+		<age Age="50" />  
+	</Person>  
+	<WOCAO str="fakdksl"/>
+    <haha> text of haha </haha>
+</Persons>  

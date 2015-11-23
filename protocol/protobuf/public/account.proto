@@ -1,0 +1,71 @@
+syntax = "proto2";
+
+package PublicProto;
+
+
+// step 0-1, client -> platform
+// 无账号注册
+message C_FastSignUp
+{
+    required string device = 1;
+}
+
+// step 0-1, client -> platform
+// 注册
+message C_SignUpWithAccount
+{
+    required string account   = 1;
+    required string password = 2;
+}
+
+// step 0-2, paltform -> client
+// 注册的结果
+message S_SignUpRet
+{
+    required uint32 acc_id   = 1;     // 0 注册失败; 非0 账户id
+}
+
+// step 0-1, client -> platform
+// 用账号密码登录
+message C_LoginByAccount
+{
+    required string account      = 2;
+    required string password     = 3;
+}
+
+// step 0-1, client -> platform
+// 用accId和token登录
+message C_FastLogin
+{
+    required uint64 acc_id    = 1;
+    required string device = 2;
+}
+
+// step 0-2, platform -> client
+// 登录操作的结果
+message S_LoginRet
+{
+    required uint64 acc_id    = 1;      // 0 表示失败
+
+}
+
+// step 0-2, client -> platform
+// 登陆成功的用户选区
+message C_SelectPlatform
+{
+    required uint32 platform    = 1;
+}
+
+// step 0-2, platform -> client
+// 通知用要连接的业务服务器网关
+message S_SelectPlatformRet
+{
+    required uint32 ip     = 1;
+    required uint32 port   = 2;
+    required uint64 token  = 3;
+}
+
+
+
+
+

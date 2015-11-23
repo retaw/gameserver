@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!--needLevel: 功能开放最低等级，daily_task_num：每日任务数量，multi_num：多倍领取倍数-->
+	<task_reward needLevel="50" daily_task_num="20" multi_num="3" >
+	<!--minLevel、maxLevel: 等级区间对应的基础奖励，reward_list：基础奖励配置-->
+		<item minLevel="50"  maxLevel="60"  reward_list="5-100,6-1000"  />
+		<item minLevel="61"  maxLevel="70"  reward_list="5-200,6-2000"  />
+		<item minLevel="71"  maxLevel="80"  reward_list="5-300,6-4000"  />
+		<item minLevel="81"  maxLevel="90"  reward_list="5-400,6-8000"  />
+		<item minLevel="91"  maxLevel="100" reward_list="5-500,6-10000" />
+		<item minLevel="101" maxLevel="150" reward_list="5-600,6-20000" />
+	</task_reward>
+
+	<!-- 
+		 fresh_star_needMoney: 刷新消耗（绑定金币）
+		 top_star_needMoney：一键满星消耗（元宝）
+		 finish_all_task_needMoney：一键全部完成消耗（元宝）
+		 multi_reward_needMoney：单次多倍领取奖励消耗（元宝）
+	-->
+	<!--star: 星级，prob：刷新出现星级的概率，percent：星级对应的基础奖励加成-->
+	<star fresh_star_needMoney="20000" top_star_needMoney="10" finish_all_task_needMoney="400" multi_reward_needMoney="50" >
+		<item star="1"  prob="4"  percent="110" />
+		<item star="2"  prob="6"  percent="120" />
+		<item star="3"  prob="10" percent="130" />
+		<item star="4"  prob="14" percent="140" />
+		<item star="5"  prob="16" percent="150" />
+		<item star="6"  prob="16" percent="160" />
+		<item star="7"  prob="14" percent="170" />
+		<item star="8"  prob="10" percent="180" />
+		<item star="9"  prob="6"  percent="190" />
+		<item star="10" prob="4"  percent="200" />
+	</star>
+
+	<!--完成满星任务奖励-->
+	<!--num: 完成满星任务的个数，rewardId：满足条件，领取的奖励（随机表）-->
+	<top_star_reward>
+		<item num="5"  rewardId="3005" />
+		<item num="10" rewardId="3004" />
+		<item num="15" rewardId="3004" />
+		<item num="20" rewardId="3003" />
+	</top_star_reward>
+
+	<!--惊喜奖励-->
+	<!--day: 连续完成所有日常任务的天数 prob: 普通领取奖励时可获得的惊喜奖励的概率 multi_prob：多倍领取奖励时可获得惊喜奖励的概率-->
+	<!--rewardID：免费领取奖励时几率获得的奖励（随机表），multi_rewardId：三倍领取奖励时几率获得的奖励（随机表）-->
+	<surprise_reward rewardId="4001" multi_rewardId="4002" >
+		<item day="0" prob="100"   multi_prob="10"  />
+		<item day="1" prob="300"   multi_prob="30"  />
+		<item day="2" prob="350"   multi_prob="35"  />
+		<item day="3" prob="400"   multi_prob="40"  />
+		<item day="4" prob="500"   multi_prob="50"  />
+		<item day="5" prob="100"  multi_prob="100" />
+	</surprise_reward>
+
+</root>

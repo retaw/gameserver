@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!--活动-->
+	<!--multiple: 活动期间经验的倍数-->
+	<action multiple="2">
+	<!--notifyTimel:活动广播时间-->
+	<!--beginTime:活动开启时间-->
+	<!--endTime:活动结束时间-->
+		<item notifyTime="11:55:00" beginTime="12:00:00" endTime="12:30:00" />
+		<item notifyTime="17:55:00" beginTime="18:00:00" endTime="18:30:00" />
+	</action>
+
+	<!--角色等级与经验奖励-->
+	<reward>
+		<item minLevel="50"  maxLevel="60"  addExp="10"  />
+		<item minLevel="61"  maxLevel="70"  addExp="20"  />
+		<item minLevel="71"  maxLevel="80"  addExp="30"  />
+		<item minLevel="81"  maxLevel="90"  addExp="100" />
+		<item minLevel="91"  maxLevel="100" addExp="200" />
+		<item minLevel="101" maxLevel="149" addExp="300" />
+		<item minLevel="150" maxLevel="150" addExp="0"	 />
+	</reward>
+
+	<!--泡点类型对应的基础经验倍数（百分比）-->
+	<bubble>
+		<item type="1" percent="10" />
+		<item type="2" percent="20" />
+		<item type="3" percent="30" />
+		<item type="4" percent="40" />
+	</bubble>
+
+	<!--VIP等级与经验加成(百分比)、及使用泡点卡次数限制-->
+	<vip>
+		<!--level: VIP等级-->
+		<!--percent: 经验百分比加成-->
+		<!--limit_count: 每日可使用泡点卡次数限制-->
+		<item level="0" percent="0"  limit_count="5"  />
+		<item level="1" percent="10" limit_count="6"  />
+		<item level="2" percent="20" limit_count="7"  />
+		<item level="3" percent="30" limit_count="8"  />
+		<item level="4" percent="40" limit_count="9"  />
+		<item level="5" percent="50" limit_count="10" />
+		<item level="6" percent="60" limit_count="11" />
+		<item level="7" percent="70" limit_count="12" />
+	</vip>
+
+</root>

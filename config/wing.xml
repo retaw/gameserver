@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!--翅膀晋阶-->
+	<levelup>
+		<item sourceTplId="100114001" level="0" destTplId="100114002" needTurnLifeLevel="0" needLevel="0"  needMoneyType="2" needMoneyNum="100" prob="1000" needYuanbao="20" need_obj_list="1120-30" />
+		<item sourceTplId="100114002" level="1" destTplId="100114020" needTurnLifeLevel="0" needLevel="20" needMoneyType="2" needMoneyNum="200" prob="800"  needYuanbao="30" need_obj_list="1120-20,1121-20" />
+		<item sourceTplId="100114020" level="2" destTplId="100114040" needTurnLifeLevel="0" needLevel="40" needMoneyType="2" needMoneyNum="300" prob="600"  needYuanbao="40" need_obj_list="1121-30,1123-30" />
+		<item sourceTplId="100114040" level="3" destTplId="100114060" needTurnLifeLevel="0" needLevel="60" needMoneyType="2" needMoneyNum="100" prob="400"  needYuanbao="50" need_obj_list="1120-20,1121-30,1123-50" />
+		<item sourceTplId="100114060" level="4" destTplId="100114080" needTurnLifeLevel="0" needLevel="80" needMoneyType="2" needMoneyNum="200" prob="200"  needYuanbao="60" need_obj_list="1123-100" />
+		<item sourceTplId="100114080" level="5" destTplId="0"    needTurnLifeLevel="0" needLevel="0"  needMoneyType="0" needMoneyNum="0"   prob="0"    needYuanbao="0"  need_obj_list="0" />
+	</levelup>
+
+	<!--不同方式的注灵消耗-->
+	<consume>
+		<item type="1" needTplId="1110" needTplNum="1" needMoneyType="2" needMoneyNum="100" rewardLingli="1"  />
+		<item type="2" needTplId="0"    needTplNum="0" needMoneyType="4" needMoneyNum="200" rewardLingli="10" />
+	</consume>
+
+	<!--注灵等级与属性加成-->
+	<reward>
+		<item level="1"  needLingli="10"  addPropPercent="10" />
+		<item level="2"  needLingli="20"  addPropPercent="20" />
+		<item level="3"  needLingli="30"  addPropPercent="30" />
+		<item level="4"  needLingli="50"  addPropPercent="40" />
+		<item level="5"  needLingli="80"  addPropPercent="50" />
+		<item level="6"  needLingli="130" addPropPercent="60" />
+		<item level="7"  needLingli="210" addPropPercent="70" />
+		<item level="8"  needLingli="340" addPropPercent="80" />
+		<item level="9"  needLingli="550" addPropPercent="90" />
+		<item level="10" needLingli="890" addPropPercent="100" />
+	</reward>
+
+</root>

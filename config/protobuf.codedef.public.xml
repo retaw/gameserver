@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<item msg_code="268435457" msg_name="PublicProto.AccountAndTokenToServer"/>
+	<item msg_code="268435458" msg_name="PublicProto.S_ClientLoginReady"/>
+	<item msg_code="268435459" msg_name="PublicProto.C_SetUpName"/>
+	<item msg_code="268435460" msg_name="PublicProto.C_MoveTo"/>
+	<item msg_code="268435461" msg_name="PublicProto.S_ItemRoleInfo"/>
+	<item msg_code="268435462" msg_name="PublicProto.S_ItemFoodInfo"/>
+	<item msg_code="268435463" msg_name="PublicProto.S_ItemThronInfo"/>
+	<item msg_code="268435464" msg_name="PublicProto.S_ItemBulletInfo"/>
+	<item msg_code="268435465" msg_name="PublicProto.S_ItemCollapsar"/>
+	<item msg_code="268435466" msg_name="PublicProto.S_SyncSceneInfo"/>
+	<item msg_code="268435467" msg_name="PublicProto.SceneItemAttr"/>
+	<item msg_code="268435468" msg_name="PublicProto.HighSpeedSceneItemAttr"/>
+	<item msg_code="268435469" msg_name="PublicProto.DeleteItem"/>
+	<item msg_code="268435470" msg_name="PublicProto.S_SyncLogicCenter"/>
+	<item msg_code="268435471" msg_name="PublicProto.S_GameOver"/>
+	<item msg_code="268435472" msg_name="PublicProto.C_Fission"/>
+	<item msg_code="268435473" msg_name="PublicProto.C_Expal"/>
+	<item msg_code="268435474" msg_name="PublicProto.S_UserLogout"/>
+	<item msg_code="268435475" msg_name="PublicProto.S_SceneItemAttrAfterImpactToCollapsar"/>
+	<item msg_code="268435476" msg_name="PublicProto.S_UpdatePoint"/>
+	<item msg_code="268435477" msg_name="PublicProto.C_FastSignUp"/>
+	<item msg_code="268435478" msg_name="PublicProto.C_SignUpWithAccount"/>
+	<item msg_code="268435479" msg_name="PublicProto.S_SignUpRet"/>
+	<item msg_code="268435480" msg_name="PublicProto.C_LoginByAccount"/>
+	<item msg_code="268435481" msg_name="PublicProto.C_FastLogin"/>
+	<item msg_code="268435482" msg_name="PublicProto.S_LoginRet"/>
+	<item msg_code="268435483" msg_name="PublicProto.C_SelectPlatform"/>
+	<item msg_code="268435484" msg_name="PublicProto.S_SelectPlatformRet"/>
+</root>

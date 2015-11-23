@@ -1,0 +1,249 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ACCOUNT_BUFF_SZIE	gateway/loginmsg.h	/^const uint32_t ACCOUNT_BUFF_SZIE = MAX_ACCOUNT_SZIE + 1;$/;"	m	namespace:gateway
+BOOST_INSTALLED_DIR	Makefile	/^export BOOST_INSTALLED_DIR = $(LIBS_DIR)\/google_protobuf\/boost\/installed$/;"	m
+CC	dbcached/Makefile	/^CC = g++$/;"	m
+CC	func/Makefile	/^CC = g++$/;"	m
+CC	gateway/Makefile	/^CC = g++$/;"	m
+CC	http/Makefile	/^CC = g++$/;"	m
+CC	router/Makefile	/^CC = g++$/;"	m
+ClientConnectionChecker	gateway/client_connection_checker.h	/^class ClientConnectionChecker : public water::process::ConnectionChecker$/;"	c	namespace:gateway
+ConnInfo	gateway/client_connection_checker.h	/^    struct ConnInfo$/;"	s	class:gateway::ClientConnectionChecker
+ConnState	gateway/client_connection_checker.h	/^    enum class ConnState $/;"	c	class:gateway::ClientConnectionChecker
+CreateCodeRet	gateway/loginmsg.h	/^    CreateCodeRet()$/;"	f	struct:gateway::CreateCodeRet
+CreateCodeRet	gateway/loginmsg.h	/^struct CreateCodeRet : public PublicMsg$/;"	s	namespace:gateway
+CreateRole	gateway/loginmsg.h	/^    CreateRole()$/;"	f	struct:gateway::CreateRole
+CreateRole	gateway/loginmsg.h	/^struct CreateRole : public PublicMsg$/;"	s	namespace:gateway
+DBCACHED_DBCACHED_H	dbcached/dbcached.h	12;"	d
+DbCached	dbcached/dbcached.cpp	/^DbCached::DbCached(int32_t num, const std::string& configDir, const std::string& logDir)$/;"	f	class:dbcached::DbCached
+DbCached	dbcached/dbcached.h	/^class DbCached : public process::Process$/;"	c	namespace:dbcached
+Func	func/func.cpp	/^Func::Func(int32_t num, const std::string& configDir, const std::string& logDir)$/;"	f	class:func::Func
+Func	func/func.h	/^class Func : public process::Process$/;"	c	namespace:func
+GATEWAY_LOGIN_MSG_H	gateway/loginmsg.h	12;"	d
+GOOGLE_PROTOBUF_INSTALLED_DIR	Makefile	/^export GOOGLE_PROTOBUF_INSTALLED_DIR = $(LIBS_DIR)\/google_protobuf\/installed$/;"	m
+Gateway	gateway/gateway.cpp	/^Gateway::Gateway(int32_t num, const std::string& configDir, const std::string& logDir)$/;"	f	class:gateway::Gateway
+Gateway	gateway/gateway.h	/^class Gateway : public process::Process$/;"	c	namespace:gateway
+HTTP_HTTP_CALLBACK_H	http/http_callback.h	2;"	d
+HTTP_HTTP_H	http/http.h	10;"	d
+HTTP_PARSE_H	http/http_parse.h	8;"	d
+HTTP_URL_CODE_H	http/url_en_decode.h	2;"	d
+Http	http/http.cpp	/^Http::Http(int32_t num, const std::string& configDir, const std::string& logDir)$/;"	f	class:http::Http
+Http	http/http.h	/^class Http: public Process$/;"	c	namespace:http
+HttpCallBack	http/http_callback.h	/^	typedef std::function<bool (water::process::HttpConnectionManager::ConnectionHolder::Ptr, const HttpProtocInfo *)> HttpCallBack;$/;"	t	class:http::HttpCallBackManager
+HttpCallBackManager	http/http_callback.h	/^	HttpCallBackManager()$/;"	f	class:http::HttpCallBackManager
+HttpCallBackManager	http/http_callback.h	/^class HttpCallBackManager$/;"	c	namespace:http
+HttpParse	http/http_parse.cpp	/^HttpParse::HttpParse()$/;"	f	class:http::HttpParse
+HttpParse	http/http_parse.h	/^class HttpParse$/;"	c	namespace:http
+HttpProtocInfo	http/http_parse.h	/^struct HttpProtocInfo$/;"	s	namespace:http
+LoginDevClientQuestLogin	gateway/loginmsg.h	/^    LoginDevClientQuestLogin()$/;"	f	struct:gateway::LoginDevClientQuestLogin
+LoginDevClientQuestLogin	gateway/loginmsg.h	/^struct LoginDevClientQuestLogin : public PublicMsg$/;"	s	namespace:gateway
+MAX_ACCOUNT_SZIE	gateway/loginmsg.h	/^const uint32_t MAX_ACCOUNT_SZIE  = 31;$/;"	m	namespace:gateway
+MAX_NAME_SZIE	gateway/loginmsg.h	/^const uint32_t MAX_NAME_SZIE     = 31;$/;"	m	namespace:gateway
+MYSQLCPPCONN_INSTALLED_DIR	Makefile	/^export MYSQLCPPCONN_INSTALLED_DIR = $(LIBS_DIR)\/google_protobuf\/mysqlconnector++\/installed$/;"	m
+NAME_BUFF_SZIE	gateway/loginmsg.h	/^const uint32_t NAME_BUFF_SZIE    = MAX_ACCOUNT_SZIE + 1;$/;"	m	namespace:gateway
+PROCESS_DBCACHED_TEST_H	dbcached/test.h	12;"	d
+PROCESS_GATEWAY_CLIENT_CONNECTION_CHECKER_H	gateway/client_connection_checker.h	12;"	d
+PROCESS_GATEWAY_GATEWAY_H	gateway/gateway.h	10;"	d
+PROCESS_GATEWAY_TEST_H	gateway/test.h	12;"	d
+PROTOCOL_DIR	Makefile	/^export PROTOCOL_DIR     = $(ROOT_DIR)\/protocol$/;"	m
+REG_MESSAGE_HANDLER	func/register_tcp_msg_handler.cpp	39;"	d	file:
+REG_PRIVATE	dbcached/register_tcp_msg_handler.cpp	21;"	d	file:
+REG_PRIVATE	gateway/register_tcp_msg_handler.cpp	20;"	d	file:
+ROUTER_ROUTER_H	router/router.h	10;"	d
+Ret	gateway/loginmsg.h	/^    enum class Ret: uint8_t$/;"	c	struct:gateway::CreateCodeRet
+Router	router/router.cpp	/^Router::Router(int32_t num, const std::string& configDir, const std::string& logDir)$/;"	f	class:router::Router
+Router	router/router.h	/^class Router : public Process$/;"	c	namespace:router
+SUBDIR	Makefile	/^SUBDIR =  \\$/;"	m
+SelectRole	gateway/loginmsg.h	/^    SelectRole()$/;"	f	struct:gateway::SelectRole
+SelectRole	gateway/loginmsg.h	/^struct SelectRole : public PublicMsg$/;"	s	namespace:gateway
+UrlCode	http/url_en_decode.h	/^class UrlCode$/;"	c	namespace:http
+WATER_EXCEPTON_H	router/process_exception.h	10;"	d
+account	gateway/client_connection_checker.h	/^        std::string account;$/;"	m	struct:gateway::ClientConnectionChecker::ConnInfo
+account	gateway/loginmsg.h	/^    char account[ACCOUNT_BUFF_SZIE];$/;"	m	struct:gateway::LoginDevClientQuestLogin
+addUncheckedConnection	gateway/client_connection_checker.cpp	/^void ClientConnectionChecker::addUncheckedConnection(net::PacketConnection::Ptr conn, ConnType type)$/;"	f	class:gateway::ClientConnectionChecker
+base_cc_flag	Makefile	/^export base_cc_flag = -I$(ROOT_DIR) -I$(BASE_DIR)$/;"	m
+base_ln_flag	Makefile	/^export base_ln_flag = \\$/;"	m
+boost_cc_flag	Makefile	/^export boost_cc_flag       = $(BOOST_INSTALLED_DIR)\/include$/;"	m
+boost_ln_flag	Makefile	/^export boost_ln_flag       = $(BOOST_INSTALLED_DIR)\/lib$/;"	m
+cc	dbcached/Makefile	/^cc = g++$/;"	m
+cc	func/Makefile	/^cc = g++$/;"	m
+cc	gateway/Makefile	/^cc = g++$/;"	m
+cc	http/Makefile	/^cc = g++$/;"	m
+cc	router/Makefile	/^cc = g++$/;"	m
+cc_flags	dbcached/Makefile	/^cc_flags = -std=c++11 -ggdb -Wall -Werror \\$/;"	m
+cc_flags	func/Makefile	/^cc_flags = -std=c++11 -ggdb -Wall -Werror \\$/;"	m
+cc_flags	gateway/Makefile	/^cc_flags = -std=c++11 -ggdb -Wall -Werror \\$/;"	m
+cc_flags	http/Makefile	/^cc_flags = -std=c++11 -ggdb -Wall -Werror \\$/;"	m
+cc_flags	router/Makefile	/^cc_flags = -std=c++11 -ggdb -Wall -Werror \\$/;"	m
+checkConn	gateway/client_connection_checker.cpp	/^void checkConn()$/;"	f	namespace:gateway
+codeCreateRole	gateway/loginmsg.h	/^const TcpMsgCode codeCreateRole = 4;$/;"	m	namespace:gateway
+codeCreateRoleRet	gateway/loginmsg.h	/^const TcpMsgCode codeCreateRoleRet = 5;$/;"	m	namespace:gateway
+codeLoginDevClientQuestLogin	gateway/loginmsg.h	/^const TcpMsgCode codeLoginDevClientQuestLogin = 1;$/;"	m	namespace:gateway
+codeLoginRetRoleList	gateway/loginmsg.h	/^    codeLoginRetRoleList()$/;"	f	struct:gateway::codeLoginRetRoleList
+codeLoginRetRoleList	gateway/loginmsg.h	/^const TcpMsgCode codeLoginRetRoleList = 2;$/;"	m	namespace:gateway
+codeLoginRetRoleList	gateway/loginmsg.h	/^struct codeLoginRetRoleList : public PublicMsg$/;"	s	namespace:gateway
+codeSelectRole	gateway/loginmsg.h	/^const TcpMsgCode codeSelectRole = 3;$/;"	m	namespace:gateway
+conflictedName	gateway/loginmsg.h	/^        conflictedName = 2,$/;"	m	class:gateway::CreateCodeRet::Ret
+conn	gateway/client_connection_checker.h	/^        water::net::PacketConnection::Ptr conn;$/;"	m	struct:gateway::ClientConnectionChecker::ConnInfo
+dbcached	dbcached/dbcached.cpp	/^namespace dbcached{$/;"	n	file:
+dbcached	dbcached/dbcached.h	/^namespace dbcached{$/;"	n
+dbcached	dbcached/register_tcp_msg_handler.cpp	/^namespace dbcached{$/;"	n	file:
+dbcached	dbcached/register_timer_handler.cpp	/^namespace dbcached{$/;"	n	file:
+dbcached	dbcached/test.cpp	/^namespace dbcached{$/;"	n	file:
+dbcached	dbcached/test.h	/^namespace dbcached{$/;"	n
+deal	gateway/client_connection_checker.h	/^    void deal(ProtoMsg msg, TimePoint tp)$/;"	f	class:gateway::ClientConnectionChecker
+dealPacket	http/http.cpp	/^void Http::dealPacket(HttpConnectionManager::ConnectionHolder::Ptr connHolder, net::Packet::CPtr packet)$/;"	f	class:http::Http
+dealRequest	http/http_parse.cpp	/^bool HttpParse::dealRequest(water::process::HttpConnectionManager::ConnectionHolder::Ptr connHolder)$/;"	f	class:http::HttpParse
+deal_GetDbNum	dbcached/test.cpp	/^void deal_GetDbNum(const ProtoMsgPtr& rev, ProcessIdentity remotePid, const componet::TimePoint& now)$/;"	f	namespace:dbcached
+deal_RetDbNum	gateway/test.cpp	/^void deal_RetDbNum(const ProtoMsgPtr& rev, ProcessIdentity remotePid, const componet::TimePoint& now)$/;"	f	namespace:gateway
+del	http/http_callback.cpp	/^void HttpCallBackManager::del(const std::string &key) $/;"	f	class:http::HttpCallBackManager
+dependent_water_files	Makefile	/^export dependent_water_files =\\$/;"	m
+extendInit	dbcached/dbcached.cpp	/^void DbCached::extendInit()$/;"	f	class:dbcached::DbCached
+extendInit	func/func.cpp	/^void Func::extendInit()$/;"	f	class:func::Func
+extendInit	gateway/gateway.cpp	/^void Gateway::extendInit()$/;"	f	class:gateway::Gateway
+extendInit	http/http.cpp	/^void Http::extendInit()$/;"	f	class:http::Http
+extendInit	router/router.cpp	/^void Router::extendInit()$/;"	f	class:router::Router
+func	func/func.cpp	/^namespace func{$/;"	n	file:
+func	func/func.h	/^namespace func{$/;"	n
+func	func/register_tcp_msg_handler.cpp	/^namespace func{$/;"	n	file:
+func	func/register_timer_handler.cpp	/^namespace func{$/;"	n	file:
+gateway	gateway/client_connection_checker.cpp	/^namespace gateway{$/;"	n	file:
+gateway	gateway/client_connection_checker.h	/^namespace gateway{$/;"	n
+gateway	gateway/gateway.cpp	/^namespace gateway{$/;"	n	file:
+gateway	gateway/gateway.h	/^namespace gateway{$/;"	n
+gateway	gateway/loginmsg.h	/^namespace gateway{$/;"	n
+gateway	gateway/register_tcp_msg_handler.cpp	/^namespace gateway{$/;"	n	file:
+gateway	gateway/register_timer_handler.cpp	/^namespace gateway{$/;"	n	file:
+gateway	gateway/test.cpp	/^namespace gateway{$/;"	n	file:
+gateway	gateway/test.h	/^namespace gateway{$/;"	n
+getFun	http/http_callback.cpp	/^HttpCallBackManager::HttpCallBack HttpCallBackManager::getFun(const std::string &key) const$/;"	f	class:http::HttpCallBackManager
+getHeaderLen	http/http_parse.cpp	/^const int HttpParse::getHeaderLen(const char *buf, const int buflen) const$/;"	f	class:http::HttpParse
+getMe	http/http_callback.h	/^	static HttpCallBackManager& getMe()$/;"	f	class:http::HttpCallBackManager
+getMe	http/url_en_decode.h	/^	static UrlCode& getMe()$/;"	f	class:http::UrlCode
+google_protobuf_cc_flag	Makefile	/^export google_protobuf_cc_flag       = -I$(GOOGLE_PROTOBUF_INSTALLED_DIR)\/include$/;"	m
+google_protobuf_ln_flag	Makefile	/^export google_protobuf_ln_flag       = -L$(GOOGLE_PROTOBUF_INSTALLED_DIR)\/lib -lprotobuf$/;"	m
+header_info	http/http_parse.h	/^	std::string header_info;     \/\/total http head$/;"	m	struct:http::HttpProtocInfo
+http	http/http.cpp	/^namespace http{$/;"	n	file:
+http	http/http.h	/^namespace http{$/;"	n
+http	http/http_callback.cpp	/^namespace http$/;"	n	file:
+http	http/http_callback.h	/^namespace http$/;"	n
+http	http/http_parse.cpp	/^namespace http$/;"	n	file:
+http	http/http_parse.h	/^namespace http$/;"	n
+http	http/url_en_decode.cpp	/^namespace http$/;"	n	file:
+http	http/url_en_decode.h	/^namespace http$/;"	n
+id	gateway/client_connection_checker.h	/^        uint64_t id = 0;$/;"	m	struct:gateway::ClientConnectionChecker::ConnInfo
+init	dbcached/dbcached.cpp	/^void DbCached::init(int32_t num, const std::string& configDir, const std::string& logDir)$/;"	f	class:dbcached::DbCached
+init	func/func.cpp	/^void Func::init(int32_t num, const std::string& configDir, const std::string& logDir)$/;"	f	class:func::Func
+init	gateway/gateway.cpp	/^void Gateway::init(int32_t num, const std::string& configDir, const std::string& logDir)$/;"	f	class:gateway::Gateway
+init	router/router.cpp	/^void Router::init(int32_t num, const std::string& configDir, const std::string& logDir)$/;"	f	class:router::Router
+initCallBack	http/http_callback.cpp	/^void HttpCallBackManager::initCallBack()$/;"	f	class:http::HttpCallBackManager
+invalidName	gateway/loginmsg.h	/^        invalidName    = 1,$/;"	m	class:gateway::CreateCodeRet::Ret
+ln_flags	dbcached/Makefile	/^ln_flags = -Wl,-dn\\$/;"	m
+ln_flags	func/Makefile	/^ln_flags = -Wl,-dn\\$/;"	m
+ln_flags	gateway/Makefile	/^ln_flags = -Wl,-dn\\$/;"	m
+ln_flags	http/Makefile	/^ln_flags = -Wl,-dn\\$/;"	m
+ln_flags	router/Makefile	/^ln_flags = -Wl,-dn\\$/;"	m
+m_conns	gateway/client_connection_checker.h	/^    std::list<ConnInfo> m_conns;$/;"	m	class:gateway::ClientConnectionChecker
+m_funcMap	http/http_callback.h	/^	std::map<std::string, HttpCallBack> m_funcMap;$/;"	m	class:http::HttpCallBackManager
+m_me	dbcached/dbcached.cpp	/^DbCached* DbCached::m_me = nullptr;$/;"	m	class:dbcached::DbCached	file:
+m_me	dbcached/dbcached.h	/^    static DbCached* m_me;$/;"	m	class:dbcached::DbCached
+m_me	func/func.cpp	/^Func* Func::m_me = nullptr;$/;"	m	class:func::Func	file:
+m_me	func/func.h	/^    static Func* m_me;$/;"	m	class:func::Func
+m_me	gateway/gateway.cpp	/^Gateway* Gateway::m_me = nullptr;$/;"	m	class:gateway::Gateway	file:
+m_me	gateway/gateway.h	/^    static Gateway* m_me;$/;"	m	class:gateway::Gateway
+m_me	router/router.cpp	/^Router* Router::m_me = nullptr;$/;"	m	class:router::Router	file:
+m_me	router/router.h	/^    static Router* m_me;$/;"	m	class:router::Router
+m_protoc_info	http/http_parse.h	/^	HttpProtocInfo m_protoc_info;$/;"	m	class:http::HttpParse
+main	dbcached/main.cpp	/^int main(int argc, char* argv[])$/;"	f
+main	func/main.cpp	/^int main(int argc, char* argv[])$/;"	f
+main	gateway/main.cpp	/^int main(int argc, char* argv[])$/;"	f
+main	http/main.cpp	/^int main(int argc, char* argv[])$/;"	f
+main	router/main.cpp	/^int main(int argc, char* argv[])$/;"	f
+me	dbcached/dbcached.cpp	/^DbCached& DbCached::me()$/;"	f	class:dbcached::DbCached
+me	func/func.cpp	/^Func& Func::me()$/;"	f	class:func::Func
+me	gateway/gateway.cpp	/^Gateway& Gateway::me()$/;"	f	class:gateway::Gateway
+me	http/http_callback.h	/^	static HttpCallBackManager me;$/;"	m	class:http::HttpCallBackManager
+me	http/url_en_decode.cpp	/^UrlCode UrlCode::me;$/;"	m	class:http::UrlCode	file:
+me	http/url_en_decode.h	/^	static UrlCode me;$/;"	m	class:http::UrlCode
+me	router/router.cpp	/^Router& Router::me()$/;"	f	class:router::Router
+mysqlcppconn_cc_flag	Makefile	/^export mysqlcppconn_cc_flag       = $(MYSQLCPPCONN_INSTALLED_DIR)\/include$/;"	m
+mysqlcppconn_ln_flag	Makefile	/^export mysqlcppconn_ln_flag       = $(MYSQLCPPCONN_INSTALLED_DIR)\/lib64 -lmysqlcppconn-static$/;"	m
+name	gateway/loginmsg.h	/^        char name[NAME_BUFF_SZIE];$/;"	m	struct:gateway::codeLoginRetRoleList::__anon1
+name	gateway/loginmsg.h	/^    char name[NAME_BUFF_SZIE];$/;"	m	struct:gateway::CreateRole
+objects	dbcached/Makefile	/^objects = \\$/;"	m
+objects	func/Makefile	/^objects = func.o\\$/;"	m
+objects	gateway/Makefile	/^objects = \\$/;"	m
+objects	http/Makefile	/^objects = http_callback.o\\$/;"	m
+objects	router/Makefile	/^objects = router.o\\$/;"	m
+override	dbcached/dbcached.h	/^                         const componet::TimePoint& now) override;$/;"	m	class:dbcached::DbCached
+override	dbcached/dbcached.h	/^    void extendInit() override;$/;"	m	class:dbcached::DbCached
+override	func/func.h	/^    void extendInit() override;$/;"	m	class:func::Func
+override	gateway/client_connection_checker.h	/^    void addUncheckedConnection(water::net::PacketConnection::Ptr conn, ConnType type) override;$/;"	m	class:gateway::ClientConnectionChecker
+override	gateway/client_connection_checker.h	/^    void checkConn() override;$/;"	m	class:gateway::ClientConnectionChecker
+override	gateway/gateway.h	/^                         const componet::TimePoint& now) override;$/;"	m	class:gateway::Gateway
+override	gateway/gateway.h	/^    void extendInit() override;$/;"	m	class:gateway::Gateway
+override	router/router.h	/^                         const componet::TimePoint& now) override;$/;"	m	class:router::Router
+override	router/router.h	/^    void extendInit() override;$/;"	m	class:router::Router
+parseHttp	http/http_parse.cpp	/^bool HttpParse::parseHttp(water::process::HttpConnectionManager::ConnectionHolder::Ptr connHolder, water::net::Packet::CPtr packet)$/;"	f	class:http::HttpParse
+parseHttpHeader	http/http_parse.cpp	/^bool HttpParse::parseHttpHeader()$/;"	f	class:http::HttpParse
+php_htoi	http/url_en_decode.cpp	/^int UrlCode::php_htoi(const char *s)$/;"	f	class:http::UrlCode
+post_data	http/http_parse.h	/^	std::string post_data;     \/\/ POST data buffer *\/$/;"	m	struct:http::HttpProtocInfo
+post_data_len	http/http_parse.h	/^	int post_data_len = 0;$/;"	m	struct:http::HttpProtocInfo
+privateMessage_testmsg	func/register_tcp_msg_handler.cpp	/^void privateMessage_testmsg(TcpMsg* tcpMsg, TcpPacket::SizeType msgSize,$/;"	f	namespace:func
+protobuf	func/func.h	/^namespace protocol{namespace protobuf{ class Message; } };$/;"	n	namespace:protocol
+protocol	func/func.h	/^namespace protocol{namespace protobuf{ class Message; } };$/;"	n
+query_string	http/http_parse.h	/^	std::string query_string;      \/\/  terminated  $/;"	m	struct:http::HttpProtocInfo
+readHeader	http/http_parse.cpp	/^bool HttpParse::readHeader(water::net::Packet::CPtr packet)$/;"	f	class:http::HttpParse
+recvAccount	gateway/client_connection_checker.h	/^        recvAccount,  \/\/等着接收账号和token$/;"	m	class:gateway::ClientConnectionChecker::ConnState
+recvId	gateway/client_connection_checker.h	/^        recvId,       \/\/等dbcached服务器发回Id, 这里需要考虑超时$/;"	m	class:gateway::ClientConnectionChecker::ConnState
+reg	http/http_callback.cpp	/^bool HttpCallBackManager::reg(const std::string &key, HttpCallBack fun)$/;"	f	class:http::HttpCallBackManager
+registerPrivateProtoHandler	dbcached/register_tcp_msg_handler.cpp	/^void DbCached::registerPrivateProtoHandler()$/;"	f	class:dbcached::DbCached
+registerPrivateProtoHandler	gateway/register_tcp_msg_handler.cpp	/^void Gateway::registerPrivateProtoHandler()$/;"	f	class:gateway::Gateway
+registerTcpMsgHandler	func/register_tcp_msg_handler.cpp	/^void Func::registerTcpMsgHandler()$/;"	f	class:func::Func
+registerTimerHandler	dbcached/register_timer_handler.cpp	/^void DbCached::registerTimerHandler()$/;"	f	class:dbcached::DbCached
+registerTimerHandler	func/register_timer_handler.cpp	/^void Func::registerTimerHandler()$/;"	f	class:func::Func
+registerTimerHandler	gateway/register_timer_handler.cpp	/^void Gateway::registerTimerHandler()$/;"	f	class:gateway::Gateway
+request_method	http/http_parse.h	/^	std::string request_method;    \/\/ "GET", "POST"$/;"	m	struct:http::HttpProtocInfo
+ret	gateway/loginmsg.h	/^    Ret ret = Ret::successful;$/;"	m	struct:gateway::CreateCodeRet
+rid	gateway/loginmsg.h	/^        uint64_t rid;$/;"	m	struct:gateway::codeLoginRetRoleList::__anon1
+rid	gateway/loginmsg.h	/^    uint64_t rid;$/;"	m	struct:gateway::SelectRole
+roleList	gateway/loginmsg.h	/^    } roleList[3];$/;"	m	struct:gateway::codeLoginRetRoleList	typeref:struct:gateway::codeLoginRetRoleList::__anon1
+router	router/router.cpp	/^namespace router{$/;"	n	file:
+router	router/router.h	/^namespace router{$/;"	n
+sendAccount	gateway/client_connection_checker.h	/^        sendAccount,  \/\/需要发账号去db$/;"	m	class:gateway::ClientConnectionChecker::ConnState
+sendId	gateway/client_connection_checker.h	/^        sendId,       \/\/把Id信息返回给客户端$/;"	m	class:gateway::ClientConnectionChecker::ConnState
+sendToPrivate	dbcached/dbcached.cpp	/^bool DbCached::sendToPrivate(ProcessIdentity pid, TcpMsgCode code)$/;"	f	class:dbcached::DbCached
+sendToPrivate	dbcached/dbcached.cpp	/^bool DbCached::sendToPrivate(ProcessIdentity pid, TcpMsgCode code, const ProtoMsg& proto)$/;"	f	class:dbcached::DbCached
+sendToPrivate	func/func.cpp	/^bool Func::sendToPrivate(ProcessIdentity remoteProcess, const void* privateMsg, uint32_t size)$/;"	f	class:func::Func
+sendToPrivate	gateway/gateway.cpp	/^bool Gateway::sendToPrivate(ProcessIdentity pid, TcpMsgCode code)$/;"	f	class:gateway::Gateway
+sendToPrivate	gateway/gateway.cpp	/^bool Gateway::sendToPrivate(ProcessIdentity pid, TcpMsgCode code, const ProtoMsg& proto)$/;"	f	class:gateway::Gateway
+sendToPrivate	gateway/gateway.cpp	/^bool Gateway::sendToPrivate(ProcessIdentity pid, TcpMsgCode code, const void* bin, uint32_t size)$/;"	f	class:gateway::Gateway
+send_GetDbNum	gateway/test.cpp	/^void send_GetDbNum(const componet::TimePoint& now)$/;"	f	namespace:gateway
+size	gateway/loginmsg.h	/^    uint8_t size = 0;$/;"	m	struct:gateway::codeLoginRetRoleList
+state	gateway/client_connection_checker.h	/^        ConnState state;$/;"	m	struct:gateway::ClientConnectionChecker::ConnInfo
+successful	gateway/loginmsg.h	/^        successful     = 0,$/;"	m	class:gateway::CreateCodeRet::Ret
+target	dbcached/Makefile	/^target = dbcached_exec$/;"	m
+target	func/Makefile	/^target = func_exec$/;"	m
+target	gateway/Makefile	/^target = gateway_exec$/;"	m
+target	http/Makefile	/^target = http_exec$/;"	m
+target	router/Makefile	/^target = router_exec$/;"	m
+target_ln_dependents	dbcached/Makefile	/^target_ln_dependents = $(dependent_water_files)\\$/;"	m
+target_ln_dependents	func/Makefile	/^target_ln_dependents = $(dependent_water_files)\\$/;"	m
+target_ln_dependents	gateway/Makefile	/^target_ln_dependents = $(dependent_water_files)\\$/;"	m
+target_ln_dependents	http/Makefile	/^target_ln_dependents = $(dependent_water_files)\\$/;"	m
+target_ln_dependents	router/Makefile	/^target_ln_dependents = $(dependent_water_files)\\$/;"	m
+tcpPacketHandle	dbcached/dbcached.cpp	/^void DbCached::tcpPacketHandle(TcpPacket::Ptr packet, $/;"	f	class:dbcached::DbCached
+tcpPacketHandle	gateway/gateway.cpp	/^void Gateway::tcpPacketHandle(TcpPacket::Ptr packet, $/;"	f	class:gateway::Gateway
+tcpPacketHandle	router/router.cpp	/^void Router::tcpPacketHandle(TcpPacket::Ptr packet,$/;"	f	class:router::Router
+test2SecsTimerHandler	dbcached/test.cpp	/^void test2SecsTimerHandler(const componet::TimePoint& now)$/;"	f	namespace:dbcached
+test2SecsTimerHandler	func/register_timer_handler.cpp	/^void test2SecsTimerHandler(const componet::TimePoint& now)$/;"	f	namespace:func
+tstFn	http/http_callback.cpp	/^bool tstFn(HttpConnectionManager::ConnectionHolder::Ptr connHolder, const HttpProtocInfo* httpInfo) $/;"	f	namespace:http
+uri	http/http_parse.h	/^	std::string uri;           		\/\/ Normalized URI $/;"	m	struct:http::HttpProtocInfo
+urlDecode	http/url_en_decode.cpp	/^std::string UrlCode::urlDecode(const std::string &src) $/;"	f	class:http::UrlCode
+urlEncode	http/url_en_decode.cpp	/^std::string UrlCode::urlEncode(const std::string& src)$/;"	f	class:http::UrlCode
+~HttpCallBackManager	http/http_callback.h	/^	~HttpCallBackManager()$/;"	f	class:http::HttpCallBackManager
+~HttpParse	http/http_parse.cpp	/^HttpParse::~HttpParse()$/;"	f	class:http::HttpParse

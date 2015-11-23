@@ -1,0 +1,25 @@
+syntax = "proto2";
+
+package PrivateProto;
+
+// 接入的区告知super自己准备好
+// zone -> super
+message ZoneActiveInfo
+{
+    required uint32 player_load_reserve  = 1;  //剩余可承载人数
+}
+
+// super -> zone
+message RegVerifiedAccountToGateway
+{
+    required uint64 acc_id     = 1;
+    required uint64 login_id_super   = 2;
+}
+
+// zone -> super
+message ZoneGatewayReady
+{
+    required uint64 acc_id     = 1;
+    required uint64 login_id_super   = 2;
+    required uint64 token = 3;
+}

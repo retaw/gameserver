@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <!--此值为放大1000倍,可以为负-->
+    <hp_param1>800</hp_param1> <!--生命系数-->
+    <hp_param2>60000</hp_param2>
+    <hp_param3>0</hp_param3>
+    <mp_param1>800</mp_param1> <!--魔法系数-->
+    <mp_param2>60000</mp_param2>
+    <mp_param3>0</mp_param3>
+    <atk_param>15000</atk_param> <!--有效攻击系数-->
+    <pdef_param>15000</pdef_param> <!--防御系数-->
+    <mdef_param>15000</mdef_param>
+    <shot_param1>950</shot_param1> <!--命中系数-->
+    <shot_param2>1000</shot_param2>
+    <shot_param3>965</shot_param3>
+    <shot_param4>350</shot_param4>
+    <shot_param5>500</shot_param5>
+    <crit_param1>1000</crit_param1> <!--暴击系数-->
+    <crit_param2>950</crit_param2>
+    <crit_param3>350</crit_param3>
+    <crit_param4>1000</crit_param4>
+    <crit_param5>5</crit_param5>
+    <crit_param6>500</crit_param6>
+    <break_param1>350</break_param1> <!--破防系数-->
+    <break_param2>20000</break_param2>
+    <break_effect_param1>200</break_effect_param1> <!--破防效果系数-->
+    <break_effect_param2>500</break_effect_param2>
+    <break_effect_param3>16000</break_effect_param3>
+    <vampire_param1>700</vampire_param1> <!--吸血系数-->
+    <vampire_param2>56000</vampire_param2>
+    <vampire_effect_param1>200</vampire_effect_param1> <!--吸血效果系数-->
+    <vampire_effect_param2>500</vampire_effect_param2>
+    <vampire_effect_param3>26000</vampire_effect_param3>
+    <dmgadd_param1>800</dmgadd_param1> <!--伤害加成系数-->
+    <dmgadd_param2>60000</dmgadd_param2>
+    <dmgadd_param3>0</dmgadd_param3>
+    <dmgadd_param4>-600</dmgadd_param4>
+    <final_param>50</final_param> <!--平砍公式伤害系数-->
+    <final_warrior_param>1200</final_warrior_param> <!--战士技能-->
+    <final_magic_param>1500</final_magic_param> <!--法师技能-->
+    <final_witch_param>1900</final_witch_param> <!--道士技能-->
+</root>

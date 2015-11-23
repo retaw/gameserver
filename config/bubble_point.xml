@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!--kickoutSec:活动结束后N秒踢人-->
+	<action kickoutSec="30">
+		<item notifyTime="12:55:00" beginTime="13:00:00" endTime="13:30:00" />
+		<item notifyTime="18:55:00" beginTime="19:00:00" endTime="19:30:00" />
+	</action>
+
+	<!--角色等级与经验奖励-->
+	<normal mapId="2001" needLevel="60">
+		<item minLevel="50"  maxLevel="60"  addExp="10"  />
+		<item minLevel="61"  maxLevel="70"  addExp="20"  />
+		<item minLevel="71"  maxLevel="80"  addExp="30"  />
+		<item minLevel="81"  maxLevel="90"  addExp="100" />
+		<item minLevel="91"  maxLevel="100" addExp="200" />
+		<item minLevel="101" maxLevel="149" addExp="300" />
+		<item minLevel="150" maxLevel="150" addExp="0"	 />
+	</normal>
+
+	<!--span:特殊点随机奖励时间间隔 percent:特殊点经验奖励加成(百分比) rewardId:随机奖励ID -->
+	<special_point span="60">
+		<item posX="37" posY="46" buffId="10152" percent="300" rewardId="3003" name="橙色1号" />
+		<item posX="28" posY="36" buffId="10142" percent="200" rewardId="3004" name="紫色1号" />
+		<item posX="46" posY="57" buffId="10132" percent="200" rewardId="3004" name="紫色2号" />
+		<item posX="31" posY="24" buffId="10132" percent="150" rewardId="3005" name="蓝色1号" />
+		<item posX="45" posY="38" buffId="10132" percent="150" rewardId="3005" name="蓝色2号" />
+		<item posX="55" posY="48" buffId="10132" percent="150" rewardId="3005" name="蓝色3号" />
+	</special_point>
+
+</root>

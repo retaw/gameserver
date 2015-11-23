@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <!--开放灵珠功能的最低等级-->
+    <openLevel>10</openLevel>
+    <!--刷新消耗金币-->
+    <refreshCostMoney>20000</refreshCostMoney>
+    <!--刷新次数购买花费元宝-->
+    <buyRefreshCostVcoin>10</buyRefreshCostVcoin>
+    <!--刷新上限,vip无上限-->
+    <refreshUpTimes>50</refreshUpTimes>
+    <!--领取上限-->
+    <maxGetTimes>5</maxGetTimes>
+    <!--购买领取次数花费元宝个数-->
+    <buyGetTimesCost>50</buyGetTimesCost>
+
+
+    <!--vip对应的可购买次数-->
+    <vips max="2">
+        <vip level="0" num="1"/>
+        <vip level="1" num="2"/>
+        <vip level="2" num="3"/>
+    </vips>
+
+    <!--星级（只有6级）-->
+    <starLevels num="6">
+        <!--level:经验珠等级;exp:该等级对应给予的经验,random:在该级刷新对应的升级概率-->
+        <starLevel level="1" exp="100000" addLevelRandom="5000"/>
+        <starLevel level="2" exp="200000" addLevelRandom="5000"/>
+        <starLevel level="3" exp="500000" addLevelRandom="5000"/>
+        <starLevel level="4" exp="1000000" addLevelRandom="5000"/>
+        <starLevel level="5" exp="1500000" addLevelRandom="5000"/>
+        <starLevel level="6" exp="2000000" addLevelRandom="5000"/>
+    </starLevels>
+    
+    <!--加倍类型(只有5行)-->
+    <types num="5">
+        <!--ratio:领取倍数;costVcoin:领取话费元宝;objectTplId:物品是否绑定(0:无效,1:不绑定,2:绑定);objectNum:物品数量;random:物品给予概率;objBind:物品是否绑定;vip:开启对应vip等级-->
+        <type ratio="1" costVcoin="0" objectTplId="0" objectNum="1" random="10000" objBind="1" vip="0"/>
+        <type ratio="5" costVcoin="200" objectTplId="0" objectNum="1" random="10000" objBind="1" vip="0"/>
+        <type ratio="10" costVcoin="340" objectTplId="5307" objectNum="1" random="10000" objBind="1" vip="1"/>
+        <type ratio="20" costVcoin="560" objectTplId="5307" objectNum="2" random="10000" objBind="1" vip="2"/>
+        <type ratio="50" costVcoin="1000" objectTplId="5307" objectNum="3" random="5000" objBind="1" vip="3"/>
+    </types>
+</root>

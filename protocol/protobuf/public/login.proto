@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package PublicProto; 
+
+message testmsg 
+{ 
+	required int32     a = 1;  // ID 
+	required int32     b = 2;  // str 
+}
+
+message AccountAndTokenToServer
+{
+    required string       account = 1;
+}

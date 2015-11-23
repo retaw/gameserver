@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<item msg_code="1" msg_name="ChannelMsgFromClient"/>
+	<item msg_code="2" msg_name="ChannelMsgToClient"/>
+	<item msg_code="3" msg_name="LoginRetRoleList"/>
+	<item msg_code="4" msg_name="SelectRole"/>
+	<item msg_code="5" msg_name="CreateRole"/>
+	<item msg_code="6" msg_name="RetCreateRole"/>
+	<item msg_code="7" msg_name="LoginRet"/>
+	<item msg_code="8" msg_name="GetRandName"/>
+	<item msg_code="9" msg_name="RetRandName"/>
+	<item msg_code="10" msg_name="NpcScreenData"/>
+	<item msg_code="11" msg_name="NpcsAroundMe"/>
+	<item msg_code="12" msg_name="NpcLeaveInfo"/>
+	<item msg_code="13" msg_name="NpcDieInfo"/>
+	<item msg_code="14" msg_name="RoleMoveToPos"/>
+	<item msg_code="15" msg_name="UpdateRolePosToClient"/>
+	<item msg_code="16" msg_name="SynchronizeRolePos"/>
+	<item msg_code="17" msg_name="SkillListToClient"/>
+	<item msg_code="18" msg_name="RoleRequestAttack"/>
+	<item msg_code="19" msg_name="PKItems"/>
+	<item msg_code="20" msg_name="RetAttackSucess"/>
+	<item msg_code="21" msg_name="RetAttackFail"/>
+	<item msg_code="22" msg_name="HpChangedToNine"/>
+	<item msg_code="23" msg_name="MpChangedToNine"/>
+	<item msg_code="24" msg_name="ChongfengMsg"/>
+	<item msg_code="25" msg_name="RefreshSkillCD"/>
+	<item msg_code="26" msg_name="NewSceneMapId"/>
+	<item msg_code="27" msg_name="RolesAroundMe"/>
+	<item msg_code="28" msg_name="SelfMainInfo"/>
+	<item msg_code="29" msg_name="RoleLeaveInfo"/>
+	<item msg_code="30" msg_name="GotoOtherSceneByTransmission"/>
+	<item msg_code="31" msg_name="RoleLeavedScene"/>
+	<item msg_code="32" msg_name="RoleLevelUp"/>
+</root>

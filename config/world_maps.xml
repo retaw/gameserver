@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 对服务器实现, 静态地图和动态地图不区分 staticMaplist 野外地图  dynamicMaplist 副本地图  -->
+
+<root>
+    <world num="1" staticMaplist="1001,1002,1003,1004,1005,1006,1007,1008,1009,2003,2001,2002,3015,3016,3017" dynamicMaplist="1001,1002,3001,3002,3003,3004,3005,3006"/>
+	<world num="2" staticMaplist="4001,4002"/>
+</root>

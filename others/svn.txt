@@ -1,0 +1,4 @@
+把文件标记为文本:
+svn ps svn:mime-type text/plain  config/*.xml.example
+
+

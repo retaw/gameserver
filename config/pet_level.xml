@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items name="c宠物表.xlsx">
+  <item>
+    <id_level>12006-1</id_level>
+    <props>8-0,9-100,10-0,11-0,12-0,13-1,14-0,15-1,16-0,17-0,1-1000,2-24</props>
+  </item>
+  <item>
+    <id_level>12006-2</id_level>
+    <props>8-0,9-100,10-0,11-0,12-0,13-1,14-0,15-1,16-0,17-0,1-1100,2-25</props>
+  </item>
+</items>

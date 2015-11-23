@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!--
+		nonsuchId: 极品属性ID
+		skill_type_list: 技能类型Id,权重;
+		tskillTypeId: 技能类型Id
+		skill_list: 技能Id,权重;
+	-->
+	<skilltype>
+		<item nonsuchId="1000" skill_type_list="1,300;0,700;" />
+		<item nonsuchId="1001" skill_type_list="2,300;0,700;" />
+		<item nonsuchId="1002" skill_type_list="3,1000;" />
+		<item nonsuchId="1003" skill_type_list="4,1000;" />
+	</skilltype>
+
+	<skill>
+		<item skillTypeId="1" skill_list="1001,700;1002,210;1003,63;1004,42;1005,12;" />
+		<item skillTypeId="2" skill_list="1011,700;1012,210;1013,63;1014,42;1015,12;" />
+		<item skillTypeId="3" skill_list="1011,1000;" />
+		<item skillTypeId="4" skill_list="1015,1000;" />
+	</skill>
+
+</root>

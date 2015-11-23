@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<base>
+		<!-- prop_type_list:属性类型-概率(属性类型不可出现最小物攻、最小魔攻、最小物防...) -->
+		<item washType="1" level="10" prop_type_list="9-100,11-100,13-100,15-100,17-100,1-100,2-100,20-100,22-100,23-100,25-100,27-100,29-100" />
+		<item washType="2" level="20" prop_type_list="9-100,11-100,13-100,15-100,17-100,1-100,2-100,20-100,22-100,23-100,25-100,27-100,29-100" />
+		<item washType="3" level="30" prop_type_list="9-100,11-100,13-100,15-100,17-100,1-100,2-100,20-100,22-100,23-100,25-100,27-100,29-100" />
+		<item washType="4" level="40" prop_type_list="9-100,11-100,13-100,15-100,17-100,1-100,2-100,20-100,22-100,23-100,25-100,27-100,29-100" />
+		<item washType="5" level="50" prop_type_list="9-100,11-100,13-100,15-100,17-100,1-100,2-100,20-100,22-100,23-100,25-100,27-100,29-100" />
+	</base>
+
+	<prop>
+		<!-- quality_prop_list:品质属性区间 1,2,3,4,5品-->
+		<item washType="1" propType="9"   quality_prop_list="1-2,3-4,5-6,7-8,9-10" />
+		<item washType="1" propType="11"  quality_prop_list="1-2,3-4,5-6,7-8,9-10" />
+		<item washType="1" propType="13"  quality_prop_list="1-2,3-4,5-6,7-8,9-10" />
+		<item washType="1" propType="15"  quality_prop_list="1-2,3-4,5-6,7-8,9-10" />
+		<item washType="1" propType="17"  quality_prop_list="1-2,3-4,5-6,7-8,9-10" />
+		<item washType="1" propType="1"   quality_prop_list="1-2,3-4,5-6,7-8,9-10" />
+		<item washType="1" propType="2"   quality_prop_list="1-2,3-4,5-6,7-8,9-10" />
+		<item washType="1" propType="20"  quality_prop_list="1-2,3-4,5-6,7-8,9-10" />
+		<item washType="1" propType="22"  quality_prop_list="1-2,3-4,5-6,7-8,9-10" />
+		<item washType="1" propType="23"  quality_prop_list="1-2,3-4,5-6,7-8,9-10" />
+		<item washType="1" propType="25"  quality_prop_list="1-2,3-4,5-6,7-8,9-10" />
+		<item washType="1" propType="27"  quality_prop_list="1-2,3-4,5-6,7-8,9-10" />
+		<item washType="1" propType="29"  quality_prop_list="1-2,3-4,5-6,7-8,9-10" />
+		<item washType="2" propType="9"   quality_prop_list="1-4,5-6,7-8,9-10,11-12" />
+		<item washType="2" propType="11"  quality_prop_list="1-4,5-6,7-8,9-10,11-12" />
+		<item washType="2" propType="13"  quality_prop_list="1-4,5-6,7-8,9-10,11-12" />
+		<item washType="2" propType="15"  quality_prop_list="1-4,5-6,7-8,9-10,11-12" />
+		<item washType="2" propType="17"  quality_prop_list="1-4,5-6,7-8,9-10,11-12" />
+		<item washType="2" propType="1"   quality_prop_list="1-4,5-6,7-8,9-10,11-12" />
+		<item washType="2" propType="2"   quality_prop_list="1-4,5-6,7-8,9-10,11-12" />
+		<item washType="2" propType="20"  quality_prop_list="1-4,5-6,7-8,9-10,11-12" />
+		<item washType="2" propType="22"  quality_prop_list="1-4,5-6,7-8,9-10,11-12" />
+		<item washType="2" propType="23"  quality_prop_list="1-4,5-6,7-8,9-10,11-12" />
+		<item washType="2" propType="25"  quality_prop_list="1-4,5-6,7-8,9-10,11-12" />
+		<item washType="2" propType="27"  quality_prop_list="1-4,5-6,7-8,9-10,11-12" />
+		<item washType="2" propType="29"  quality_prop_list="1-4,5-6,7-8,9-10,11-12" />
+		<item washType="3" propType="9"   quality_prop_list="1-6,7-8,9-10,11-12,13-14" />
+		<item washType="3" propType="11"  quality_prop_list="1-6,7-8,9-10,11-12,13-14" />
+		<item washType="3" propType="13"  quality_prop_list="1-6,7-8,9-10,11-12,13-14" />
+		<item washType="3" propType="15"  quality_prop_list="1-6,7-8,9-10,11-12,13-14" />
+		<item washType="3" propType="17"  quality_prop_list="1-6,7-8,9-10,11-12,13-14" />
+		<item washType="3" propType="1"   quality_prop_list="1-6,7-8,9-10,11-12,13-14" />
+		<item washType="3" propType="2"   quality_prop_list="1-6,7-8,9-10,11-12,13-14" />
+		<item washType="3" propType="20"  quality_prop_list="1-6,7-8,9-10,11-12,13-14" />
+		<item washType="3" propType="22"  quality_prop_list="1-6,7-8,9-10,11-12,13-14" />
+		<item washType="3" propType="23"  quality_prop_list="1-6,7-8,9-10,11-12,13-14" />
+		<item washType="3" propType="25"  quality_prop_list="1-6,7-8,9-10,11-12,13-14" />
+		<item washType="3" propType="27"  quality_prop_list="1-6,7-8,9-10,11-12,13-14" />
+		<item washType="3" propType="29"  quality_prop_list="1-6,7-8,9-10,11-12,13-14" />
+		<item washType="4" propType="9"   quality_prop_list="1-8,9-10,11-12,13-14,15-16" />
+		<item washType="4" propType="11"  quality_prop_list="1-8,9-10,11-12,13-14,15-16" />
+		<item washType="4" propType="13"  quality_prop_list="1-8,9-10,11-12,13-14,15-16" />
+		<item washType="4" propType="15"  quality_prop_list="1-8,9-10,11-12,13-14,15-16" />
+		<item washType="4" propType="17"  quality_prop_list="1-8,9-10,11-12,13-14,15-16" />
+		<item washType="4" propType="1"   quality_prop_list="1-8,9-10,11-12,13-14,15-16" />
+		<item washType="4" propType="2"   quality_prop_list="1-8,9-10,11-12,13-14,15-16" />
+		<item washType="4" propType="20"  quality_prop_list="1-8,9-10,11-12,13-14,15-16" />
+		<item washType="4" propType="22"  quality_prop_list="1-8,9-10,11-12,13-14,15-16" />
+		<item washType="4" propType="23"  quality_prop_list="1-8,9-10,11-12,13-14,15-16" />
+		<item washType="4" propType="25"  quality_prop_list="1-8,9-10,11-12,13-14,15-16" />
+		<item washType="4" propType="27"  quality_prop_list="1-8,9-10,11-12,13-14,15-16" />
+		<item washType="4" propType="29"  quality_prop_list="1-8,9-10,11-12,13-14,15-16" />
+		<item washType="5" propType="9"   quality_prop_list="1-10,11-12,13-14,15-16,17-18" />
+		<item washType="5" propType="11"  quality_prop_list="1-10,11-12,13-14,15-16,17-18" />
+		<item washType="5" propType="13"  quality_prop_list="1-10,11-12,13-14,15-16,17-18" />
+		<item washType="5" propType="15"  quality_prop_list="1-10,11-12,13-14,15-16,17-18" />
+		<item washType="5" propType="17"  quality_prop_list="1-10,11-12,13-14,15-16,17-18" />
+		<item washType="5" propType="1"   quality_prop_list="1-10,11-12,13-14,15-16,17-18" />
+		<item washType="5" propType="2"   quality_prop_list="1-10,11-12,13-14,15-16,17-18" />
+		<item washType="5" propType="20"  quality_prop_list="1-10,11-12,13-14,15-16,17-18" />
+		<item washType="5" propType="22"  quality_prop_list="1-10,11-12,13-14,15-16,17-18" />
+		<item washType="5" propType="23"  quality_prop_list="1-10,11-12,13-14,15-16,17-18" />
+		<item washType="5" propType="25"  quality_prop_list="1-10,11-12,13-14,15-16,17-18" />
+		<item washType="5" propType="27"  quality_prop_list="1-10,11-12,13-14,15-16,17-18" />
+		<item washType="5" propType="29"  quality_prop_list="1-10,11-12,13-14,15-16,17-18" />
+	</prop>
+
+	<consume>
+		<!-- quality_prob_list:品质-概率 -->
+		<item washType="1" washWay="1" needMoneyType="2" needMoneyNum="10" lockNeedYuanbao="10" quality_prob_list="1-500,2-250,3-150,4-75,5-25"  />
+		<item washType="1" washWay="2" needMoneyType="4" needMoneyNum="20" lockNeedYuanbao="10" quality_prob_list="1-450,2-250,3-150,4-75,5-75"  />
+		<item washType="1" washWay="3" needMoneyType="4" needMoneyNum="30" lockNeedYuanbao="10" quality_prob_list="1-275,2-250,3-150,4-75,5-250" />
+		<item washType="2" washWay="1" needMoneyType="2" needMoneyNum="15" lockNeedYuanbao="20" quality_prob_list="1-500,2-250,3-150,4-75,5-25"  />
+		<item washType="2" washWay="2" needMoneyType="4" needMoneyNum="25" lockNeedYuanbao="20" quality_prob_list="1-450,2-250,3-150,4-75,5-75"  />
+		<item washType="2" washWay="3" needMoneyType="4" needMoneyNum="35" lockNeedYuanbao="20" quality_prob_list="1-275,2-250,3-150,4-75,5-250" />
+		<item washType="3" washWay="1" needMoneyType="2" needMoneyNum="20" lockNeedYuanbao="30" quality_prob_list="1-500,2-250,3-150,4-75,5-25"  />
+		<item washType="3" washWay="2" needMoneyType="4" needMoneyNum="30" lockNeedYuanbao="30" quality_prob_list="1-450,2-250,3-150,4-75,5-75"  />
+		<item washType="3" washWay="3" needMoneyType="4" needMoneyNum="40" lockNeedYuanbao="30" quality_prob_list="1-275,2-250,3-150,4-75,5-250" />
+		<item washType="4" washWay="1" needMoneyType="2" needMoneyNum="25" lockNeedYuanbao="40" quality_prob_list="1-500,2-250,3-150,4-75,5-25"  />
+		<item washType="4" washWay="2" needMoneyType="4" needMoneyNum="35" lockNeedYuanbao="40" quality_prob_list="1-450,2-250,3-150,4-75,5-75"  />
+		<item washType="4" washWay="3" needMoneyType="4" needMoneyNum="45" lockNeedYuanbao="40" quality_prob_list="1-275,2-250,3-150,4-75,5-250" />
+		<item washType="5" washWay="1" needMoneyType="2" needMoneyNum="30" lockNeedYuanbao="50" quality_prob_list="1-500,2-250,3-150,4-75,5-25"  />
+		<item washType="5" washWay="2" needMoneyType="4" needMoneyNum="40" lockNeedYuanbao="50" quality_prob_list="1-450,2-250,3-150,4-75,5-75"  />
+		<item washType="5" washWay="3" needMoneyType="4" needMoneyNum="50" lockNeedYuanbao="50" quality_prob_list="1-275,2-250,3-150,4-75,5-250" />
+	</consume>
+
+</root>
