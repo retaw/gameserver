@@ -33,21 +33,6 @@ namespace world{
 
 void World::registerTimerHandler()
 {
-    RoleManager::me().regTimer();
-    NpcManager::me().regTimer();
-	SceneObjectManager::me().regTimer();
-    FireManager::me().regTimer();
-    PetManager::me().regTimer();
-    HeroIDs::me().regTimer();
-	ExpAreaManager::me().regTimer();
-    TriggerManager::me().regTimer();
-	BubblePointManager::me().regTimer();
-    WorldBoss::me().regTimer();
-	FirstManager::me().regTimer();
-	BonfireManager::me().regTimer();
-	TradeManager::me().regTimer();
-    SceneManager::me().regTimer();
-    ShaBaKe::me().regTimer();
 }
 
 

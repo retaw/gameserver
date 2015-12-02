@@ -28,10 +28,8 @@ export dependent_water_files =\
 SUBDIR =  \
 		  router\
 		  gateway\
-		  dbcached\
-		  session\
 		  world\
-		  func\
+
 #		  http\
 
 

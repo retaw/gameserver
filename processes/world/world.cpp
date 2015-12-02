@@ -1,6 +1,4 @@
 #include "world.h"
-#include "role_manager.h"
-#include "role.h"
 
 #include "water/process/tcp_message.h"
 #include "water/componet/logger.h"
@@ -50,6 +48,7 @@ void World::lanchThreads()
 
 void World::stop()
 {
+    /*
 	for(Role::Ptr role : RoleManager::me())
 	{
 		if(role == nullptr)
@@ -57,7 +56,7 @@ void World::stop()
 
 		role->beforeLeaveScene();
 	}
-
+*/
 	Process::stop();
 }
 

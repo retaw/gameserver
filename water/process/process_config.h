@@ -19,7 +19,6 @@
 #include "net/endpoint.h"
 #include "process_id.h"
 
-#include "common/commdef.h"
 
 namespace water{
 namespace process{

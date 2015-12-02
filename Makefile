@@ -14,8 +14,9 @@ export optimization_flag =
 
 SUBDIR =  \
 		  water\
-		  protocol\
-		  processes\
+
+#protocol\
+#processes\
 
 
 all: targets
