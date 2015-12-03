@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+<!--
+           怪物分为1离开领地范围会自动返回 2离开领地范围不会自动返回
+		condition id: 激活事件定义ID
+		name="": 激活事件条件
+		interval=""：激活事件参数
+		trigger expression=""：激活事件
+		action name=""：事件名称
+		idelViewRange="X": 领地范围（警戒范围），警戒范围是以怪物当前位置为圆心的半径为X的圆
+		   领地范围：怪物1的领地范围以出生点为圆心，怪物2的领地范围以脱战位置为圆心
+	    attRange=""：怪物能发起攻击的范围
+		homeless="": 怪物离开领地范围是否会自动返回（0会返回，1不会返回）
+		配置为事件a*b即同时触发
+		name="Probability" prob=""：几率触发，百分比
+		combatViewRange="":战斗状态中怪物视野，超出视野丢失目标
+		MobAction：攻击动作
+		IdelMove：随机移动
+        radius=""：移动范围
+		msec_500:毫秒单位只能使用100/200/300/500，上限500
+		sec_1：超过毫秒时间上限用秒单位
+	-->
+    <ai id="1">
+        <condition id="a" name="TimerFilter" interval="sec_1"/>
+		<condition id="b" name="Probability" prob="10"/>
+        <item>
+            <trigger expression="a*b"/>
+            <action name="IdelMove" radius="6"/>
+        </item>
+    </ai>
+
+    <ai id="2">
+        <condition id="a" name="TimerFilter" interval="sec_1"/>
+        <condition id="b" name="Probability" prob="10"/>
+        <condition id="c" name="TimerFilter" interval="sec_1"/>
+        <item>
+            <trigger expression="a*b"/>
+            <action name="IdelMove" radius="6"/>
+	    </item>
+		<item>
+			<trigger expression="c"/>
+            <action name="MobAction" idelViewRange="8" combatViewRange="12" attRange="1" homeless="0"/>
+        </item>
+    </ai>
+	
+	<ai id="3">
+        <condition id="a" name="TimerFilter" interval="sec_2"/>
+        <condition id="b" name="Probability" prob="10"/>
+		<condition id="c" name="TimerFilter" interval="sec_1"/>
+        <item>
+            <trigger expression="a*b"/>
+            <action name="IdelMove" radius="6"/>
+		</item>
+		<item>
+            <trigger expression="c"/>
+            <action name="MobAction" idelViewRange="8" combatViewRange="12" attRange="1" homeless="0"/>
+        </item>
+    </ai>
+	
+	<ai id="4">
+        <condition id="a" name="TimerFilter" interval="sec_2"/>
+        <condition id="b" name="Probability" prob="10"/>
+		<condition id="c" name="TimerFilter" interval="sec_1"/>
+        <item>
+            <trigger expression="a*b"/>
+            <action name="IdelMove" radius="6"/>
+		</item>
+		<item>
+            <trigger expression="c"/>
+            <action name="MobAction" idelViewRange="8" combatViewRange="12" attRange="1" homeless="0"/>
+        </item>
+    </ai>
+	
+	<ai id="1000">
+        <condition id="a" name="TimerFilter" interval="sec_1"/>
+        <item>
+            <trigger expression="a"/>
+            <action name="Tower"  attRange="5"/>
+        </item>
+    </ai>
+</root>

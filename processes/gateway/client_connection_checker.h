@@ -12,8 +12,7 @@
 #define PROCESS_GATEWAY_CLIENT_CONNECTION_CHECKER_H
 
 
-#include "common/commdef.h"
-#include "common/roledef.h"
+#include "def.h"
 
 #include "water/componet/spinlock.h"
 #include "water/componet/datetime.h"
@@ -24,6 +23,8 @@
 #include <list>
 
 namespace gateway{
+
+typedef uint64_t LoginId;
 
 using namespace water;
 

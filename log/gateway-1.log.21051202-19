@@ -1,0 +1,70 @@
+21051202 19:00:13 DEBUG: private client thread start ok
+21051202 19:00:13 DEBUG: public server thread start ok
+21051202 19:00:13 DEBUG: connection checker thread start ok
+21051202 19:00:13 DEBUG: flash sandbox server thread start ok
+21051202 19:00:13 DEBUG: flash sandbox handler thread start ok
+21051202 19:00:13 DEBUG: tcp conns thread start ok
+21051202 19:00:13 DEBUG: main timer thread start ok
+21051202 19:00:13 TRACE: start listening on 0.0.0.0:1843
+21051202 19:00:13 TRACE: 发起到127.0.0.1:6000的tcp连接
+21051202 19:00:13 TRACE: 发起到127.0.0.1:6000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 19:00:13 TRACE: start listening on 0.0.0.0:2000
+21051202 19:00:15 DEBUG: 收到信号2
+21051202 19:00:15 TRACE: exiting ...
+21051202 19:00:15 TRACE: stoped
+21051202 19:00:15 TRACE: thread connection checker  stoped
+21051202 19:00:15 TRACE: thread flash sandbox handler  stoped
+21051202 19:00:15 TRACE: thread flash sandbox server  stoped
+21051202 19:00:15 TRACE: thread main timer  stoped
+21051202 19:00:15 TRACE: thread public server  stoped
+21051202 19:00:15 TRACE: thread tcp conns  stoped
+21051202 19:00:15 TRACE: thread private client  stoped
+21051202 19:00:15 TRACE: gateway-1 exited
+21051202 19:48:56 DEBUG: private client thread start ok
+21051202 19:48:56 DEBUG: public server thread start ok
+21051202 19:48:56 DEBUG: connection checker thread start ok
+21051202 19:48:56 DEBUG: flash sandbox server thread start ok
+21051202 19:48:56 DEBUG: flash sandbox handler thread start ok
+21051202 19:48:56 DEBUG: tcp conns thread start ok
+21051202 19:48:56 DEBUG: main timer thread start ok
+21051202 19:48:56 TRACE: start listening on 0.0.0.0:1843
+21051202 19:48:56 TRACE: 发起到127.0.0.1:6000的tcp连接
+21051202 19:48:56 TRACE: 发起到127.0.0.1:6000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 19:48:56 TRACE: start listening on 0.0.0.0:2000
+21051202 19:49:01 TRACE: 发起到127.0.0.1:6000的tcp连接
+21051202 19:49:01 TRACE: 发起到127.0.0.1:6000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 19:49:04 DEBUG: 收到信号2
+21051202 19:49:04 TRACE: exiting ...
+21051202 19:49:04 TRACE: stoped
+21051202 19:49:04 TRACE: thread connection checker  stoped
+21051202 19:49:04 TRACE: thread flash sandbox handler  stoped
+21051202 19:49:04 TRACE: thread flash sandbox server  stoped
+21051202 19:49:04 TRACE: thread main timer  stoped
+21051202 19:49:04 TRACE: thread private client  stoped
+21051202 19:49:05 TRACE: thread public server  stoped
+21051202 19:49:05 TRACE: thread tcp conns  stoped
+21051202 19:49:05 TRACE: gateway-1 exited
+21051202 19:51:56 DEBUG: private client thread start ok
+21051202 19:51:56 DEBUG: public server thread start ok
+21051202 19:51:56 DEBUG: connection checker thread start ok
+21051202 19:51:56 DEBUG: flash sandbox server thread start ok
+21051202 19:51:56 DEBUG: flash sandbox handler thread start ok
+21051202 19:51:56 DEBUG: tcp conns thread start ok
+21051202 19:51:56 DEBUG: main timer thread start ok
+21051202 19:51:56 TRACE: start listening on 0.0.0.0:1843
+21051202 19:51:56 TRACE: 发起到127.0.0.1:6000的tcp连接
+21051202 19:51:56 TRACE: 发起到127.0.0.1:6000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 19:51:56 TRACE: start listening on 0.0.0.0:2000
+21051202 19:52:01 TRACE: 发起到127.0.0.1:6000的tcp连接
+21051202 19:52:01 TRACE: 发起到127.0.0.1:6000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 19:52:02 DEBUG: 收到信号2
+21051202 19:52:02 TRACE: exiting ...
+21051202 19:52:02 TRACE: stoped
+21051202 19:52:03 TRACE: thread connection checker  stoped
+21051202 19:52:03 TRACE: thread flash sandbox handler  stoped
+21051202 19:52:03 TRACE: thread flash sandbox server  stoped
+21051202 19:52:03 TRACE: thread main timer  stoped
+21051202 19:52:03 TRACE: thread private client  stoped
+21051202 19:52:03 TRACE: thread public server  stoped
+21051202 19:52:03 TRACE: thread tcp conns  stoped
+21051202 19:52:03 TRACE: gateway-1 exited

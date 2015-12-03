@@ -12,22 +12,6 @@
 
 #include "water/componet/logger.h"
 
-#include "role_manager.h"
-#include "npc_manager.h"
-#include "scene_object_manager.h"
-#include "fire.h"
-#include "pet_manager.h"
-#include "hero_ids.h"
-#include "exp_area_manager.h"
-#include "trigger_manager.h"
-#include "bubble_point_manager.h"
-#include "world_boss.h"
-#include "first_manager.h"
-#include "bonfire_manager.h"
-#include "trade_manager.h"
-#include "scene_manager.h"
-#include "shabake.h"
-
 namespace world{
 
 

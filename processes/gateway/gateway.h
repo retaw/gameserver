@@ -13,9 +13,10 @@
 #include "water/process/process.h"
 #include "protocol/protobuf/proto_manager.h"
 #include "client_connection_checker.h"
-#include "common/commdef.h"
+#include "def.h"
 
 namespace gateway{
+
 
 using namespace water;
 using namespace process;

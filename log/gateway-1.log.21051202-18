@@ -1,0 +1,75 @@
+21051202 18:02:36 DEBUG: private client thread start ok
+21051202 18:02:36 DEBUG: public server thread start ok
+21051202 18:02:36 DEBUG: connection checker thread start ok
+21051202 18:02:36 DEBUG: flash sandbox server thread start ok
+21051202 18:02:36 DEBUG: flash sandbox handler thread start ok
+21051202 18:02:36 DEBUG: tcp conns thread start ok
+21051202 18:02:36 DEBUG: main timer thread start ok
+21051202 18:02:36 TRACE: 发起到127.0.0.1:6000的tcp连接
+21051202 18:02:36 TRACE: 已建立到127.0.0.1:6000的tcp连接
+21051202 18:02:36 TRACE: start listening on 0.0.0.0:2000
+21051202 18:02:36 TRACE: start listening on 0.0.0.0:1843
+21051202 18:02:36 TRACE: ConnectionManager, insert privateConn, fd=8, pid=router-1, ep=127.0.0.1:6000
+21051202 18:02:36 TRACE: 到 router-1 的私网连接已被接受
+21051202 18:02:36 DEBUG: gateway-1 lanuch successful
+21051202 18:06:30 DEBUG: 收到信号15
+21051202 18:06:30 TRACE: exiting ...
+21051202 18:06:30 TRACE: stoped
+21051202 18:06:30 TRACE: thread connection checker  stoped
+21051202 18:06:30 TRACE: thread flash sandbox handler  stoped
+21051202 18:06:30 TRACE: thread flash sandbox server  stoped
+21051202 18:06:30 TRACE: thread main timer  stoped
+21051202 18:06:30 TRACE: thread private client  stoped
+21051202 18:06:30 TRACE: thread public server  stoped
+21051202 18:06:30 TRACE: thread tcp conns  stoped
+21051202 18:06:30 TRACE: gateway-1 exited
+21051202 18:57:35 DEBUG: private client thread start ok
+21051202 18:57:35 DEBUG: public server thread start ok
+21051202 18:57:35 DEBUG: connection checker thread start ok
+21051202 18:57:35 DEBUG: flash sandbox server thread start ok
+21051202 18:57:35 DEBUG: flash sandbox handler thread start ok
+21051202 18:57:35 DEBUG: tcp conns thread start ok
+21051202 18:57:35 DEBUG: main timer thread start ok
+21051202 18:57:35 TRACE: start listening on 0.0.0.0:1843
+21051202 18:57:35 TRACE: 发起到127.0.0.1:6000的tcp连接
+21051202 18:57:35 TRACE: 已建立到127.0.0.1:6000的tcp连接
+21051202 18:57:35 TRACE: start listening on 0.0.0.0:2000
+21051202 18:57:35 TRACE: ConnectionManager, insert privateConn, fd=9, pid=router-1, ep=127.0.0.1:6000
+21051202 18:57:35 TRACE: 到 router-1 的私网连接已被接受
+21051202 18:57:35 DEBUG: gateway-1 lanuch successful
+21051202 18:57:51 DEBUG: 收到信号15
+21051202 18:57:51 TRACE: exiting ...
+21051202 18:57:51 TRACE: stoped
+21051202 18:57:51 TRACE: thread main timer  stoped
+21051202 18:57:51 TRACE: thread connection checker  stoped
+21051202 18:57:51 TRACE: thread flash sandbox handler  stoped
+21051202 18:57:51 TRACE: thread flash sandbox server  stoped
+21051202 18:57:52 TRACE: thread public server  stoped
+21051202 18:57:52 TRACE: thread tcp conns  stoped
+21051202 18:57:52 TRACE: thread private client  stoped
+21051202 18:57:52 TRACE: gateway-1 exited
+21051202 18:59:19 DEBUG: private client thread start ok
+21051202 18:59:19 DEBUG: public server thread start ok
+21051202 18:59:19 DEBUG: connection checker thread start ok
+21051202 18:59:19 DEBUG: flash sandbox server thread start ok
+21051202 18:59:19 DEBUG: flash sandbox handler thread start ok
+21051202 18:59:19 DEBUG: tcp conns thread start ok
+21051202 18:59:19 DEBUG: main timer thread start ok
+21051202 18:59:19 TRACE: start listening on 0.0.0.0:1843
+21051202 18:59:19 TRACE: 发起到127.0.0.1:6000的tcp连接
+21051202 18:59:19 TRACE: 已建立到127.0.0.1:6000的tcp连接
+21051202 18:59:19 TRACE: start listening on 0.0.0.0:2000
+21051202 18:59:19 TRACE: ConnectionManager, insert privateConn, fd=9, pid=router-1, ep=127.0.0.1:6000
+21051202 18:59:19 TRACE: 到 router-1 的私网连接已被接受
+21051202 18:59:20 DEBUG: gateway-1 lanuch successful
+21051202 18:59:39 DEBUG: 收到信号15
+21051202 18:59:39 TRACE: exiting ...
+21051202 18:59:39 TRACE: stoped
+21051202 18:59:39 TRACE: thread connection checker  stoped
+21051202 18:59:39 TRACE: thread flash sandbox handler  stoped
+21051202 18:59:39 TRACE: thread flash sandbox server  stoped
+21051202 18:59:40 TRACE: thread main timer  stoped
+21051202 18:59:40 TRACE: thread private client  stoped
+21051202 18:59:40 TRACE: thread public server  stoped
+21051202 18:59:40 TRACE: thread tcp conns  stoped
+21051202 18:59:40 TRACE: gateway-1 exited

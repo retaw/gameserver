@@ -11,9 +11,7 @@
 #ifndef PROCESS_GATEWAY_LOGIN_PROCESSER_H
 #define PROCESS_GATEWAY_LOGIN_PROCESSER_H
 
-
-#include "common/commdef.h"
-#include "common/roledef.h"
+#include "def.h"
 
 #include "water/componet/spinlock.h"
 #include "water/componet/datetime.h"
@@ -24,6 +22,7 @@
 #include <list>
 
 namespace gateway{
+
 
 using namespace water;
 

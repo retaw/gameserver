@@ -11,9 +11,9 @@
 #ifndef GATE_ROLE_H
 #define GATE_ROLE_H
 
-#include "common/commdef.h"
-#include "common/roledef.h"
-#include "common/role_container.h"
+#include "def.h"
+#include "role_container.h"
+
 #include "water/process/process_id.h"
 #include "water/process/tcp_message.h"
 #include "water/net/packet_connection.h"
@@ -22,6 +22,7 @@
 
 
 namespace gateway{
+
 
 using water::process::ProcessIdentity;
 using water::process::TcpMsgCode;

@@ -1,14 +1,12 @@
 #ifndef PROTOCOL_RAWMSG_PRIVATE_LOGIN_MSG_H
 #define PROTOCOL_RAWMSG_PRIVATE_LOGIN_MSG_H
 
-#include "water/common/commdef.h"
-#include "water/common/roledef.h"
-
-#include <cstring>
+#include "../commdef.h"
 
 #pragma pack(1)
 
 namespace PrivateRaw{
+
 
 //g <-> d
 struct TestMsg

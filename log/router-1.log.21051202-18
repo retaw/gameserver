@@ -1,0 +1,210 @@
+21051202 18:02:36 DEBUG: private server thread start ok
+21051202 18:02:36 DEBUG: private client thread start ok
+21051202 18:02:36 DEBUG: connection checker thread start ok
+21051202 18:02:36 DEBUG: tcp conns thread start ok
+21051202 18:02:36 DEBUG: main timer thread start ok
+21051202 18:02:36 TRACE: start listening on 127.0.0.1:6000
+21051202 18:02:36 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:02:36 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:02:36 TRACE: 新呼入连接: 127.0.0.1:43814
+21051202 18:02:36 TRACE: ConnectionManager, insert privateConn, fd=8, pid=world-1, ep=127.0.0.1:43814
+21051202 18:02:36 TRACE: 来自 world-1 的私网连接验证通过
+21051202 18:02:36 DEBUG: router-1 lanuch successful
+21051202 18:02:36 TRACE: 新呼入连接: 127.0.0.1:43815
+21051202 18:02:36 TRACE: ConnectionManager, insert privateConn, fd=9, pid=gateway-1, ep=127.0.0.1:43815
+21051202 18:02:36 TRACE: 来自 gateway-1 的私网连接验证通过
+21051202 18:02:41 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:02:41 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:02:46 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:02:46 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:02:51 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:02:51 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:02:56 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:02:56 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:03:01 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:03:01 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:03:06 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:03:06 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:03:11 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:03:11 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:03:16 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:03:16 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:03:21 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:03:21 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:03:26 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:03:26 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:03:31 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:03:31 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:03:36 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:03:36 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:03:41 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:03:41 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:03:46 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:03:46 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:03:51 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:03:51 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:03:56 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:03:56 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:04:01 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:04:01 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:04:06 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:04:06 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:04:11 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:04:11 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:04:16 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:04:16 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:04:21 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:04:21 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:04:26 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:04:26 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:04:31 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:04:31 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:04:36 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:04:36 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:04:41 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:04:41 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:04:46 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:04:46 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:04:51 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:04:51 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:04:56 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:04:56 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:05:01 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:05:01 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:05:06 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:05:06 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:05:11 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:05:11 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:05:16 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:05:16 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:05:21 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:05:21 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:05:26 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:05:26 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:05:31 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:05:31 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:05:36 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:05:36 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:05:41 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:05:41 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:05:46 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:05:46 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:05:51 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:05:51 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:05:56 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:05:56 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:06:01 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:06:01 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:06:06 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:06:06 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:06:11 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:06:11 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:06:16 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:06:16 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:06:21 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:06:21 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:06:26 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:06:26 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:06:30 TRACE: 对方断开连接, 127.0.0.1:43815, fd=9
+21051202 18:06:30 TRACE: ConnectionManager, erase privateConn, id=gateway-1, fd=9
+21051202 18:06:30 TRACE: ConnectionManager, erase conn, socketFd=9, id=42958263222273, ep=127.0.0.1:43815
+21051202 18:06:30 TRACE: 被动tcp连接已断开, remoteEp=127.0.0.1:43815
+21051202 18:06:31 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:06:31 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:06:32 TRACE: 对方断开连接, 127.0.0.1:43814, fd=8
+21051202 18:06:32 TRACE: ConnectionManager, erase privateConn, id=world-1, fd=8
+21051202 18:06:32 TRACE: ConnectionManager, erase conn, socketFd=8, id=42958263287809, ep=127.0.0.1:43814
+21051202 18:06:32 TRACE: 被动tcp连接已断开, remoteEp=127.0.0.1:43814
+21051202 18:06:36 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:06:36 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:06:36 DEBUG: 收到信号15
+21051202 18:06:36 TRACE: exiting ...
+21051202 18:06:36 TRACE: stoped
+21051202 18:06:36 TRACE: thread main timer  stoped
+21051202 18:06:36 TRACE: thread connection checker  stoped
+21051202 18:06:36 TRACE: thread private server  stoped
+21051202 18:06:36 TRACE: thread tcp conns  stoped
+21051202 18:06:37 TRACE: thread private client  stoped
+21051202 18:06:37 TRACE: router-1 exited
+21051202 18:57:35 DEBUG: private server thread start ok
+21051202 18:57:35 DEBUG: private client thread start ok
+21051202 18:57:35 DEBUG: connection checker thread start ok
+21051202 18:57:35 DEBUG: tcp conns thread start ok
+21051202 18:57:35 DEBUG: main timer thread start ok
+21051202 18:57:35 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:57:35 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:57:35 TRACE: start listening on 127.0.0.1:6000
+21051202 18:57:35 TRACE: 新呼入连接: 127.0.0.1:43900
+21051202 18:57:35 TRACE: ConnectionManager, insert privateConn, fd=8, pid=world-1, ep=127.0.0.1:43900
+21051202 18:57:35 TRACE: 来自 world-1 的私网连接验证通过
+21051202 18:57:35 DEBUG: router-1 lanuch successful
+21051202 18:57:35 TRACE: 新呼入连接: 127.0.0.1:43901
+21051202 18:57:35 TRACE: ConnectionManager, insert privateConn, fd=9, pid=gateway-1, ep=127.0.0.1:43901
+21051202 18:57:35 TRACE: 来自 gateway-1 的私网连接验证通过
+21051202 18:57:40 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:57:40 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:57:45 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:57:45 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:57:50 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:57:50 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:57:52 TRACE: 对方断开连接, 127.0.0.1:43901, fd=9
+21051202 18:57:52 TRACE: ConnectionManager, erase privateConn, id=gateway-1, fd=9
+21051202 18:57:52 TRACE: ConnectionManager, erase conn, socketFd=9, id=42958263222273, ep=127.0.0.1:43901
+21051202 18:57:52 TRACE: 被动tcp连接已断开, remoteEp=127.0.0.1:43901
+21051202 18:57:55 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:57:55 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:57:55 TRACE: 对方断开连接, 127.0.0.1:43900, fd=8
+21051202 18:57:55 TRACE: ConnectionManager, erase privateConn, id=world-1, fd=8
+21051202 18:57:55 TRACE: ConnectionManager, erase conn, socketFd=8, id=42958263287809, ep=127.0.0.1:43900
+21051202 18:57:55 TRACE: 被动tcp连接已断开, remoteEp=127.0.0.1:43900
+21051202 18:57:57 DEBUG: 收到信号15
+21051202 18:57:57 TRACE: exiting ...
+21051202 18:57:57 TRACE: stoped
+21051202 18:57:57 TRACE: thread connection checker  stoped
+21051202 18:57:57 TRACE: thread main timer  stoped
+21051202 18:57:57 TRACE: thread private server  stoped
+21051202 18:57:57 TRACE: thread private client  stoped
+21051202 18:57:57 TRACE: thread tcp conns  stoped
+21051202 18:57:57 TRACE: router-1 exited
+21051202 18:59:19 DEBUG: private server thread start ok
+21051202 18:59:19 DEBUG: private client thread start ok
+21051202 18:59:19 DEBUG: connection checker thread start ok
+21051202 18:59:19 DEBUG: tcp conns thread start ok
+21051202 18:59:19 DEBUG: main timer thread start ok
+21051202 18:59:19 TRACE: start listening on 127.0.0.1:6000
+21051202 18:59:19 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:59:19 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:59:19 TRACE: 新呼入连接: 127.0.0.1:43907
+21051202 18:59:19 TRACE: ConnectionManager, insert privateConn, fd=8, pid=world-1, ep=127.0.0.1:43907
+21051202 18:59:19 TRACE: 来自 world-1 的私网连接验证通过
+21051202 18:59:19 TRACE: 新呼入连接: 127.0.0.1:43908
+21051202 18:59:19 DEBUG: router-1 lanuch successful
+21051202 18:59:19 TRACE: ConnectionManager, insert privateConn, fd=9, pid=gateway-1, ep=127.0.0.1:43908
+21051202 18:59:19 TRACE: 来自 gateway-1 的私网连接验证通过
+21051202 18:59:24 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:59:24 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:59:29 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:59:29 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:59:34 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:59:34 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:59:39 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:59:39 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:59:40 TRACE: 对方断开连接, 127.0.0.1:43908, fd=9
+21051202 18:59:40 TRACE: ConnectionManager, erase privateConn, id=gateway-1, fd=9
+21051202 18:59:40 TRACE: ConnectionManager, erase conn, socketFd=9, id=42958263222273, ep=127.0.0.1:43908
+21051202 18:59:40 TRACE: 被动tcp连接已断开, remoteEp=127.0.0.1:43908
+21051202 18:59:42 TRACE: 对方断开连接, 127.0.0.1:43907, fd=8
+21051202 18:59:42 TRACE: ConnectionManager, erase privateConn, id=world-1, fd=8
+21051202 18:59:42 TRACE: ConnectionManager, erase conn, socketFd=8, id=42958263287809, ep=127.0.0.1:43907
+21051202 18:59:42 TRACE: 被动tcp连接已断开, remoteEp=127.0.0.1:43907
+21051202 18:59:44 TRACE: 发起到0.0.0.0:7000的tcp连接
+21051202 18:59:44 TRACE: 发起到0.0.0.0:7000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 18:59:44 DEBUG: 收到信号15
+21051202 18:59:44 TRACE: exiting ...
+21051202 18:59:44 TRACE: stoped
+21051202 18:59:45 TRACE: thread connection checker  stoped
+21051202 18:59:45 TRACE: thread main timer  stoped
+21051202 18:59:45 TRACE: thread private server  stoped
+21051202 18:59:45 TRACE: thread tcp conns  stoped
+21051202 18:59:45 TRACE: thread private client  stoped
+21051202 18:59:45 TRACE: router-1 exited

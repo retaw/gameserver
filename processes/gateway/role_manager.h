@@ -49,7 +49,6 @@ private:
     void relayRoleMsgToWorld(TcpMsgCode msgCode, const uint8_t* msgData, uint32_t msgSize, LoginId loginId);
     void relayRoleMsgToFunc(TcpMsgCode msgCode, const uint8_t* msgData, uint32_t msgSize, LoginId loginId);
 
-
 private:
     RoleId m_lastTempRoleId;
 

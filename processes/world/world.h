@@ -11,7 +11,7 @@
 
 
 #include "water/process/process.h"
-#include "common/commdef.h"
+#include "protocol/rawmsg/commdef.h"
 #include "protocol/protobuf/proto_manager.h"
 
 namespace world{

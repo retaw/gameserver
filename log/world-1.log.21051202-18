@@ -1,0 +1,54 @@
+21051202 18:02:36 DEBUG: private client thread start ok
+21051202 18:02:36 DEBUG: connection checker thread start ok
+21051202 18:02:36 DEBUG: tcp conns thread start ok
+21051202 18:02:36 DEBUG: main timer thread start ok
+21051202 18:02:36 TRACE: 发起到127.0.0.1:6000的tcp连接
+21051202 18:02:36 TRACE: 已建立到127.0.0.1:6000的tcp连接
+21051202 18:02:36 TRACE: ConnectionManager, insert privateConn, fd=6, pid=router-1, ep=127.0.0.1:6000
+21051202 18:02:36 TRACE: 到 router-1 的私网连接已被接受
+21051202 18:02:36 DEBUG: world-1 lanuch successful
+21051202 18:06:32 DEBUG: 收到信号15
+21051202 18:06:32 TRACE: exiting ...
+21051202 18:06:32 TRACE: stoped
+21051202 18:06:32 TRACE: thread main timer  stoped
+21051202 18:06:32 TRACE: thread connection checker  stoped
+21051202 18:06:32 TRACE: thread private client  stoped
+21051202 18:06:32 TRACE: thread tcp conns  stoped
+21051202 18:06:32 TRACE: world-1 exited
+21051202 18:57:35 DEBUG: private client thread start ok
+21051202 18:57:35 DEBUG: connection checker thread start ok
+21051202 18:57:35 DEBUG: tcp conns thread start ok
+21051202 18:57:35 DEBUG: main timer thread start ok
+21051202 18:57:35 TRACE: 发起到127.0.0.1:6000的tcp连接
+21051202 18:57:35 TRACE: 已建立到127.0.0.1:6000的tcp连接
+21051202 18:57:35 TRACE: ConnectionManager, insert privateConn, fd=6, pid=router-1, ep=127.0.0.1:6000
+21051202 18:57:35 TRACE: 到 router-1 的私网连接已被接受
+21051202 18:57:35 DEBUG: world-1 lanuch successful
+21051202 18:57:54 DEBUG: 收到信号15
+21051202 18:57:54 TRACE: exiting ...
+21051202 18:57:54 TRACE: stoped
+21051202 18:57:54 TRACE: thread main timer  stoped
+21051202 18:57:54 TRACE: thread connection checker  stoped
+21051202 18:57:55 TRACE: thread tcp conns  stoped
+21051202 18:57:55 TRACE: thread private client  stoped
+21051202 18:57:55 TRACE: world-1 exited
+21051202 18:59:19 DEBUG: private client thread start ok
+21051202 18:59:19 DEBUG: connection checker thread start ok
+21051202 18:59:19 DEBUG: tcp conns thread start ok
+21051202 18:59:19 DEBUG: main timer thread start ok
+21051202 18:59:19 TRACE: 发起到127.0.0.1:6000的tcp连接
+21051202 18:59:19 TRACE: 已建立到127.0.0.1:6000的tcp连接
+21051202 18:59:19 TRACE: ConnectionManager, insert privateConn, fd=6, pid=router-1, ep=127.0.0.1:6000
+21051202 18:59:19 TRACE: 到 router-1 的私网连接已被接受
+21051202 18:59:19 DEBUG: world-1 lanuch successful
+21051202 18:59:41 DEBUG: 收到信号15
+21051202 18:59:41 TRACE: exiting ...
+21051202 18:59:41 TRACE: stoped
+21051202 18:59:41 TRACE: thread connection checker  stoped
+21051202 18:59:41 TRACE: thread main timer  stoped
+21051202 18:59:42 TRACE: thread tcp conns  stoped
+21051202 18:59:42 TRACE: thread private client  stoped
+21051202 18:59:42 DEBUG: 收到信号15
+21051202 18:59:42 TRACE: exiting ...
+21051202 18:59:42 TRACE: stoped
+21051202 18:59:42 TRACE: world-1 exited

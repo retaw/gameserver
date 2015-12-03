@@ -18,7 +18,6 @@ objects = \
     logger.o\
     spinlock.o\
     timer.o\
-	qsqrt.o\
 	coord.o\
 
 

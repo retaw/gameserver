@@ -16,6 +16,8 @@ test_*
 *.public.h
 *codedef.*
 *.pb.*
+*.log.*
+*.log
 water/libs/mysql++/mysql++-3.2.1/
 water/libs/mysql++/installed/
 water/libs/google_protobuf/installed/

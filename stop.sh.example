@@ -13,7 +13,7 @@ PROCESS_EXIST=0
 PROCESS_NOT_EXIST=1
 
 
-PROCESS_LIST=("gateway" "world" "router")
+PROCESS_LIST=("gateway" "world" "func" "session" "router" "dbcached")
 
 function killProcess()
 {

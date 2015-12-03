@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<!-- 对服务器实现, 静态地图和动态地图不区分 staticMaplist 野外地图  dynamicMaplist 副本地图  -->
-
-<root>
-    <defaultPos mapId="1009" posX="28" posY="191" dir="1"/>
-</root>

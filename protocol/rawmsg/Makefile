@@ -19,87 +19,11 @@ objects = \
 	private/codedef.private.o\
 
 public_msgcodedef_list = \
-	public/test.codedef.public.h\
 	public/login.codedef.public.h\
-	public/role_scene.codedef.public.h\
-	public/role_action.codedef.public.h\
-	public/role_pk.codedef.public.h\
-	public/channel_info.codedef.public.h\
-	public/npc_scene.codedef.public.h\
-	public/package.codedef.public.h\
-	public/object_scene.codedef.public.h\
-	public/friend.codedef.public.h\
-	public/buff_scene.codedef.public.h\
-	public/pk_state.codedef.public.h\
-	public/hero_scene.codedef.public.h\
-	public/store.codedef.public.h\
-	public/team.codedef.public.h\
-	public/watch.codedef.public.h\
-	public/mail.codedef.public.h\
-	public/horse.codedef.public.h\
-	public/guanzhi.codedef.public.h\
-	public/title.codedef.public.h\
-	public/faction.codedef.public.h\
-	public/wash.codedef.public.h\
-	public/merge.codedef.public.h\
-	public/equip_equality.codedef.public.h\
-	public/wing.codedef.public.h\
-	public/pet_scene.codedef.public.h\
-	public/fire_scene.codedef.public.h\
-	public/dragon_ball.codedef.public.h\
-	public/use_object.codedef.public.h\
-	public/zhuansheng.codedef.public.h\
-	public/fenjie.codedef.public.h\
-	public/task.codedef.public.h\
-	public/dragon_heart.codedef.public.h\
-	public/expbead.codedef.public.h\
-	public/exp_area.codedef.public.h\
-	public/trigger_scene.codedef.public.h\
-	public/world_boss.codedef.public.h\
-	public/bubble_point.codedef.public.h\
-	public/action.codedef.public.h\
-	public/faction_active.codedef.public.h\
-	public/function.codedef.public.h\
-	public/first.codedef.public.h\
-	public/bonfire.codedef.public.h\
-	public/field_boss.codedef.public.h\
-	public/stall.codedef.public.h\
-	public/trade.codedef.public.h\
-	public/private_boss.codedef.public.h\
-	public/boss_home.codedef.public.h\
-	public/daily_task.codedef.public.h\
-	public/shabake.codedef.public.h\
 
 private_msgcodedef_list = \
 	private/login.codedef.private.h\
 	private/relay.codedef.private.h\
-	private/role_scene.codedef.private.h\
-	private/package.codedef.private.h\
-	private/skill.codedef.private.h\
-	private/friend.codedef.private.h\
-	private/channel_info.codedef.private.h\
-	private/buff.codedef.private.h\
-	private/counter.codedef.private.h\
-	private/store.codedef.private.h\
-	private/hero.codedef.private.h\
-	private/team.codedef.private.h\
-	private/watch.codedef.private.h\
-	private/mail.codedef.private.h\
-	private/faction.codedef.private.h\
-	private/guanzhi.codedef.private.h\
-	private/horse.codedef.private.h\
-	private/title.codedef.private.h\
-	private/wash.codedef.private.h\
-	private/dragon_ball.codedef.private.h\
-	private/task.codedef.private.h\
-	private/exp_area.codedef.private.h\
-	private/sundry.codedef.private.h\
-	private/world_boss.codedef.private.h\
-	private/first.codedef.private.h\
-	private/field_boss.codedef.private.h\
-	private/stall_log.codedef.private.h\
-	private/shabake.codedef.private.h\
-	private/boss_home.codedef.private.h\
 
 CC = g++
 cc = g++

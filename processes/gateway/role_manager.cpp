@@ -26,9 +26,9 @@ void RoleManager::regMsgHandler()
 {
     regRoleMsgRelay();
     using namespace std::placeholders;
-    REG_RAWMSG_PRIVATE(RoleOffline, std::bind(&RoleManager::servermsg_RoleOffline, this, _1, _2));
-    REG_RAWMSG_PRIVATE(RelayMsgToClient, std::bind(&RoleManager::servermsg_RelayMsgToClient, this, _1, _2, _3));
-    REG_RAWMSG_PRIVATE(UpdateRoleWorldId, std::bind(&RoleManager::servermsg_UpdateRoleWorldId, this, _1, _2));
+//    REG_RAWMSG_PRIVATE(RoleOffline, std::bind(&RoleManager::servermsg_RoleOffline, this, _1, _2));
+//    REG_RAWMSG_PRIVATE(RelayMsgToClient, std::bind(&RoleManager::servermsg_RelayMsgToClient, this, _1, _2, _3));
+//    REG_RAWMSG_PRIVATE(UpdateRoleWorldId, std::bind(&RoleManager::servermsg_UpdateRoleWorldId, this, _1, _2));
 }
 
 Role::Ptr RoleManager::newLoginRole(LoginId loginId,

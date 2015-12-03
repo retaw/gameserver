@@ -5,7 +5,6 @@ ROOT_DIR=$(pwd)
 PROCESSES_DIR=$ROOT_DIR/processes
 
 CONFIG_DIR=$ROOT_DIR/config
-#CONFIG_DIR=~/std_svn/公共/server/config/
 
 LOG_DIR=$ROOT_DIR/log
 
@@ -15,7 +14,7 @@ PROCESS_NOT_EXIST=1
 ulimit -c unlimited
 
 
-PROCESS_LIST=("router 1" "dbcached 1" "session 1" "func 1" "world 1" "gateway 1")
+PROCESS_LIST=("router 1" "world 1" "gateway 1")
 #PROCESS_LIST=("router 1" "dbcached 1" "session 1" "func 1" "world 1" "world 2" "gateway 1")
 
 function checkProcessExist()

@@ -1,0 +1,14 @@
+21051202 19:00:00 DEBUG: private client thread start ok
+21051202 19:00:00 DEBUG: connection checker thread start ok
+21051202 19:00:00 DEBUG: tcp conns thread start ok
+21051202 19:00:00 DEBUG: main timer thread start ok
+21051202 19:00:00 TRACE: 发起到127.0.0.1:6000的tcp连接
+21051202 19:00:00 TRACE: 发起到127.0.0.1:6000的tcp连接出错, 5秒后重试, [NetException], msg:[::connect], file:[connector.cpp+100], fun:[water::net::TcpConnection::Ptr water::net::TcpConnector::connect(const milliseconds&)], errno:[111 Connection refused]
+21051202 19:00:04 DEBUG: 收到信号2
+21051202 19:00:04 TRACE: exiting ...
+21051202 19:00:04 TRACE: stoped
+21051202 19:00:04 TRACE: thread connection checker  stoped
+21051202 19:00:04 TRACE: thread main timer  stoped
+21051202 19:00:04 TRACE: thread private client  stoped
+21051202 19:00:04 TRACE: thread tcp conns  stoped
+21051202 19:00:04 TRACE: world-1 exited
