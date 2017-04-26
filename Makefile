@@ -1,3 +1,5 @@
+export SHELL = /bin/bash
+
 export ROOT_DIR = $(shell pwd)
 
 export BASE_DIR = $(ROOT_DIR)/water
@@ -22,8 +24,9 @@ all: targets
 
 targets:
 	@for subdir in $(SUBDIR); do  \
-		$(MAKE) -C $$subdir || exit 1 ; \
+		cd $$subdir && $(MAKE) SHELL=$(SHELL) || exit 1 ; \
 		done 
+
 
 clean:
 	@for subdir in $(SUBDIR); do  \

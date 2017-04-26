@@ -95,18 +95,22 @@ $(objects): %.o: %.cpp
 	sed -r 's,^(.*)\.o:,$@ $*\.o:,' $@.$$$$ > $@;  \
 	rm -f $@.$$$$
 
+ifneq ($(MAKECMDGOALS),clean)
+ifneq ($(MAKECMDGOALS),distclean)
 -include $(objects:.o=.d)
+endif
+endif
 
 clean:
-	rm -rf *.temp
-	rm -f *.o *.d *.d.*
-	rm -f $(target_lib).a
-	rm $(PUBLIC_PROTOCOL_DEFINITION_DIR)/codedef.* 
-	rm $(PUBLIC_PROTOCOL_DEFINITION_DIR)/*.codedef.*.h 
-	rm $(PUBLIC_PROTOCOL_DEFINITION_DIR)/rawmsg.codedef.*.xml
-	rm $(PRIVATE_PROTOCOL_DEFINITION_DIR)/codedef.* 
-	rm $(PRIVATE_PROTOCOL_DEFINITION_DIR)/*.codedef.*.h 
-	rm $(PRIVATE_PROTOCOL_DEFINITION_DIR)/rawmsg.codedef.*.xml
+	-rm -rf *.temp
+	-rm -f *.o *.d *.d.*
+	-rm -f $(target_lib).a
+	-rm -f $(PUBLIC_PROTOCOL_DEFINITION_DIR)/codedef.* 
+	-rm -f $(PUBLIC_PROTOCOL_DEFINITION_DIR)/*.codedef.*.h 
+	-rm -f $(PUBLIC_PROTOCOL_DEFINITION_DIR)/rawmsg.codedef.*.xml
+	-rm -f $(PRIVATE_PROTOCOL_DEFINITION_DIR)/codedef.* 
+	-rm -f $(PRIVATE_PROTOCOL_DEFINITION_DIR)/*.codedef.*.h 
+	-rm -f $(PRIVATE_PROTOCOL_DEFINITION_DIR)/rawmsg.codedef.*.xml
 
 distclean: clean
 

@@ -51,7 +51,11 @@ $(target) : $(objects)
 	sed -r 's,^(.*)\.o:,$@ $*\.o:,' $@.$$$$ > $@;  \
 	rm -f $@.$$$$
 
+ifneq ($(MAKECMDGOALS), clean)
+ifneq ($(MAKECMDGOALS), distclean)
 -include $(objects:.o=.d)
+endif
+endif
 
 .PHONY: clean distclean
 clean:

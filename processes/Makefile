@@ -38,13 +38,15 @@ all: targets
 targets:
 	@for subdir in $(SUBDIR); do  \
 		$(MAKE) -C $$subdir || exit 1 ; \
-		done 
+		done
 
+.PHONY: clean
 clean:
 	@for subdir in $(SUBDIR); do  \
 		(cd $$subdir && $(MAKE) clean); \
 		done
 
+.PHONY: distclean
 distclean:
 	@for subdir in $(SUBDIR); do  \
 		(cd $$subdir && $(MAKE) distclean); \

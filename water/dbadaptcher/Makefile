@@ -37,7 +37,12 @@ $(target) : $(objects)
 	sed 's,\($*\)\.o[ :]*,\1.o $@ : ,g' < $@.$$$$ > $@;  \
 	rm -f $@.$$$$
 
+ifneq ($(MAKECMDGOALS),clean)
+ifneq ($(MAKECMDGOALS),distclean)
 -include $(objects:.o=.d)
+endif
+endif
+
 
 .PHONY: clean distclean
 clean:

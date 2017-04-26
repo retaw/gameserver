@@ -130,8 +130,12 @@ $(CONF_DIR)/protobuf.codedef.private.xml : $(private_protobuf_codedef_list)
 	sed -r 's,^(.*)\.o:,$@ $*\.o:,' $@.$$$$ > $@;  \
 	rm -f $@.$$$$
 
+ifneq ($(MAKECMDGOALS),clean)
+ifneq ($(MAKECMDGOALS),distclean)
 -include $(objects:.o=.d)
 -include $(protodef_objects:.pb.o=.pb.d)
+endif
+endif
 
 .PHONY: clean
 clean:
@@ -146,6 +150,5 @@ clean:
 	rm -f $(PRIVATE_PROTOCOL_DEFINITION_DIR)/*.d.*
 
 .PHONY: distclean
-distclean:
-	clean
+distclean: clean
 

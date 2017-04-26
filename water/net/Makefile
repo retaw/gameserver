@@ -37,7 +37,12 @@ $(objects): %.o: %.cpp
 	sed -r 's,^(.*)\.o:,$@ $*\.o:,' $@.$$$$ > $@;  \
 	rm -f $@.$$$$
 
+ifneq ($(MAKECMDGOALS), clean)
+ifneq ($(MAKECMDGOALS), distclean)
 -include $(objects:.o=.d)
+endif
+endif
+
 #sed 's,/($*/)/.o[ :]*,/1.o $@ : ,g' < $@.$$$$ > $@; \
 
 .PHONY: clean distclean
