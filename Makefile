@@ -10,6 +10,9 @@ export CONF_DIR = $(ROOT_DIR)/config
 
 export PROCESSES_DIR = $(ROOT_DIR)/processes
 
+#mysql_config
+export MYSQL_CONFIG_CMD = mysql_config
+
 #export optimization_flag = -O2
 export optimization_flag = 
 
