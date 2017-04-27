@@ -1,8 +1,14 @@
+#替换默认shell
+SHELL = /bin/bash
+
 #当前目录
 CUR_DIR = $(shell pwd)
 
 #源文件名
-SOURCE_PACKGE_BASE_NAME = mysql++-3.2.1
+SOURCE_PACKGE_BASE_NAME = mysql++-3.2.3
+
+#mysql libs_r 所在的目录
+MYSQL_LIB_DIR = $(shell mysql_config --libs_r | awk '{for(i=1;i<=NF;i++)if($$i~/^-L/) {gsub(/-L/, "", $$i); print $$i;}}')
 
 #安装目录
 INSTALL_DIR = $(CUR_DIR)/installed
@@ -11,9 +17,14 @@ INSTALL_DIR = $(CUR_DIR)/installed
 all: $(INSTALL_DIR)
 
 $(INSTALL_DIR):
-	if [[ ! -d $(SOURCE_PACKGE_BASE_NAME) ]]; then tar -xf $(SOURCE_PACKGE_BASE_NAME).tar.gz; fi;
+	if [[ ! -d $(MYSQL_LIB_DIR) ]]; then exit 1; fi
+	if [[ ! -d $(SOURCE_PACKGE_BASE_NAME) ]]; then \
+		tar -xf $(SOURCE_PACKGE_BASE_NAME).tar.gz; \
+		cp -f ./configure_mysql++ $(SOURCE_PACKGE_BASE_NAME)/configure; \
+		chmod +x $(SOURCE_PACKGE_BASE_NAME)/configure; \
+	fi;
 	cd $(SOURCE_PACKGE_BASE_NAME); \
-		./configure --enable-thread-check --prefix=$(INSTALL_DIR) || exit 1; \
+		./configure --enable-thread-check --with-mysql-lib=$(MYSQL_LIB_DIR) --prefix=$(INSTALL_DIR) || exit 1; \
 		make && make install; \
 		cd $(CUR_DIR);
 
