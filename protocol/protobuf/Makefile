@@ -4,10 +4,10 @@ PROTO_ROOT_DIR = $(shell pwd)
 PROTOBUF_INSTALLED_DIR = $(LIBS_DIR)/google_protobuf/installed
 
 #对外协议定义文件存放目录
-PUBLIC_PROTOCOL_DEFINITION_DIR = ./public#$(PROTO_ROOT_DIR)/public
+PUBLIC_PROTOCOL_DEFINITION_DIR = $(PROTO_ROOT_DIR)/public
 
 #内部协议定义文件存放目录
-PRIVATE_PROTOCOL_DEFINITION_DIR = ./private#$(PROTO_ROOT_DIR)/private
+PRIVATE_PROTOCOL_DEFINITION_DIR = $(PROTO_ROOT_DIR)/private
 
 #安装好的protobuf编译器路径
 PROTOBUF_COMPILER = $(PROTOBUF_INSTALLED_DIR)/bin/protoc
@@ -144,9 +144,19 @@ clean:
 	rm -f $(target_lib).a
 	rm -f $(CONF_DIR)/protobuf.codedef.private.xml
 	rm -f $(CONF_DIR)/protobuf.codedef.public.xml
-	rm -f $(PUBLIC_PROTOCOL_DEFINITION_DIR)/*.{d,h,cpp,cc,o,xml}
+	rm -f $(PUBLIC_PROTOCOL_DEFINITION_DIR)/*.d
+	rm -f $(PUBLIC_PROTOCOL_DEFINITION_DIR)/*.dh
+	rm -f $(PUBLIC_PROTOCOL_DEFINITION_DIR)/*.cpp
+	rm -f $(PUBLIC_PROTOCOL_DEFINITION_DIR)/*.cc
+	rm -f $(PUBLIC_PROTOCOL_DEFINITION_DIR)/*.o
+	rm -f $(PUBLIC_PROTOCOL_DEFINITION_DIR)/*.xml
 	rm -f $(PUBLIC_PROTOCOL_DEFINITION_DIR)/*.d.*
-	rm -f $(PRIVATE_PROTOCOL_DEFINITION_DIR)/*.{d,h,cpp,cc,o,xml}
+	rm -f $(PRIVATE_PROTOCOL_DEFINITION_DIR)/*.d
+	rm -f $(PRIVATE_PROTOCOL_DEFINITION_DIR)/*.dh
+	rm -f $(PRIVATE_PROTOCOL_DEFINITION_DIR)/*.cpp
+	rm -f $(PRIVATE_PROTOCOL_DEFINITION_DIR)/*.cc
+	rm -f $(PRIVATE_PROTOCOL_DEFINITION_DIR)/*.o
+	rm -f $(PRIVATE_PROTOCOL_DEFINITION_DIR)/*.xml
 	rm -f $(PRIVATE_PROTOCOL_DEFINITION_DIR)/*.d.*
 
 .PHONY: distclean
