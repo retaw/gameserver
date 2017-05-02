@@ -18,7 +18,7 @@ int main()
     cout << "filling data ..." << endl;
     for(uint32_t i = 0; i < banch; ++i)
     {
-        if(i % 1000 == 0)
+        if(i % 100000 == 0)
             cout << "filled " << i << " items" << endl;
 
         Random<uint32_t> random;
@@ -45,7 +45,7 @@ int main()
     int i = 0;
     for(auto iter = um.begin(); iter != um.end(); ++iter)
     {
-        if(i++ % 1000 == 0)
+        if(i++ % 100000 == 0)
             cout << "checked " << i << " items" << endl;
 
         auto ftIter = ftum.find(iter->first);
