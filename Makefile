@@ -26,19 +26,18 @@ SUBDIR =  \
 all: targets
 
 targets:
-	@for subdir in $(SUBDIR); do  \
-		cd $$subdir && $(MAKE) SHELL=$(SHELL) || exit 1 ; \
-		done 
-
+	for subdir in $(SUBDIR); do  \
+		$(MAKE) -C $$subdir SHELL=$(SHELL) || exit 1;\
+		done
 
 clean:
 	@for subdir in $(SUBDIR); do  \
-		(cd $$subdir && $(MAKE) clean); \
+		$(MAKE) clean -C $$subdir; \
 		done
 
 distclean:
 	@for subdir in $(SUBDIR); do  \
-		(cd $$subdir && $(MAKE) distclean); \
+		$(MAKE) distclean -C $$subdir; \
 		done
 
 cleanlibs:
