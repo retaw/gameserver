@@ -143,7 +143,7 @@ public:
 
 private:
     mutable std::list<std::pair<Key, Value>> m_list;//{{kye, value},...}
-    std::unordered_map<Key, iterator> m_map;  //{key, indexOfVec} 这里存的是下标, 所以这个封装可以直接支持default copy
+    std::unordered_map<Key, iterator> m_map;  //{key, list::iterator}
 };
 
 

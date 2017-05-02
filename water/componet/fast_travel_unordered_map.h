@@ -8,8 +8,6 @@
  * Description: 可快速遍历的unordered_map, 
  *              按值存储, 删除操作有对象复制的开销
  *              迭代器在变动性操作后不保证有效
- *          ！！！！！！ 这个实现具有重大bug，没有考虑stlunordered_map会自动rehash的问题，会造成内存错误而宕机。
- *                       已经发现很久了，由于换了工作，一直没有来得及修复，特此注明
  */
 
 #ifndef WATER_QUICK_SEARCH_VECTOR_HPP
