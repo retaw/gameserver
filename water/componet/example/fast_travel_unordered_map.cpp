@@ -30,7 +30,7 @@ int main()
     }
 
     cout << "fill data done" << endl;
-    cout << "checking contintor ..." << endl;
+    cout << "checking container ..." << endl;
 
     //size
     if(ftum.size() != um.size())
